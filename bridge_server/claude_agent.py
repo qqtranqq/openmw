@@ -10,6 +10,7 @@ from anthropic import AsyncAnthropic
 from connection import BridgeConnection
 from game_state import GameState
 import action_builder
+from knowledge import KnowledgeBase
 
 logger = logging.getLogger(__name__)
 
@@ -259,6 +260,57 @@ TOOLS = [
             "required": ["book"],
         },
     },
+    {
+        "name": "remember",
+        "description": "Save a note to your knowledge base for future sessions. Use this to record important discoveries, NPC locations, quest strategies, or anything you want to remember later.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string",
+                    "enum": ["locations", "npcs", "quests", "strategies", "discoveries", "inventory"],
+                    "description": "Category for the note",
+                },
+                "key": {
+                    "type": "string",
+                    "description": "Short identifier for this note (e.g. 'Caius Cosades', 'Balmora shops')",
+                },
+                "content": {
+                    "type": "string",
+                    "description": "The information to remember",
+                },
+            },
+            "required": ["category", "key", "content"],
+        },
+    },
+    {
+        "name": "recall",
+        "description": "Search your knowledge base for previously saved notes. Useful to remember what you learned in prior sessions.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "Search query (matches against note keys and content)",
+                },
+            },
+            "required": ["query"],
+        },
+    },
+    {
+        "name": "review_notes",
+        "description": "List all notes in a category, or list all categories if no category specified.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string",
+                    "description": "Category to review. Omit to list all categories.",
+                },
+            },
+            "required": [],
+        },
+    },
 ]
 
 SYSTEM_PROMPT = """You are playing The Elder Scrolls III: Morrowind through OpenMW. You observe the game world and take actions using the provided tools.
@@ -287,6 +339,7 @@ async def execute_tool(
     tool_input: dict,
     conn: BridgeConnection,
     state: GameState,
+    knowledge: Optional[KnowledgeBase] = None,
 ) -> str:
     """Execute a tool call and return the result as a string."""
 
@@ -513,6 +566,45 @@ async def execute_tool(
                 return f"=== {kind}: {title} ===\n{text}"
             return _format_result(result)
 
+        elif tool_name == "remember":
+            if not knowledge:
+                return "Knowledge base not available."
+            result = knowledge.save(
+                tool_input["category"],
+                tool_input["key"],
+                tool_input["content"],
+            )
+            return result
+
+        elif tool_name == "recall":
+            if not knowledge:
+                return "Knowledge base not available."
+            results = knowledge.search(tool_input["query"])
+            if not results:
+                return "No matching notes found."
+            lines = []
+            for r in results:
+                lines.append(f"[{r['category']}] {r['key']}: {r['value']}")
+            return "\n".join(lines)
+
+        elif tool_name == "review_notes":
+            if not knowledge:
+                return "Knowledge base not available."
+            category = tool_input.get("category")
+            if category:
+                entries = knowledge.get_all(category)
+                if not entries:
+                    return f"No notes in '{category}'."
+                lines = [f"=== {category} ({len(entries)} notes) ==="]
+                for key, value in entries.items():
+                    lines.append(f"  {key}: {str(value)[:200]}")
+                return "\n".join(lines)
+            else:
+                cats = knowledge.list_categories()
+                if not cats:
+                    return "Knowledge base is empty."
+                return "Categories:\n" + "\n".join(f"  {c}" for c in cats)
+
         else:
             return f"Unknown tool: {tool_name}"
 
@@ -552,6 +644,7 @@ async def run_agent(
     state: GameState,
     model: str = "claude-sonnet-4-20250514",
     goal: Optional[str] = None,
+    knowledge: Optional[KnowledgeBase] = None,
 ):
     """Main agent loop. Connects Claude to OpenMW via tool use."""
 
@@ -560,6 +653,11 @@ async def run_agent(
     system = SYSTEM_PROMPT
     if goal:
         system += f"\n\nYour current goal: {goal}"
+
+    if knowledge:
+        prior = knowledge.get_summary()
+        if prior and prior != "No prior knowledge saved.":
+            system += f"\n\n{prior}"
 
     messages = []
 
@@ -599,7 +697,7 @@ async def run_agent(
                     if block.type == "tool_use":
                         logger.info(f"Tool: {block.name}({block.input})")
                         print(f"  🔧 {block.name}({block.input})")
-                        result_text = await execute_tool(block.name, block.input, conn, state)
+                        result_text = await execute_tool(block.name, block.input, conn, state, knowledge)
                         logger.info(f"Result: {result_text[:200]}")
                         print(f"  📋 {result_text[:200]}")
                         tool_results.append({

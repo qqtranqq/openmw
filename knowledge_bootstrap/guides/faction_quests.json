@@ -1,0 +1,2316 @@
+[
+  {
+    "faction": "Fighters Guild",
+    "quests": [
+      {
+        "name": "Exterminator",
+        "quest_giver": "Eydis Fire-Eye",
+        "location": "Balmora, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Kill cave rats infesting Drarayne Thelas's house in Balmora. Return to Eydis for your reward.",
+        "reward": "100 gold"
+      },
+      {
+        "name": "The Egg Poachers",
+        "quest_giver": "Eydis Fire-Eye",
+        "location": "Balmora, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Eliminate two egg poachers at Shulk Egg Mine south of Balmora. Clear the mine and report back.",
+        "reward": "100 gold"
+      },
+      {
+        "name": "The Telvanni Agents",
+        "quest_giver": "Eydis Fire-Eye",
+        "location": "Balmora, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Kill four Telvanni agents responsible for thefts at Caldera Mine. Travel to Caldera Mining Company and eliminate them.",
+        "reward": "400 gold"
+      },
+      {
+        "name": "The Code Book",
+        "quest_giver": "Eydis Fire-Eye",
+        "location": "Balmora, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Retrieve the code book from Sottilde at the South Wall Cornerclub in Balmora. Persuade or pickpocket her to obtain it.",
+        "reward": "200 gold"
+      },
+      {
+        "name": "Desele's Debt",
+        "quest_giver": "Eydis Fire-Eye",
+        "location": "Balmora, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Collect debt money from Helviane Desele at Desele's House of Earthly Delights in Suran. Persuade or intimidate her to pay.",
+        "reward": "500 gold"
+      },
+      {
+        "name": "Gra-Bol's Bounty",
+        "quest_giver": "Eydis Fire-Eye",
+        "location": "Balmora, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Complete the bounty contract on the Orc Dura gra-Bol in Balmora. Find and eliminate the target.",
+        "reward": "250 gold"
+      },
+      {
+        "name": "Alof and the Orcs",
+        "quest_giver": "Eydis Fire-Eye",
+        "location": "Balmora, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Rescue Alof from Orcs at Ghorak Manor in Caldera or handle the situation. Report back to Eydis.",
+        "reward": "250 gold"
+      },
+      {
+        "name": "The Verethi Gang",
+        "quest_giver": "Eydis Fire-Eye",
+        "location": "Balmora, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Kill the leader of the Verethi smuggler gang in Mannammu cave, southeast of Pelagiad. Clear the cave and report back.",
+        "reward": "500 gold"
+      },
+      {
+        "name": "Hunger in the Sarano Tomb",
+        "quest_giver": "Eydis Fire-Eye",
+        "location": "Balmora, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Eliminate a hunger daedra defiling the Sarano Tomb south of Balmora. Kill the creature and return to Eydis.",
+        "reward": "500 gold"
+      },
+      {
+        "name": "Juicedaw Ring",
+        "quest_giver": "Lorbumol gro-Aglakh",
+        "location": "Vivec, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Obtain the Juicedaw Feather Ring from an Orc named Rov in Hlaalu Waistworks. Retrieve the ring and return it to Lorbumol.",
+        "reward": "100 gold"
+      },
+      {
+        "name": "Silence Tongue-Toad",
+        "quest_giver": "Lorbumol gro-Aglakh",
+        "location": "Vivec, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Silence the Argonian Tongue-Toad in Ald'ruhn who has been slandering the Fighters Guild. Persuade or kill him.",
+        "reward": "250 gold"
+      },
+      {
+        "name": "Dro'Sakhar's Bounty",
+        "quest_giver": "Lorbumol gro-Aglakh",
+        "location": "Vivec, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Complete the bounty on the Khajiit outlaw Dro'Sakhar hiding in Vivec. Find and eliminate the target.",
+        "reward": "250 gold"
+      },
+      {
+        "name": "Lirielle's Debt",
+        "quest_giver": "Lorbumol gro-Aglakh",
+        "location": "Vivec, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Retrieve a 2000 gold debt from Lirielle Stoine in Ald'ruhn. Persuade or intimidate her to pay up.",
+        "reward": "500 gold"
+      },
+      {
+        "name": "Vandacia's Bounty",
+        "quest_giver": "Lorbumol gro-Aglakh",
+        "location": "Vivec, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Collect a bounty on the outlaw Vandacia in Seyda Neen. Find and eliminate the target.",
+        "reward": "250 gold"
+      },
+      {
+        "name": "Alleius' Bounty",
+        "quest_giver": "Lorbumol gro-Aglakh",
+        "location": "Vivec, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Collect a bounty on judge Alleius in Ebonheart. This is a Camonna Tong-directed hit, so consider the implications.",
+        "reward": "250 gold"
+      },
+      {
+        "name": "Battle at Nchurdamz",
+        "quest_giver": "Hrundi",
+        "location": "Wolverine Hall, Fighters Guild (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Aid warrior Larienna Macrina against the daedra Hrelvesuu at Nchurdamz Dwemer ruin. Fight alongside her to defeat the creature.",
+        "reward": "500 gold"
+      },
+      {
+        "name": "The Dissapla Mine",
+        "quest_giver": "Hrundi",
+        "location": "Wolverine Hall, Fighters Guild (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Rescue the healer Teres Arothan from Nix-Hounds infesting Dissapla Mine. Clear the mine of creatures.",
+        "reward": "250 gold"
+      },
+      {
+        "name": "Berwen's Stalker",
+        "quest_giver": "Hrundi",
+        "location": "Wolverine Hall, Fighters Guild (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Kill the corprus stalker in Berwen's shop in Tel Mora. Eliminate the diseased creature threatening the shopkeeper.",
+        "reward": "250 gold"
+      },
+      {
+        "name": "Tenim's Bounty",
+        "quest_giver": "Hrundi",
+        "location": "Wolverine Hall, Fighters Guild (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Kill outlaw Rels Tenim found near Vos. Track down and eliminate the target.",
+        "reward": "500 gold"
+      },
+      {
+        "name": "Sujamma to Dunirai",
+        "quest_giver": "Hrundi",
+        "location": "Wolverine Hall, Fighters Guild (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Deliver sujamma to Nelacar at Dunirai Caverns. Transport the bottles and hand them over.",
+        "reward": "250 gold"
+      },
+      {
+        "name": "Sondaale",
+        "quest_giver": "Hrundi",
+        "location": "Wolverine Hall, Fighters Guild (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Rescue researcher Sondaale from Sixth House cultists at Telasero. Find her and escort her safely out of the ruin.",
+        "reward": "500 gold"
+      },
+      {
+        "name": "Engaer's Bounty",
+        "quest_giver": "Hrundi",
+        "location": "Wolverine Hall, Fighters Guild (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Eliminate outlaw Engaer in Tel Naga. Find and kill the target in the Telvanni tower.",
+        "reward": "500 gold"
+      },
+      {
+        "name": "The Pudai Eggmine",
+        "quest_giver": "Hrundi",
+        "location": "Wolverine Hall, Fighters Guild (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Retrieve the Seven Eggs of Gold from Pudai Egg Mine in the Sheogorad region. Locate the eggs deep in the mine and return them.",
+        "reward": "1000 gold"
+      },
+      {
+        "name": "The Necromancer of Vas",
+        "quest_giver": "Percius Mercius",
+        "location": "Ald'ruhn, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Clear a necromancer den in the Sheogorad region at Vas. Travel far north and eliminate the necromancer and undead.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Beneran's Bounty",
+        "quest_giver": "Percius Mercius",
+        "location": "Ald'ruhn, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Collect a bounty on the murderer Nerer Beneran hiding in Sargon. Find and eliminate the target.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Bandits in Suran",
+        "quest_giver": "Percius Mercius",
+        "location": "Ald'ruhn, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Eliminate bandits in Suran for Avon Oran. Find and clear out the bandit group threatening the town.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Flin for Elith-Pal",
+        "quest_giver": "Percius Mercius",
+        "location": "Ald'ruhn, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Deliver flin to Elith-Pal Mine at the base of Red Mountain. Transport the alcohol through dangerous territory.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Remove Sjoring's Supporters",
+        "quest_giver": "Percius Mercius",
+        "location": "Ald'ruhn, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Kill two corrupted Fighters Guild members who support the Camonna Tong. Eliminate Lorbumol gro-Aglakh and Duronos Gal.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Kill Hard-Heart",
+        "quest_giver": "Percius Mercius",
+        "location": "Ald'ruhn, Fighters Guild",
+        "rank_required": "None",
+        "summary": "Assassinate Fighters Guild Master Sjoring Hard-Heart in the Vivec guild hall. Defeat him to become the new Guild Master.",
+        "reward": "Fighters Guild Master rank"
+      },
+      {
+        "name": "Remove the Heads of the Thieves Guild",
+        "quest_giver": "Sjoring Hard-Heart",
+        "location": "Vivec, Fighters Guild",
+        "rank_required": "Protector",
+        "summary": "Eliminate all three Thieves Guild bosses: Sugar-Lips Habasi, Aengoth the Jeweler, and Big Helende. This is a Camonna Tong plot.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Kill the Master Thief",
+        "quest_giver": "Sjoring Hard-Heart",
+        "location": "Vivec, Fighters Guild",
+        "rank_required": "Protector",
+        "summary": "Assassinate Gentleman Jim Stacey, leader of the Thieves Guild, at Simine Fralinie's Bookseller in Vivec. This completes the Camonna Tong questline.",
+        "reward": "Faction reputation"
+      }
+    ]
+  },
+  {
+    "faction": "Mages Guild",
+    "quests": [
+      {
+        "name": "Four Types of Mushrooms",
+        "quest_giver": "Ajira",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Collect four mushroom samples: Luminous Russula, Violet Coprinus, Bungler's Bane, and Hypha Facia. Find them in the wilderness around Balmora and return them to Ajira.",
+        "reward": "4 potions"
+      },
+      {
+        "name": "Fake Soul Gem",
+        "quest_giver": "Ajira",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Help Ajira win a bet against Galbedir by placing a fake soul gem on Galbedir's desk upstairs. Return to Ajira when done.",
+        "reward": "4 potions"
+      },
+      {
+        "name": "Four Types of Flowers",
+        "quest_giver": "Ajira",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Collect four flower samples: Gold Kanet, Stoneflower, Willow Anther, and Heather. Return all four to Ajira.",
+        "reward": "4 potions"
+      },
+      {
+        "name": "Ceramic Bowl",
+        "quest_giver": "Ajira",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Buy a ceramic bowl from Ra'Virr or Nalcarya in Balmora and bring it to Ajira for her alchemy experiments.",
+        "reward": "4 potions"
+      },
+      {
+        "name": "Stolen Reports",
+        "quest_giver": "Ajira",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Find Ajira's stolen mushroom and flower reports. They were hidden behind Galbedir's desk by a rival. Retrieve and return them.",
+        "reward": "4 potions"
+      },
+      {
+        "name": "The Staff of Magnus",
+        "quest_giver": "Ajira",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "Warlock",
+        "summary": "Recover the powerful Staff of Magnus from Assu cave in the Molag Amur region. Fight through daedra to retrieve this artifact.",
+        "reward": "Staff of Magnus"
+      },
+      {
+        "name": "Warlock's Ring",
+        "quest_giver": "Ajira",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "Warlock",
+        "summary": "Retrieve the Warlock's Ring. Ajira provides location information for this powerful artifact that provides speed and health regeneration.",
+        "reward": "Warlock's Ring"
+      },
+      {
+        "name": "Recruit or Kill Llarar Bereloth",
+        "quest_giver": "Ranis Athrys",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Travel to Sulipund to recruit the Telvanni mage Llarar Bereloth into the Mages Guild, or eliminate him if he refuses.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Manwe's Dues",
+        "quest_giver": "Ranis Athrys",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Retrieve overdue guild dues from the mage Manwe in Punabi. Persuade her to pay or handle the situation.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Unsanctioned Training",
+        "quest_giver": "Ranis Athrys",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Stop the Argonian Only-He-Stands-There from offering Restoration training without guild approval in Balmora. Persuade or threaten him to stop.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Escort Itermerel",
+        "quest_giver": "Ranis Athrys",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Escort the scholar Itermerel safely from Balmora to Pelagiad. Protect him from any threats along the way.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Kill Necromancer Tashpi Ashibael",
+        "quest_giver": "Ranis Athrys",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Investigate and eliminate the necromancer Tashpi Ashibael near Maar Gan. She can also be spared if you speak to her first.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Catch a Spy",
+        "quest_giver": "Ranis Athrys",
+        "location": "Balmora, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Search for the Telvanni spy Tiram Gadar infiltrating the guild. Find and apprehend or eliminate the spy.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Chronicles of Nchuleft",
+        "quest_giver": "Edwinna Elbert",
+        "location": "Ald'ruhn, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Search for the rare Dwemer book 'Chronicles of Nchuleft.' It can be found in several locations including Jobasha's bookshop in Vivec.",
+        "reward": "3 Exclusive potions"
+      },
+      {
+        "name": "A Potion from Skink-in-Tree's-Shade",
+        "quest_giver": "Edwinna Elbert",
+        "location": "Ald'ruhn, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Fetch a potion from Skink-in-Tree's-Shade at the Wolverine Hall guild in Sadrith Mora. Deliver it back to Edwinna.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Steal Chimarvamidium",
+        "quest_giver": "Edwinna Elbert",
+        "location": "Ald'ruhn, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Borrow the rare book Chimarvamidium from the Vivec Guild of Mages. Sneak it out and bring it to Edwinna for study.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Huleen's Hut",
+        "quest_giver": "Edwinna Elbert",
+        "location": "Ald'ruhn, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Investigate reports of disturbances from Huleen's Hut in Maar Gan. A Centurion Spider has been activated inside.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Return Chimarvamidium",
+        "quest_giver": "Edwinna Elbert",
+        "location": "Ald'ruhn, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Return the previously borrowed book Chimarvamidium to its place in the Vivec Guild of Mages library.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Dwemer Tube from Arkngthunch-Sturdumz",
+        "quest_giver": "Edwinna Elbert",
+        "location": "Ald'ruhn, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Acquire a rare Dwemer Tube from the Arkngthunch-Sturdumz ruin west of Ald'ruhn. Navigate Dwemer automatons to find it.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Nchuleftingth Expedition",
+        "quest_giver": "Edwinna Elbert",
+        "location": "Ald'ruhn, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Check on an expedition to the Dwemer ruin of Nchuleftingth south of Balmora. Find and aid the researchers.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Scarab Plans in Mzuleft",
+        "quest_giver": "Edwinna Elbert",
+        "location": "Ald'ruhn, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Retrieve Dwemer scarab plans from the Mzuleft ruins in the Sheogorad region. Navigate the ruin to find the plans.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Bethamez",
+        "quest_giver": "Edwinna Elbert",
+        "location": "Ald'ruhn, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Retrieve ancient Dwemer documents from Bethamez, the Dwemer ruin beneath Gnisis. Access it through the egg mine.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Escort Tenyeminwe",
+        "quest_giver": "Skink-in-Tree's-Shade",
+        "location": "Wolverine Hall, Guild of Mages (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Escort the scholar Tenyeminwe safely to the docks of Sadrith Mora. Protect her from threats along the way.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Vampires of Vvardenfell, Vol II",
+        "quest_giver": "Skink-in-Tree's-Shade",
+        "location": "Wolverine Hall, Guild of Mages (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Find the rare book 'Vampires of Vvardenfell, Volume II.' Check bookshops in Vivec and other towns.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Meeting with a Wise Woman",
+        "quest_giver": "Skink-in-Tree's-Shade",
+        "location": "Wolverine Hall, Guild of Mages (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Arrange a meeting between Skink and an Ashlander Wise Woman. Travel to an Ashlander camp and convince a wise woman to meet.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Kill Necromancer Telura Ulver",
+        "quest_giver": "Skink-in-Tree's-Shade",
+        "location": "Wolverine Hall, Guild of Mages (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Eliminate the former guild member Telura Ulver who has turned to necromancy. Find her and put an end to her dark practices.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Soul of an Ash Ghoul",
+        "quest_giver": "Skink-in-Tree's-Shade",
+        "location": "Wolverine Hall, Guild of Mages (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Capture the soul of an Ash Ghoul using a soul gem for Skink's research. Find an Ash Ghoul near Red Mountain and trap its soul.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Galur Rithari's Papers",
+        "quest_giver": "Skink-in-Tree's-Shade",
+        "location": "Wolverine Hall, Guild of Mages (Sadrith Mora)",
+        "rank_required": "None",
+        "summary": "Find Galur Rithari's rare papers about vampirism causes and cures. Search in the Vivec Library or other locations.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Mystery of the Dwarves",
+        "quest_giver": "Trebonius Artorius",
+        "location": "Vivec, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Discover what happened to the Dwemer civilization. Research the topic and report back with findings about their disappearance.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Kill the Telvanni Councilors",
+        "quest_giver": "Trebonius Artorius",
+        "location": "Vivec, Guild of Mages",
+        "rank_required": "None",
+        "summary": "Eliminate all Telvanni councilors as ordered by the Arch-Mage. This is an extreme request that can be avoided through other means.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "A Wizard's Staff",
+        "quest_giver": "Various guild stewards",
+        "location": "Any Guild of Mages hall",
+        "rank_required": "Wizard (Rank 7)",
+        "summary": "Procure a Wizard's Staff to advance to Wizard rank. Purchase one for 5000 gold or find one in the world.",
+        "reward": "Advancement to Wizard rank"
+      },
+      {
+        "name": "I'm NOT a Necromancer!",
+        "quest_giver": "Guild leadership",
+        "location": "Various",
+        "rank_required": "Varies",
+        "summary": "Discover and confront a practitioner of forbidden necromantic arts within guild ranks. Investigate the accusations and resolve the situation.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Arch-Mage",
+        "quest_giver": "Trebonius Artorius",
+        "location": "Vivec, Guild of Mages",
+        "rank_required": "Master Wizard (Rank 8)",
+        "summary": "Replace Trebonius as Arch-Mage of the Mages Guild. Challenge him to a duel in the Arena or use persuasion to make him step down.",
+        "reward": "Arch-Mage rank"
+      }
+    ]
+  },
+  {
+    "faction": "Thieves Guild",
+    "quests": [
+      {
+        "name": "Diamonds for Habasi",
+        "quest_giver": "Sugar-Lips Habasi",
+        "location": "South Wall Cornerclub, Balmora",
+        "rank_required": "None",
+        "summary": "Obtain a diamond from Nalcarya the alchemist in Balmora. Steal it or buy one and bring it to Habasi.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Nerano Manor Key",
+        "quest_giver": "Sugar-Lips Habasi",
+        "location": "South Wall Cornerclub, Balmora",
+        "rank_required": "None",
+        "summary": "Acquire the key to Nerano Manor in Balmora. Pickpocket or persuade the owner for the key.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Ra'Zhid's Dwemer Artifacts",
+        "quest_giver": "Sugar-Lips Habasi",
+        "location": "South Wall Cornerclub, Balmora",
+        "rank_required": "None",
+        "summary": "Recover Dwemer artifacts from Ra'Zhid in Hla Oad. Travel there and retrieve the stolen goods.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "The Vintage Brandy",
+        "quest_giver": "Sugar-Lips Habasi",
+        "location": "South Wall Cornerclub, Balmora",
+        "rank_required": "None",
+        "summary": "Steal vintage brandy from Ralen Hlaalo's manor in Balmora. Sneak in and grab the bottles.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Free New-Shoes Bragor",
+        "quest_giver": "Sugar-Lips Habasi",
+        "location": "South Wall Cornerclub, Balmora",
+        "rank_required": "None",
+        "summary": "Free fellow guild member New-Shoes Bragor from the prison in Pelagiad. Pick the lock or obtain the key to free him.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Master of Security",
+        "quest_giver": "Sugar-Lips Habasi",
+        "location": "South Wall Cornerclub, Balmora",
+        "rank_required": "None",
+        "summary": "Help Habasi locate a security master in Balmora. Find the expert and report their location.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Loot the Mages Guild",
+        "quest_giver": "Aengoth the Jeweler",
+        "location": "The Rat In The Pot, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Steal an enchanted tanto from the Ald'ruhn Mages Guild. Sneak in and take the weapon without being caught.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Redoran Master Helm",
+        "quest_giver": "Aengoth the Jeweler",
+        "location": "The Rat In The Pot, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Steal a Redoran Master Helm. Find one in the Redoran Council Hall in Ald'ruhn and take it.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Naughty Gandosa",
+        "quest_giver": "Aengoth the Jeweler",
+        "location": "The Rat In The Pot, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Find incriminating evidence about the Arobar family in Ald'ruhn. Locate Gandosa Arobar's compromising book.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Withershins",
+        "quest_giver": "Aengoth the Jeweler",
+        "location": "The Rat In The Pot, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Find a copy of the rare book Withershins. Check bookshops or steal one from a private collection.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Retrieve the Scrap Metal",
+        "quest_giver": "Aengoth the Jeweler",
+        "location": "The Rat In The Pot, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Retrieve Dwemer scrap metal to protect the Thieves Guild by having a Centurion Spider built. Gather the materials needed.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "The Darts of Judgement",
+        "quest_giver": "Aengoth the Jeweler",
+        "location": "The Rat In The Pot, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Steal four daedric Darts of Judgement from a Redoran guard. Pickpocket or sneak to obtain them.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Potion Recipe",
+        "quest_giver": "Big Helende",
+        "location": "Dirty Muriel's Cornerclub, Sadrith Mora",
+        "rank_required": "None",
+        "summary": "Steal a potion recipe from the local alchemist in Sadrith Mora. Sneak into the shop and grab the recipe.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "The Grandmaster's Retort",
+        "quest_giver": "Big Helende",
+        "location": "Dirty Muriel's Cornerclub, Sadrith Mora",
+        "rank_required": "None",
+        "summary": "Steal a Grandmaster's Retort, a valuable alchemy apparatus. Find and take one from its owner.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Wizard For Hire",
+        "quest_giver": "Big Helende",
+        "location": "Dirty Muriel's Cornerclub, Sadrith Mora",
+        "rank_required": "None",
+        "summary": "Hire a battlemage to protect the Thieves Guild. Find a willing wizard and recruit them for protection.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Redoran Cookbook",
+        "quest_giver": "Big Helende",
+        "location": "Dirty Muriel's Cornerclub, Sadrith Mora",
+        "rank_required": "None",
+        "summary": "Steal a copy of 'Redoran Cooking Secrets' from its owner. Find the book and bring it to Helende.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Felen's Ebony Staff",
+        "quest_giver": "Big Helende",
+        "location": "Dirty Muriel's Cornerclub, Sadrith Mora",
+        "rank_required": "None",
+        "summary": "Steal Felen Maryon's enchanted ebony staff in Tel Branora. Sneak into the wizard's tower and take the staff.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Find Brother Nads",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Find fellow guild member Brother Nads who has disappeared. Investigate his whereabouts and report back.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Speak With Percius",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Visit Percius Mercius in the Ald'ruhn Fighters Guild to learn about the Camonna Tong's influence on the Fighters Guild.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "The Bitter Cup",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Find the Bittercup artifact in Ald Redaynia and use it to persuade Eydis Fire-Eye to betray the Camonna Tong.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Hrundi's Lover",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Persuade Hrundi in Sadrith Mora's Fighters Guild to join the Thieves Guild against the Camonna Tong by finding his lover.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "The Brothers Ienith",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Kill the Ienith brothers, two enforcers of the Camonna Tong, at Dren Plantation. Eliminate both targets.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Kill Hard-Heart",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Kill Sjoring Hard-Heart, the corrupt Master of the Fighters Guild, in Vivec. This ends the Camonna Tong's grip on the Fighters Guild.",
+        "reward": "Master Thief rank"
+      },
+      {
+        "name": "The Hlervu Locket (Bal Molagmer)",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Steal a locket and return it to its rightful owner as part of the Bal Molagmer Robin Hood-style missions. Wear the Bal Molagmer gloves.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Yngling's Ledger (Bal Molagmer)",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Steal Yngling Half-Troll's ledger to expose corruption in Vivec. Deliver the evidence to the proper authorities.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Land Deed (Bal Molagmer)",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Steal a forged land deed from the Library of Vivec to prevent an unjust eviction. Return it to the rightful owner.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Enamor (Bal Molagmer)",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Return the sword Enamor to Salyn Sarethi at the Tower of Dusk in Ghostgate. Retrieve and deliver the artifact.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Brallion's Ring (Bal Molagmer)",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Steal a ring from the slaver Brallion in Sadrith Mora and deliver it to an abolitionist to aid the anti-slavery cause.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Books for Vala (Bal Molagmer)",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Steal four history books from Odral Helvi in Caldera and donate them to Vala Catraso in Ald'ruhn for education.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "The Dwemer Goblet (Bal Molagmer)",
+        "quest_giver": "Gentleman Jim Stacey",
+        "location": "Simine Fralinie's Bookseller, Vivec",
+        "rank_required": "None",
+        "summary": "Steal a Dwemer Goblet as a final Bal Molagmer mission. Complete this task to earn Gentleman Jim's full trust.",
+        "reward": "Faction reputation"
+      }
+    ]
+  },
+  {
+    "faction": "Imperial Legion",
+    "quests": [
+      {
+        "name": "Widow Vabdas' Deed",
+        "quest_giver": "General Darius",
+        "location": "Madach Tradehouse, Gnisis",
+        "rank_required": "None",
+        "summary": "Obtain a land deed for Widow Vabdas in Gnisis. Investigate the dispute and recover the deed document from Hetman Abelmawia.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Gnisis Eggmine",
+        "quest_giver": "General Darius",
+        "location": "Madach Tradehouse, Gnisis",
+        "rank_required": "None",
+        "summary": "Cure the blighted Kwama Queen in the Gnisis Eggmine. Obtain a Cure Blight spell or potion and use it on the queen.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Rescue Madura Seran",
+        "quest_giver": "General Darius",
+        "location": "Madach Tradehouse, Gnisis",
+        "rank_required": "None",
+        "summary": "Rescue the kidnapped pilgrim Madura Seran from Ashlander outcasts north of Gnisis. Free her and escort her to safety.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Rescue Ragash gra-Shuzgub",
+        "quest_giver": "General Darius",
+        "location": "Madach Tradehouse, Gnisis",
+        "rank_required": "None",
+        "summary": "Investigate the disappearance of the tax collector Ragash gra-Shuzgub. Find her in Arvs-Drelen and rescue her.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Talos Cult Conspiracy",
+        "quest_giver": "General Darius",
+        "location": "Madach Tradehouse, Gnisis",
+        "rank_required": "None",
+        "summary": "Investigate the Talos Cult in Gnisis that may be plotting against the Emperor. Uncover and stop the conspiracy.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Dwemer Artifacts at Drinar Varyon's Place",
+        "quest_giver": "Imsin the Dreamer",
+        "location": "Buckmoth Legion Fort, near Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Find proof that Drinar Varyon in Ald'ruhn is smuggling Dwemer artifacts. Search his home for evidence and report back.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Rescue Joncis Dalomax",
+        "quest_giver": "Imsin the Dreamer",
+        "location": "Buckmoth Legion Fort, near Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Rescue the imprisoned knight Joncis Dalomax from the Daedric shrine Ashurnibibi. Fight through daedra to free him.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Maiden's Token",
+        "quest_giver": "Imsin the Dreamer",
+        "location": "Buckmoth Legion Fort, near Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Recover an embroidered gauntlet (maiden's token) from Varona Nelas in Assumanu cave. Retrieve the item and return it.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Scrap Metal",
+        "quest_giver": "Radd Hard-Heart",
+        "location": "Moonmoth Legion Fort, near Balmora",
+        "rank_required": "None",
+        "summary": "Retrieve Dwemer scrap metal for a contest. Find the scrap metal and bring it to Radd Hard-Heart.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Rescue Jocien Ancois",
+        "quest_giver": "Radd Hard-Heart",
+        "location": "Moonmoth Legion Fort, near Balmora",
+        "rank_required": "None",
+        "summary": "Rescue Jocien Ancois kidnapped from the Erabenimsun Ashlander camp. Find and free the hostage.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Rescue Dandsa",
+        "quest_giver": "Radd Hard-Heart",
+        "location": "Moonmoth Legion Fort, near Balmora",
+        "rank_required": "None",
+        "summary": "Free the Imperial citizen Dandsa held by raiders in Abernanit cave. Locate the cave and rescue the captive.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Breeding Netch",
+        "quest_giver": "Radd Hard-Heart",
+        "location": "Moonmoth Legion Fort, near Balmora",
+        "rank_required": "None",
+        "summary": "Eliminate a dangerous breeding netch pair near Balmora. Hunt and kill both the bull and betty netch.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Sorkvild the Raven",
+        "quest_giver": "Radd Hard-Heart",
+        "location": "Moonmoth Legion Fort, near Balmora",
+        "rank_required": "None",
+        "summary": "Kill the necromancer Sorkvild the Raven in his tower near Dagon Fel. Travel north and eliminate the target.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Courtesy",
+        "quest_giver": "Frald the White",
+        "location": "Hawkmoth Legion Garrison, Ebonheart",
+        "rank_required": "None",
+        "summary": "Defend Legion honor by dueling a Buoyant Armiger at Ghostgate. Travel there and defeat the opponent in combat.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Honthjolf is a Traitor",
+        "quest_giver": "Frald the White",
+        "location": "Hawkmoth Legion Garrison, Ebonheart",
+        "rank_required": "None",
+        "summary": "Kill the Legion deserter Honthjolf hiding in Aharnabi cave. Locate and eliminate the traitor.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Suryn Athones' Slanders",
+        "quest_giver": "Frald the White",
+        "location": "Hawkmoth Legion Garrison, Ebonheart",
+        "rank_required": "None",
+        "summary": "Kill the Ordinator Suryn Athones in Vivec who is spreading false information about the Legion. Eliminate the slanderer.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Saprius Entius",
+        "quest_giver": "Frald the White",
+        "location": "Hawkmoth Legion Garrison, Ebonheart",
+        "rank_required": "None",
+        "summary": "Find and protect the Legion Knight Saprius Entius who has been falsely accused of murder. Locate him and clear his name.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Lord's Mail",
+        "quest_giver": "Varus Vantinius",
+        "location": "Grand Council Chambers, Ebonheart",
+        "rank_required": "Knight Protector",
+        "summary": "Retrieve the Lord's Mail artifact. Find this cuirass in Ebonheart's underground areas and bring it to Vantinius.",
+        "reward": "Knight of the Imperial Dragon rank"
+      },
+      {
+        "name": "Chrysamere",
+        "quest_giver": "Varus Vantinius",
+        "location": "Grand Council Chambers, Ebonheart",
+        "rank_required": "Knight Protector",
+        "summary": "Retrieve the Chrysamere artifact, the Paladin's Blade. Find this legendary sword and bring it to Vantinius.",
+        "reward": "Knight of the Imperial Dragon rank"
+      },
+      {
+        "name": "Grandmaster Duel",
+        "quest_giver": "Varus Vantinius",
+        "location": "Grand Council Chambers, Ebonheart",
+        "rank_required": "Knight of the Imperial Dragon",
+        "summary": "Achieve the highest rank by dueling Varus Vantinius in the Arena at Vivec. Defeat the commander in combat to become the new leader.",
+        "reward": "Knight of the Garland rank (Grandmaster)"
+      }
+    ]
+  },
+  {
+    "faction": "Imperial Cult",
+    "quests": [
+      {
+        "name": "Gathering Marshmerrow",
+        "quest_giver": "Synnolian Tunifus",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Retrieve five pieces of marshmerrow from farmer Balur Salvu in Pelagiad. Return the ingredients to Synnolian.",
+        "reward": "Skill book 'The Cake and the Diamond'"
+      },
+      {
+        "name": "Gathering Muck",
+        "quest_giver": "Synnolian Tunifus",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Find five pieces of muck and deliver restore health potions to Gnisis. Return to Synnolian when done.",
+        "reward": "Restore Attribute spell"
+      },
+      {
+        "name": "Gathering Willow Anther",
+        "quest_giver": "Synnolian Tunifus",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Collect five pieces of willow anther from Gro-Bagrat Plantation north of Vivec. Deliver them to Synnolian.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Gathering Scrib Jelly",
+        "quest_giver": "Synnolian Tunifus",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Visit an egg mine to harvest jelly from scribs. Collect five pieces and bring them back.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Gathering Corkbulb Root",
+        "quest_giver": "Synnolian Tunifus",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Harvest corkbulb root at the Arvel Plantation north of Vivec. Collect five pieces and return.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Gathering Rat Meat",
+        "quest_giver": "Synnolian Tunifus",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Kill rats in Vivec to obtain five pieces of rat meat for Cure Poison potions. Return the meat to Synnolian.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Gathering Netch Leather",
+        "quest_giver": "Synnolian Tunifus",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Kill a netch to obtain leather for crafting Cure Paralysis potions. Return the leather to Synnolian.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Alms from the Skyrim Mission",
+        "quest_giver": "Iulus Truptor",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Visit the Skyrim Mission in Ebonheart and collect charitable donations for the Imperial Cult. Return the alms.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Alms from the Argonian Mission",
+        "quest_giver": "Iulus Truptor",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Visit the Argonian Mission in Ebonheart and collect charitable donations for the Cult. Return the donations.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Buckmoth Alms",
+        "quest_giver": "Iulus Truptor",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Visit citizens of Ald'ruhn and collect charitable donations for the Imperial Cult. Gather gold from several donors.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Shirt and Vest for Harvest's End",
+        "quest_giver": "Iulus Truptor",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Collect a red shirt and black vest for the Harvest's End festival. Find the clothing items and deliver them.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Brandy for the Fundraising Dinner",
+        "quest_giver": "Iulus Truptor",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Find expensive brandy for a fundraising dinner. Persuade tavern owners to donate or purchase bottles.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Donation from Cunius Pelelius",
+        "quest_giver": "Iulus Truptor",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Collect a 500 gold pledge from Cunius Pelelius, the owner of Caldera Mine. Persuade him to pay up.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Pledge from Canctunian Ponius",
+        "quest_giver": "Iulus Truptor",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Layman",
+        "summary": "Collect a 1000 gold pledge from Canctunian Ponius at the East Empire Company in Ebonheart. Persuade him to honor his pledge.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Missing Limeware",
+        "quest_giver": "Kaye",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Acolyte",
+        "summary": "Recover a limeware bowl stolen from the chapel by the High Elf Caryarel in Gnaar Mok. Retrieve the bowl and return it.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "The Haunting",
+        "quest_giver": "Kaye",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Acolyte",
+        "summary": "Stop the haunting of Nedhelas' house in Caldera. Find and destroy the ghost causing the disturbance.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Thelsa Dral the Witch",
+        "quest_giver": "Kaye",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Acolyte",
+        "summary": "Dispose of the witch Thelsa Dral hiding in an egg mine near Khuul. Find and eliminate her.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "The Silver Staff of Shaming",
+        "quest_giver": "Kaye",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Acolyte",
+        "summary": "Find the Silver Staff of Shaming, last held by Linus Iulus, in the shadow of Mount Kand. Explore the area and recover it.",
+        "reward": "Silver Staff of Shaming"
+      },
+      {
+        "name": "Restless Spirit",
+        "quest_giver": "Kaye",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Acolyte",
+        "summary": "Calm the restless spirit of murdered Julielle Aumine haunting Okur in Hla Oad. Investigate the murder and lay the spirit to rest.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Ring in Darkness",
+        "quest_giver": "Lalatia Varian",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Theurgist",
+        "summary": "Find the legendary Ring in Darkness in the caverns of Nammu. Navigate the dangerous cave and retrieve the artifact.",
+        "reward": "Ring in Darkness"
+      },
+      {
+        "name": "Boots of the Apostle",
+        "quest_giver": "Lalatia Varian",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Theurgist",
+        "summary": "Find the Boots of the Apostle in the stronghold of Berandas south of Gnisis. Fight through enemies to claim them.",
+        "reward": "Boots of the Apostle"
+      },
+      {
+        "name": "Ice Blade of the Monarch",
+        "quest_giver": "Lalatia Varian",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Theurgist",
+        "summary": "Find the Ice Blade of the Monarch in the stronghold of Rotheran. Battle through the fortress to retrieve this artifact.",
+        "reward": "Ice Blade of the Monarch"
+      },
+      {
+        "name": "The Scroll of Fiercely Roasting",
+        "quest_giver": "Lalatia Varian",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Theurgist",
+        "summary": "Find the Scroll of Fiercely Roasting in the Daedric shrine of Ashalmimilkala on the west coast. Explore and recover it.",
+        "reward": "Scroll of Fiercely Roasting"
+      },
+      {
+        "name": "Skull-Crusher",
+        "quest_giver": "Lalatia Varian",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "Theurgist",
+        "summary": "Find the powerful warhammer Skull-Crusher in the Forgotten Vaults of Anudnabia east of Sadrith Mora. Retrieve this artifact.",
+        "reward": "Skull-Crusher"
+      },
+      {
+        "name": "A Lucky Coin",
+        "quest_giver": "Lalatia Varian",
+        "location": "Imperial Chapels, Ebonheart",
+        "rank_required": "None",
+        "summary": "A special encounter at Ghostgate involving a lucky coin. Investigate the mysterious occurrence.",
+        "reward": "Lucky coin"
+      }
+    ]
+  },
+  {
+    "faction": "Tribunal Temple",
+    "quests": [
+      {
+        "name": "Pilgrimages of the Seven Graces",
+        "quest_giver": "Various Temple priests",
+        "location": "Any Tribunal Temple",
+        "rank_required": "Layman",
+        "summary": "Visit all seven grace shrines throughout Vvardenfell: Fields of Kummu, Shrine of Humility, Ghostgate, Gnisis, Maar Gan, Mount Kand, and the Palace. Donate the appropriate item at each shrine.",
+        "reward": "Faction reputation and advancement"
+      },
+      {
+        "name": "Compassion",
+        "quest_giver": "Tuls Valen",
+        "location": "Ald'ruhn Temple",
+        "rank_required": "Initiate",
+        "summary": "Cure a mortal enemy afflicted with Blight disease to demonstrate compassion. Find a Corprus sufferer and cure their disease.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "False Incarnate",
+        "quest_giver": "Tuls Valen",
+        "location": "Ald'ruhn Temple",
+        "rank_required": "Initiate",
+        "summary": "Investigate claims of a possible Nerevarine candidate named Elvil Vidron in Suran. Confront the false incarnate.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Pilgrimage to Maar Gan",
+        "quest_giver": "Tuls Valen",
+        "location": "Ald'ruhn Temple",
+        "rank_required": "Initiate",
+        "summary": "Perform a pilgrimage to the shrine in Maar Gan and make an offering. Return to Tuls Valen when complete.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Dark Cult in Hassour",
+        "quest_giver": "Tuls Valen",
+        "location": "Ald'ruhn Temple",
+        "rank_required": "Initiate",
+        "summary": "Destroy a Sixth House cult operating in Hassour cave. Clear the cultists and their shrine.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Disease Carrier",
+        "quest_giver": "Endryn Llethan",
+        "location": "Vivec, High Fane",
+        "rank_required": "Acolyte",
+        "summary": "Convince a Corprus-infected pilgrim named Tanusea Veloth to leave Vivec city. Persuade her or cure her disease.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Silent Pilgrimage",
+        "quest_giver": "Endryn Llethan",
+        "location": "Vivec, High Fane",
+        "rank_required": "Acolyte",
+        "summary": "Take a vow of silence and complete a pilgrimage to the Sanctus Shrine west of Dagon Fel. Do not speak to anyone during the journey.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Shoes of St. Rilms",
+        "quest_giver": "Endryn Llethan",
+        "location": "Vivec, High Fane",
+        "rank_required": "Curate",
+        "summary": "Recover the Shoes of St. Rilms from the depths of the Daedric ruin Ald Sotha northeast of Vivec. Navigate the ruin and retrieve the artifact.",
+        "reward": "Shoes of St. Rilms"
+      },
+      {
+        "name": "Foul Cult Beneath St. Delyn Canton",
+        "quest_giver": "Endryn Llethan",
+        "location": "Vivec, High Fane",
+        "rank_required": "Curate",
+        "summary": "Eliminate a Sixth House cult operating beneath St. Delyn Canton in Vivec. Find the hidden lair and destroy the shrine.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Cure Lette",
+        "quest_giver": "Tharer Rotheloth",
+        "location": "Molag Mar Temple",
+        "rank_required": "Adept",
+        "summary": "Cure a villager named Lette in Tel Mora of swamp fever. Use a Cure Common Disease spell or potion on her.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Pilgrimage to Mount Kand",
+        "quest_giver": "Tharer Rotheloth",
+        "location": "Molag Mar Temple",
+        "rank_required": "Adept",
+        "summary": "Demonstrate wisdom and bravery by visiting the Mount Kand shrine. Complete the pilgrimage and report back.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Necromancer in Mawia",
+        "quest_giver": "Tharer Rotheloth",
+        "location": "Molag Mar Temple",
+        "rank_required": "Diviner",
+        "summary": "Eliminate the necromancer in the Mawia cavern. Kill the necromancer and any undead minions.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Slay Raxle Berne",
+        "quest_giver": "Tharer Rotheloth",
+        "location": "Molag Mar Temple",
+        "rank_required": "Master",
+        "summary": "Cleanse the vampire lair at Galom Daeus and kill the elder vampire Raxle Berne, leader of the Berne clan.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Cure the Outcast Outlander",
+        "quest_giver": "Uvoo Llaren",
+        "location": "Ghostgate Temple",
+        "rank_required": "Diviner",
+        "summary": "Cure an ill Ashlander in a camp near Ghostgate who is suffering from disease. Use cure spells or potions.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Food and Drink for the Hermit",
+        "quest_giver": "Uvoo Llaren",
+        "location": "Ghostgate Temple",
+        "rank_required": "Diviner",
+        "summary": "Deliver food and drink to the hermit Sendus Sathis living on Shuran Island. Bring him supplies.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Hair Shirt of St. Aralor",
+        "quest_giver": "Uvoo Llaren",
+        "location": "Ghostgate Temple",
+        "rank_required": "Master",
+        "summary": "Recover the Hair Shirt of St. Aralor from the Sixth House stronghold Kogoruhn. Navigate the dangerous ruin to find the relic.",
+        "reward": "Hair Shirt of St. Aralor"
+      },
+      {
+        "name": "Cleaver of St. Felms",
+        "quest_giver": "Uvoo Llaren",
+        "location": "Ghostgate Temple",
+        "rank_required": "Master",
+        "summary": "Recover the Cleaver of St. Felms from the Sixth House citadel Tureynulal inside Red Mountain's crater.",
+        "reward": "Cleaver of St. Felms"
+      },
+      {
+        "name": "Crosier of St. Llothis the Pious",
+        "quest_giver": "Uvoo Llaren",
+        "location": "Ghostgate Temple",
+        "rank_required": "Patriarch",
+        "summary": "Recover the Crosier of St. Llothis from deep within Red Mountain's crater. This is one of the most dangerous Temple quests.",
+        "reward": "Crosier of St. Llothis"
+      },
+      {
+        "name": "Malacath of the House of Troubles",
+        "quest_giver": "Archcanon Tholer Saryoni",
+        "location": "Vivec, High Fane",
+        "rank_required": "Patriarch",
+        "summary": "Begin the Pilgrimages of the Four Corners by visiting the Statue of Malacath at Assurdirapal. Make an offering at the shrine.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Mehrunes Dagon of the House of Troubles",
+        "quest_giver": "Archcanon Tholer Saryoni",
+        "location": "Vivec, High Fane",
+        "rank_required": "Patriarch",
+        "summary": "Renew the pact with Mehrunes Dagon by visiting his shrine at Ald Sotha. Make the proper offering.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Molag Bal of the House of Troubles",
+        "quest_giver": "Archcanon Tholer Saryoni",
+        "location": "Vivec, High Fane",
+        "rank_required": "Patriarch",
+        "summary": "Renew the pact with Molag Bal by visiting his shrine at Bal Ur. Make the proper offering.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Sheogorath of the House of Troubles",
+        "quest_giver": "Archcanon Tholer Saryoni",
+        "location": "Vivec, High Fane",
+        "rank_required": "Patriarch",
+        "summary": "Complete the Pilgrimages of the Four Corners by visiting the Statue of Sheogorath. Make the final offering.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Ebony Mail",
+        "quest_giver": "Archcanon Tholer Saryoni",
+        "location": "Vivec, High Fane",
+        "rank_required": "Patriarch",
+        "summary": "Retrieve the Ebony Mail artifact from the shrine at Mount Assarnibibi. This is the final Temple quest rewarding the highest honor.",
+        "reward": "Ebony Mail artifact; Patriarch rank confirmed"
+      }
+    ]
+  },
+  {
+    "faction": "House Hlaalu",
+    "quests": [
+      {
+        "name": "Disguise",
+        "quest_giver": "Nileno Dorvayn",
+        "location": "Hlaalu Council Manor, Balmora",
+        "rank_required": "Retainer",
+        "summary": "Acquire a dead Redoran's disguise and wear it to steal orders from Neminda at the Redoran Council Hall in Ald'ruhn.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Alchemical Formulas",
+        "quest_giver": "Nileno Dorvayn",
+        "location": "Hlaalu Council Manor, Balmora",
+        "rank_required": "Retainer",
+        "summary": "Eliminate a rival alchemist who is interfering with a loyal Hlaalu member's business. Handle the competitor.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Inanius Egg Mine",
+        "quest_giver": "Nileno Dorvayn",
+        "location": "Hlaalu Council Manor, Balmora",
+        "rank_required": "Retainer",
+        "summary": "Travel to Inanius Egg Mine near Suran and kill the blighted kwama queen to restore the mine's productivity.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Guar Hide Squeeze",
+        "quest_giver": "Nileno Dorvayn",
+        "location": "Hlaalu Council Manor, Balmora",
+        "rank_required": "Retainer",
+        "summary": "Persuade a guar hide merchant in Vivec to purchase only Hlaalu guar hides. Use persuasion or intimidation.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Delivery for Bivale Teneran",
+        "quest_giver": "Nileno Dorvayn",
+        "location": "Hlaalu Council Manor, Balmora",
+        "rank_required": "Retainer",
+        "summary": "Transport clothing orders to the clothier Bivale Teneran in Ald'ruhn. Deliver the package safely.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "The Death of Ralen Hlaalo",
+        "quest_giver": "Nileno Dorvayn",
+        "location": "Hlaalu Council Manor, Balmora",
+        "rank_required": "Retainer",
+        "summary": "Investigate and solve the murder of the nobleman Ralen Hlaalo in Balmora. Find the killer and bring them to justice.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Ebony Trade",
+        "quest_giver": "Nileno Dorvayn",
+        "location": "Hlaalu Council Manor, Balmora",
+        "rank_required": "Retainer",
+        "summary": "Either convince Canctunian Ponius to purchase ebony exclusively from Hlaalu or shut down the competing Sudanit Mine.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Bank Courier",
+        "quest_giver": "Edryno Arethi",
+        "location": "Hlaalu Waistworks, Vivec",
+        "rank_required": "Retainer",
+        "summary": "Deliver a sealed treasury report to the Hlaalu vault in Vivec. Transport the documents safely.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Murudius Flaeus's Debt",
+        "quest_giver": "Edryno Arethi",
+        "location": "Hlaalu Waistworks, Vivec",
+        "rank_required": "Retainer",
+        "summary": "Collect debt money owed by Murudius Flaeus in Hla Oad. Persuade or intimidate him to pay.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Escort Tarvyn Faren",
+        "quest_giver": "Edryno Arethi",
+        "location": "Hlaalu Waistworks, Vivec",
+        "rank_required": "Retainer",
+        "summary": "Guide House merchant Tarvyn Faren safely from Vivec to Pelagiad. Protect him along the way.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Telvanni at Odirniran",
+        "quest_giver": "Edryno Arethi",
+        "location": "Hlaalu Waistworks, Vivec",
+        "rank_required": "Retainer",
+        "summary": "Travel to the Odirniran stronghold to locate Hlaalu survivors and eliminate hostile Telvanni operatives who attacked them.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Exterminator",
+        "quest_giver": "Edryno Arethi",
+        "location": "Hlaalu Waistworks, Vivec",
+        "rank_required": "Retainer",
+        "summary": "Kill diseased rats affecting Yngling Half-Troll's game stock in the Vivec Hlaalu canton. Clear the rat infestation.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Ashlander Ebony",
+        "quest_giver": "Edryno Arethi",
+        "location": "Hlaalu Waistworks, Vivec",
+        "rank_required": "Retainer",
+        "summary": "Negotiate with the Zainab Ashlander camp to sell their ebony exclusively to House Hlaalu. Persuade the camp leader.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "The Shipwreck 'Prelude'",
+        "quest_giver": "Edryno Arethi",
+        "location": "Hlaalu Waistworks, Vivec",
+        "rank_required": "Retainer",
+        "summary": "Locate the sunken vessel 'Prelude' and retrieve a Daedric wakizashi from its wreckage. Dive and recover the weapon.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Guard Ralen Tilvur",
+        "quest_giver": "Edryno Arethi",
+        "location": "Hlaalu Waistworks, Vivec",
+        "rank_required": "Retainer",
+        "summary": "Protect Ralen Tilvur's smithy in Vivec's Foreign Quarter from theft. Stand guard and repel any thieves.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "An Admiring Sponsor",
+        "quest_giver": "Crassius Curio",
+        "location": "Curio Manor, Vivec Hlaalu Canton",
+        "rank_required": "None",
+        "summary": "Meet Crassius Curio at his Vivec residence to receive his sponsorship into House Hlaalu. Endure his eccentric personality.",
+        "reward": "House Hlaalu sponsorship"
+      },
+      {
+        "name": "Velfred the Outlaw",
+        "quest_giver": "Crassius Curio",
+        "location": "Curio Manor, Vivec Hlaalu Canton",
+        "rank_required": "Retainer",
+        "summary": "Locate the outlaw Velfred and compel him to pay outstanding smuggling fees to House Hlaalu. Find him in Hla Oad.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Kill Banden Indarys",
+        "quest_giver": "Crassius Curio",
+        "location": "Curio Manor, Vivec Hlaalu Canton",
+        "rank_required": "Lawman",
+        "summary": "Eliminate the Redoran noble Banden Indarys at Indarys Manor between Maar Gan and Ald'ruhn. Kill him to weaken House Redoran.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Bero's Support",
+        "quest_giver": "Crassius Curio",
+        "location": "Curio Manor, Vivec Hlaalu Canton",
+        "rank_required": "Lawman",
+        "summary": "Secure political backing from the reclusive councilor Dram Bero in Vivec. Find his hidden manor and gain his support.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Kill Reynel Uvirith",
+        "quest_giver": "Crassius Curio",
+        "location": "Curio Manor, Vivec Hlaalu Canton",
+        "rank_required": "Lawman",
+        "summary": "Assassinate the Telvanni sorcerer Reynel Uvirith at Tel Uvirith stronghold. Eliminate him to weaken House Telvanni.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Sealed Orders",
+        "quest_giver": "Odral Helvi",
+        "location": "Governor's Hall, Caldera",
+        "rank_required": "Retainer",
+        "summary": "Transport suspicious sealed orders to the Hlaalu vault clerk in Vivec. Deliver the documents without opening them.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "The Caldera Spy",
+        "quest_giver": "Odral Helvi",
+        "location": "Governor's Hall, Caldera",
+        "rank_required": "Retainer",
+        "summary": "Identify and apprehend the spy who stole documents from Caldera Mine. Investigate and find the thief.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Erroneous Documents",
+        "quest_giver": "Odral Helvi",
+        "location": "Governor's Hall, Caldera",
+        "rank_required": "Retainer",
+        "summary": "Replace fraudulent land deeds with forgeries in Vivec's Hlaalu Records Office. Swap the documents discreetly.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Rent and Taxes",
+        "quest_giver": "Odral Helvi",
+        "location": "Governor's Hall, Caldera",
+        "rank_required": "Retainer",
+        "summary": "Collect overdue rent and taxes from farmers in the area. Persuade or threaten them to pay their debts.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Shipment of Ebony",
+        "quest_giver": "Odral Helvi",
+        "location": "Governor's Hall, Caldera",
+        "rank_required": "Retainer",
+        "summary": "Smuggle a shipment of raw ebony supplies to Ald'ruhn for the house. Transport the goods without being caught.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Literacy Campaign",
+        "quest_giver": "Ilmeni Dren",
+        "location": "Vivec, St. Delyn Canton",
+        "rank_required": "None",
+        "summary": "Procure two educational books and deliver them to the Ald'ruhn Mages Guild school for a literacy campaign.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "The Twin Lamps",
+        "quest_giver": "Ilmeni Dren",
+        "location": "Vivec, St. Delyn Canton",
+        "rank_required": "None",
+        "summary": "Help the abolitionist Twin Lamps organization by locating and liberating an escaped slave.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Free Hides-His-Foot",
+        "quest_giver": "Ilmeni Dren",
+        "location": "Vivec, St. Delyn Canton",
+        "rank_required": "None",
+        "summary": "Rescue the Argonian slave Hides-His-Foot from Dren Plantation. Infiltrate the plantation and free him.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Control the Ordinators",
+        "quest_giver": "Duke Vedam Dren",
+        "location": "Grand Council Chambers, Ebonheart",
+        "rank_required": "Grandmaster",
+        "summary": "Consult with Archcanon Tholer Saryoni regarding gaining authority over the Ordinators of Vivec.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Dealing with Orvas Dren",
+        "quest_giver": "Duke Vedam Dren",
+        "location": "Grand Council Chambers, Ebonheart",
+        "rank_required": "Grandmaster",
+        "summary": "Negotiate with or eliminate Orvas Dren to break the Camonna Tong's influence. Visit Dren Plantation and resolve the situation.",
+        "reward": "Faction advancement; Hlaalu Grandmaster confirmed"
+      },
+      {
+        "name": "Stronghold (Rethan Manor)",
+        "quest_giver": "Duke Vedam Dren",
+        "location": "Grand Council Chambers, Ebonheart",
+        "rank_required": "Kinsman",
+        "summary": "Construct your House stronghold Rethan Manor south of Balmora across three building phases. Complete tasks for each phase.",
+        "reward": "Rethan Manor stronghold"
+      }
+    ]
+  },
+  {
+    "faction": "House Redoran",
+    "quests": [
+      {
+        "name": "Mudcrab Pests",
+        "quest_giver": "Neminda",
+        "location": "Redoran Council Hall, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Eliminate mudcrabs pestering Drulene Falen's guar herd at her farm south of Ald'ruhn. Kill the crabs and report back.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Deliver Cure Disease Potion",
+        "quest_giver": "Neminda",
+        "location": "Redoran Council Hall, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Transport a Cure Disease potion to Theldyn Virith at the Ald Velothi outpost. Deliver it safely.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Find Mathis Dalobar",
+        "quest_giver": "Neminda",
+        "location": "Redoran Council Hall, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Locate the missing trader Mathis Dalobar who disappeared near Ald'ruhn. Search for him and report back.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Founder's Helm",
+        "quest_giver": "Neminda",
+        "location": "Redoran Council Hall, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Recover the stolen Founder's Helm from Alvis Teri in Balmora. Retrieve it and return it to Neminda.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Trouble with Bandits",
+        "quest_giver": "Neminda",
+        "location": "Redoran Council Hall, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Protect Drulene Falen and her guar herd from bandits threatening her farm. Eliminate the bandit threat.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Guard Sarethi Manor",
+        "quest_giver": "Neminda",
+        "location": "Redoran Council Hall, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Defend Athyn Sarethi's manor in Ald'ruhn from assassin attacks. Stand guard and repel the assassins.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Old Blue Fin",
+        "quest_giver": "Theldyn Virith",
+        "location": "Ald Velothi Outpost",
+        "rank_required": "None",
+        "summary": "Kill the old slaughterfish Old Blue Fin bothering dock workers in Ald Velothi. Hunt the creature in the water.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Ashimanu Mine",
+        "quest_giver": "Theldyn Virith",
+        "location": "Ald Velothi Outpost",
+        "rank_required": "None",
+        "summary": "Eliminate a blighted shalk in the Ashimanu Egg Mine threatening the workers. Kill the creature.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Kagouti Den",
+        "quest_giver": "Theldyn Virith",
+        "location": "Ald Velothi Outpost",
+        "rank_required": "None",
+        "summary": "Kill the kagouti menacing the area near Ashimanu Egg Mine. Track down and eliminate the beast.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Shishi Report",
+        "quest_giver": "Theldyn Virith",
+        "location": "Ald Velothi Outpost",
+        "rank_required": "None",
+        "summary": "Check on Redoran soldiers stationed at the Shishi outpost. Report back on their status.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Kill Gordol",
+        "quest_giver": "Theldyn Virith",
+        "location": "Ald Velothi Outpost",
+        "rank_required": "None",
+        "summary": "Eliminate the Daedra worshipper Gordol in the Ashalmawia Daedric shrine. Fight through to find and kill him.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Rescue Varvur Sarethi",
+        "quest_giver": "Athyn Sarethi",
+        "location": "Sarethi Manor, Ald'ruhn",
+        "rank_required": "Kinsman",
+        "summary": "Free Athyn Sarethi's son Varvur from captivity in Venim Manor. Sneak or fight into the manor and free him.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Clear Varvur Sarethi's Name",
+        "quest_giver": "Athyn Sarethi",
+        "location": "Sarethi Manor, Ald'ruhn",
+        "rank_required": "Kinsman",
+        "summary": "Investigate the murder to exonerate Varvur Sarethi. Find the real killer and evidence to clear his name.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Ondres Nerano's Slanders",
+        "quest_giver": "Athyn Sarethi",
+        "location": "Sarethi Manor, Ald'ruhn",
+        "rank_required": "Kinsman",
+        "summary": "Defend House Redoran's honor by confronting Ondres Nerano about his slanderous accusations. Silence him.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Shurinbaal",
+        "quest_giver": "Athyn Sarethi",
+        "location": "Sarethi Manor, Ald'ruhn",
+        "rank_required": "Kinsman",
+        "summary": "Eliminate smugglers operating in the Shurinbaal cavern near Gnaar Mok. Clear the cave of smugglers.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "The Mad Lord of Milk",
+        "quest_giver": "Athyn Sarethi",
+        "location": "Sarethi Manor, Ald'ruhn",
+        "rank_required": "Kinsman",
+        "summary": "Pacify the enraged inhabitant of the settlement called Milk. Resolve the situation peacefully or by force.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Duel with Bolvyn Venim",
+        "quest_giver": "Athyn Sarethi",
+        "location": "Sarethi Manor, Ald'ruhn",
+        "rank_required": "Councilman",
+        "summary": "Challenge Archmaster Bolvyn Venim to a duel in the Vivec Arena for leadership of House Redoran. Defeat him in combat.",
+        "reward": "Archmaster rank"
+      },
+      {
+        "name": "Ash Statue",
+        "quest_giver": "Lloros Sarano",
+        "location": "Ald'ruhn Temple",
+        "rank_required": "None",
+        "summary": "Investigate how Varvur Sarethi received a Sixth House ash statue. Follow the trail to uncover the source.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Find Fedris Tharen",
+        "quest_giver": "Lloros Sarano",
+        "location": "Ald'ruhn Temple",
+        "rank_required": "None",
+        "summary": "Locate the pilgrim Fedris Tharen who disappeared on the way to Koal Cave shrine. Search the route for him.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Find Beden Giladren",
+        "quest_giver": "Lloros Sarano",
+        "location": "Ald'ruhn Temple",
+        "rank_required": "None",
+        "summary": "Find the pilgrim Beden Giladren who went missing on his way to Maar Gan. Search for any signs of him.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Recover Shields from Andasreth",
+        "quest_giver": "Lloros Sarano",
+        "location": "Ald'ruhn Temple",
+        "rank_required": "None",
+        "summary": "Locate four soldiers who vanished at Andasreth Stronghold and recover their shields. Explore the ruins.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Mission to Morvayn Manor",
+        "quest_giver": "Redoran Councilors",
+        "location": "Ald'ruhn",
+        "rank_required": "House Brother",
+        "summary": "Recover an ash statue from Morvayn Manor that has been overrun by Corprus creatures. Clear the manor and retrieve it.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Taxes from Gnisis",
+        "quest_giver": "Redoran Councilors",
+        "location": "Ald'ruhn",
+        "rank_required": "House Brother",
+        "summary": "Collect overdue taxes from Hetman Abelmawia in Gnisis on behalf of House Redoran.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Nalvilie Saren",
+        "quest_giver": "Hlaren Ramoran",
+        "location": "Ramoran Private Quarters, Ald'ruhn",
+        "rank_required": "House Brother",
+        "summary": "Locate Nalvilie Saren, a lost love for Councilor Hlaren Ramoran. Search for her and report back.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Evidence of Corruption",
+        "quest_giver": "Redoran Councilors",
+        "location": "Ald'ruhn",
+        "rank_required": "House Brother",
+        "summary": "Recover proof of House Hlaalu corruption in the Caldera mining operation. Find documents as evidence.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Shut the Mines Down",
+        "quest_giver": "Garisa Llethri",
+        "location": "Llethri Private Quarters, Ald'ruhn",
+        "rank_required": "House Brother",
+        "summary": "Close the Caldera Mine for Councilor Garisa Llethri. Convince or force the mine operators to shut down.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Miner Arobar's Support",
+        "quest_giver": "Redoran Councilors",
+        "location": "Ald'ruhn",
+        "rank_required": "House Brother",
+        "summary": "Determine what influences Councilor Miner Arobar's political decisions. Investigate his connections and report.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Meril Hlaano's Slanders",
+        "quest_giver": "Faral Retheran",
+        "location": "Redoran Treasury, Vivec",
+        "rank_required": "None",
+        "summary": "Persuade or silence Hlaalu noble Meril Hlaano who is slandering House Redoran. Confront him.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Redas Tomb",
+        "quest_giver": "Faral Retheran",
+        "location": "Redoran Treasury, Vivec",
+        "rank_required": "None",
+        "summary": "Retrieve three items from Redas Tomb south of Molag Mar: the Redas Chalice, War Axe, and Robe of Deeds.",
+        "reward": "Redas artifacts (upon Archmaster rank)"
+      },
+      {
+        "name": "Duel of Honor",
+        "quest_giver": "Faral Retheran",
+        "location": "Redoran Treasury, Vivec",
+        "rank_required": "None",
+        "summary": "Convince Rothis Nethan to complete an honor duel he abandoned. Find him and persuade him to finish it.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Slay Dagoth Tanis",
+        "quest_giver": "Faral Retheran",
+        "location": "Redoran Treasury, Vivec",
+        "rank_required": "None",
+        "summary": "Kill Dagoth Tanis at Falasmaryon Stronghold's lower level. Navigate the Sixth House base and destroy the Ash Vampire.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Slay Reynel Uvirith",
+        "quest_giver": "Faral Retheran",
+        "location": "Redoran Treasury, Vivec",
+        "rank_required": "None",
+        "summary": "Eliminate the Telvanni wizard Reynel Uvirith at Tel Uvirith. Attack the rival house's stronghold.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Slay Raynasa Rethan",
+        "quest_giver": "Faral Retheran",
+        "location": "Redoran Treasury, Vivec",
+        "rank_required": "None",
+        "summary": "Kill Hlaalu lord Raynasa Rethan at Rethan Manor on Odai Plateau south of Balmora. Eliminate the rival.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Escort to Koal Cave",
+        "quest_giver": "Tuveso Beleth",
+        "location": "Tuveso Beleth: Smith, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Guide Tuveso's son Deval on a pilgrimage to Koal Cave south of Gnisis. Protect him on the journey.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Armor Repair Debts",
+        "quest_giver": "Tuveso Beleth",
+        "location": "Tuveso Beleth: Smith, Ald'ruhn",
+        "rank_required": "None",
+        "summary": "Collect money owed by Buoyant Armiger Giras Indaram at the Molag Mar stronghold for armor repairs.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Stronghold (Indarys Manor)",
+        "quest_giver": "Redoran Councilors",
+        "location": "Ald'ruhn",
+        "rank_required": "Kinsman",
+        "summary": "Build House Redoran's stronghold Indarys Manor through three construction phases. Complete objectives for each stage.",
+        "reward": "Indarys Manor stronghold"
+      }
+    ]
+  },
+  {
+    "faction": "House Telvanni",
+    "quests": [
+      {
+        "name": "Muck",
+        "quest_giver": "Raven Omayn",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Retainer",
+        "summary": "Retrieve five pieces of muck for potion-making purposes. Gather the ingredient from mudcrabs or swamps and deliver it.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Black Jinx",
+        "quest_giver": "Raven Omayn",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Retainer",
+        "summary": "Locate the Black Jinx magical ring somewhere within Sadrith Mora. Find it and return it to Raven Omayn.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Sload Soap",
+        "quest_giver": "Arara Uvulas",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Retainer",
+        "summary": "Retrieve five pieces of sload soap for Master Neloth's research. Find the rare ingredient and deliver it.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Staff of the Silver Dawn",
+        "quest_giver": "Arara Uvulas",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Retainer",
+        "summary": "Find the Staff of the Silver Dawn hidden somewhere in Sadrith Mora. Locate and return the magical staff.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "New Clothes",
+        "quest_giver": "Felisa Ulessen",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Retainer",
+        "summary": "Deliver a skirt to Mistress Therana at Tel Branora. Transport the clothing item to the eccentric Telvanni councilor.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Slave Rebellion",
+        "quest_giver": "Felisa Ulessen",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Retainer",
+        "summary": "End the slave revolt at Abebaal Egg Mine near Tel Branora. Defeat the rebellious slaves to restore order.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Dwemer Books",
+        "quest_giver": "Baladas Demnevanni",
+        "location": "Arvs-Drelen, Gnisis",
+        "rank_required": "Oathman",
+        "summary": "Find three rare Dwemer books:Erta Mool, Hanging Gardens, and The Egg of Time. Deliver them to Baladas in Gnisis.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Dahrk Mezalf",
+        "quest_giver": "Baladas Demnevanni",
+        "location": "Arvs-Drelen, Gnisis",
+        "rank_required": "Oathman",
+        "summary": "Recover the ancient Dwemer ring Dahrk Mezalf from the ruins of Bthungthumz. Navigate the Dwemer ruin to find it.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Three Questions for Baladas Demnevanni",
+        "quest_giver": "Mallam Ryon",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Oathman",
+        "summary": "Travel to Gnisis and question Baladas Demnevanni on three pivotal questions about Dwemer history and civilization. Report back.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Mission to Nchuleft",
+        "quest_giver": "Mallam Ryon",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Oathman",
+        "summary": "Retrieve Dwemer plans from the Nchuleft ruins located far west of Vos. Explore the ruin and find the plans.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Coded Message",
+        "quest_giver": "Galos Mathendis",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Oathman",
+        "summary": "Deliver a coded message to Divayth Fyr at Tel Fyr. Travel to the legendary wizard's tower.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Cure Blight",
+        "quest_giver": "Galos Mathendis",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Oathman",
+        "summary": "Deliver three Cure Blight potions to an alchemist in Tel Vos. Provide the needed medical supplies.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Daedra Skin",
+        "quest_giver": "Galos Mathendis",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Oathman",
+        "summary": "Find and deliver a Daedra skin to Master Aryon in Tel Vos. Hunt a daedra or purchase the skin.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Auriel's Bow",
+        "quest_giver": "Mistress Therana",
+        "location": "Tel Branora, Upper Tower",
+        "rank_required": "Oathman",
+        "summary": "Locate the legendary artifact Auriel's Bow somewhere in the Ghostgate area. Retrieve it for the eccentric Therana.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Flesh Made Whole",
+        "quest_giver": "Mistress Dratha",
+        "location": "Tel Mora, Upper Tower",
+        "rank_required": "Oathman",
+        "summary": "Retrieve the Amulet of Flesh Made Whole from Tel Naga in Sadrith Mora. Find and return the healing amulet.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Drake's Pride",
+        "quest_giver": "Master Neloth",
+        "location": "Tel Naga, Sadrith Mora",
+        "rank_required": "Oathman",
+        "summary": "Find the robe Drake's Pride on a servant in Tel Aruhn. Locate and retrieve the enchanted robe for Neloth.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Ring of Equity",
+        "quest_giver": "Fast Eddie",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Retainer",
+        "summary": "Help Eddie retrieve the Ring of Equity from Neloth's treasury in Tel Naga. Sneak in and steal the ring.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Amulet of Unity",
+        "quest_giver": "Fast Eddie",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Retainer",
+        "summary": "Help Eddie retrieve the Amulet of Unity. Find and bring back this magical amulet.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Baladas Demnevanni (Recruit to Council)",
+        "quest_giver": "Master Aryon",
+        "location": "Tel Vos",
+        "rank_required": "Mouth",
+        "summary": "Convince Baladas Demnevanni in Gnisis to join the Telvanni Council. Persuade the reclusive wizard to participate.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Mudan-Mul Egg Mine",
+        "quest_giver": "Master Aryon",
+        "location": "Tel Vos",
+        "rank_required": "Mouth",
+        "summary": "Cure the blighted Kwama Queen in Mudan-Mul Egg Mine west of Tel Vos. Use a Cure Blight spell or potion on the queen.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Wizard Spells",
+        "quest_giver": "Master Aryon",
+        "location": "Tel Vos",
+        "rank_required": "Wizard",
+        "summary": "Learn three specific spells as required by Aryon for advancement. Acquire and demonstrate the requested spells.",
+        "reward": "Rank advancement"
+      },
+      {
+        "name": "Odirniran",
+        "quest_giver": "Master Aryon",
+        "location": "Tel Vos",
+        "rank_required": "Mouth",
+        "summary": "Help Milyn Faram who is under attack by House Hlaalu forces at Odirniran stronghold. Rescue the Telvanni member.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Mages Guild Monopoly",
+        "quest_giver": "Master Aryon",
+        "location": "Tel Vos",
+        "rank_required": "Spellwright",
+        "summary": "Convince three Redoran Councilors to support a proposal allowing House Telvanni to compete with the Mages Guild's trade monopoly.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Shishi",
+        "quest_giver": "Master Aryon",
+        "location": "Tel Vos",
+        "rank_required": "Spellwright",
+        "summary": "Rescue Faves Andas from House Redoran forces at the Shishi outpost northwest of Maar Gan. Fight the Redoran troops.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Recruit a Mouth",
+        "quest_giver": "Master Aryon",
+        "location": "Tel Vos",
+        "rank_required": "Spellwright",
+        "summary": "Recruit a Mouth (spokesperson) to enable your promotion to Councilor rank. Find a suitable candidate.",
+        "reward": "Advancement to Mouth rank"
+      },
+      {
+        "name": "Kill Raynasa Rethan",
+        "quest_giver": "Master Aryon",
+        "location": "Tel Vos",
+        "rank_required": "Wizard",
+        "summary": "Eliminate the Hlaalu noble Raynasa Rethan at Rethan Manor south of Balmora to weaken House Hlaalu.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Kill Banden Indarys",
+        "quest_giver": "Master Aryon",
+        "location": "Tel Vos",
+        "rank_required": "Wizard",
+        "summary": "Eliminate the Redoran noble Banden Indarys at Indarys Manor to weaken House Redoran's position.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Archmagister Gothren",
+        "quest_giver": "Master Aryon",
+        "location": "Tel Vos",
+        "rank_required": "Magister",
+        "summary": "Secure support from all House Councilors and then challenge Archmagister Gothren at Tel Aruhn for leadership of House Telvanni.",
+        "reward": "Archmagister rank"
+      },
+      {
+        "name": "Stronghold (Tel Uvirith)",
+        "quest_giver": "Llunela Hleran",
+        "location": "Sadrith Mora, Telvanni Council House",
+        "rank_required": "Mouth",
+        "summary": "Build your House stronghold Tel Uvirith through three construction phases. Complete objectives for each stage of tower construction.",
+        "reward": "Tel Uvirith stronghold"
+      }
+    ]
+  },
+  {
+    "faction": "Morag Tong",
+    "quests": [
+      {
+        "name": "Writ for Feruren Oran",
+        "quest_giver": "Eno Hlaalu",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "Associate",
+        "summary": "Execute Feruren Oran to prove your worth and be initiated into the Morag Tong guild. Present the writ if questioned by guards.",
+        "reward": "Faction advancement"
+      },
+      {
+        "name": "Writ for Odaishah Yasalmibaal",
+        "quest_giver": "Any Morag Tong quest giver",
+        "location": "Various (Vivec, Balmora, Ald'ruhn, Sadrith Mora)",
+        "rank_required": "Associate",
+        "summary": "Execute the target Odaishah Yasalmibaal found near Tel Fyr. Present your writ to avoid legal consequences.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Toris Saren",
+        "quest_giver": "Any Morag Tong quest giver",
+        "location": "Various (Vivec, Balmora, Ald'ruhn, Sadrith Mora)",
+        "rank_required": "Associate",
+        "summary": "Execute the target Toris Saren in Vivec. Find him and carry out the sanctioned assassination.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Sarayn Sadus",
+        "quest_giver": "Any Morag Tong quest giver",
+        "location": "Various (Vivec, Balmora, Ald'ruhn, Sadrith Mora)",
+        "rank_required": "Associate",
+        "summary": "Execute the target Sarayn Sadus in the Zaintirari cave. Travel there and complete the writ.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Ethal Seloth and Idroso Vendu",
+        "quest_giver": "Any Morag Tong quest giver",
+        "location": "Various (Vivec, Balmora, Ald'ruhn, Sadrith Mora)",
+        "rank_required": "Associate",
+        "summary": "Execute both targets Ethal Seloth and Idroso Vendu in Vivec Temporary Housing. Kill both to complete the writ.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Guril Retheran",
+        "quest_giver": "Any Morag Tong quest giver",
+        "location": "Various (Vivec, Balmora, Ald'ruhn, Sadrith Mora)",
+        "rank_required": "Associate",
+        "summary": "Execute the target Guril Retheran in Vivec. Find and assassinate him per the writ.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Galasa Uvayn",
+        "quest_giver": "Any Morag Tong quest giver",
+        "location": "Various (Vivec, Balmora, Ald'ruhn, Sadrith Mora)",
+        "rank_required": "Associate",
+        "summary": "Execute the target Galasa Uvayn in Vivec. Carry out the sanctioned assassination.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Mavon Drenim",
+        "quest_giver": "Any Morag Tong quest giver",
+        "location": "Various (Vivec, Balmora, Ald'ruhn, Sadrith Mora)",
+        "rank_required": "Associate",
+        "summary": "Execute the target Mavon Drenim, a Telvanni wizard in Vivec. Kill this powerful mage.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Tirer Belvayn",
+        "quest_giver": "Any Morag Tong quest giver",
+        "location": "Various (Vivec, Balmora, Ald'ruhn, Sadrith Mora)",
+        "rank_required": "Associate",
+        "summary": "Execute the target Tirer Belvayn in the Shara dungeon. Navigate the dungeon to find and kill him.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Mathyn Bemis",
+        "quest_giver": "Any Morag Tong quest giver",
+        "location": "Various (Vivec, Balmora, Ald'ruhn, Sadrith Mora)",
+        "rank_required": "Associate",
+        "summary": "Execute the target Mathyn Bemis in Vivec. Find and carry out the assassination.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Brilnosu Llarys",
+        "quest_giver": "Any Morag Tong quest giver",
+        "location": "Various (Vivec, Balmora, Ald'ruhn, Sadrith Mora)",
+        "rank_required": "Associate",
+        "summary": "Execute the target Brilnosu Llarys in Hlormaren stronghold. Infiltrate the stronghold to complete the writ.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Navil and Ranes Ienith",
+        "quest_giver": "Any Morag Tong quest giver",
+        "location": "Various (Vivec, Balmora, Ald'ruhn, Sadrith Mora)",
+        "rank_required": "Associate",
+        "summary": "Kill both Ienith brothers in the Dren Plantation Villa basement. Eliminate both targets to complete the writ.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Threads of the Webspinner",
+        "quest_giver": "Eno Hlaalu",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "Associate",
+        "summary": "Collect all 26 Sanguine items scattered across Vvardenfell for Eno Hlaalu. Each item is a unique enchanted piece. Receive Mephala's reward upon completion.",
+        "reward": "Mephala's Skill (unique ability from Daedric Prince)"
+      },
+      {
+        "name": "A Contact in the Dark Brotherhood",
+        "quest_giver": "Eno Hlaalu",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "White Thrall",
+        "summary": "Find the name of a Dark Brotherhood contact from an enchanter in the Vivec canton. Investigate and report the intelligence.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Belt of Sanguine Fleetness",
+        "quest_giver": "Eno Hlaalu",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "White Thrall",
+        "summary": "Recover the Belt of Sanguine Fleetness from Pelagiad. Find the Sanguine item and return it.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Ultimatum for Movis Darys",
+        "quest_giver": "Eno Hlaalu",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "White Thrall",
+        "summary": "Deliver an ultimatum to Dark Brotherhood member Movis Darys, persuading him to defect to the Morag Tong.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Ultimatum for Carecalmo",
+        "quest_giver": "Eno Hlaalu",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "White Thrall",
+        "summary": "Deliver an ultimatum to Carecalmo, a Mehrunes Dagon worshipper who aids the Dark Brotherhood. Confront him at his shrine.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Ring of Sanguine Sublime Wisdom",
+        "quest_giver": "Eno Hlaalu",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "Knower",
+        "summary": "Recover the Ring of Sanguine Sublime Wisdom from the Yasammidan shrine northwest of Gnisis. Explore the shrine.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Execute Durus Marius",
+        "quest_giver": "Eno Hlaalu",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "Knower",
+        "summary": "Kill the Dark Brotherhood assassin Durus Marius hiding in the St. Olms Underworks shrine in Vivec.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Execute Severa Magia",
+        "quest_giver": "Eno Hlaalu",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "Knower",
+        "summary": "Execute the Dark Brotherhood Night Mother Severa Magia in Ald Sotha. This strike cripples the Dark Brotherhood's operations in Morrowind.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Grandmaster",
+        "quest_giver": "Eno Hlaalu",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "Master",
+        "summary": "Eno Hlaalu retires as Grandmaster and names you as his successor. Accept the title and leadership of the Morag Tong.",
+        "reward": "Grandmaster rank"
+      },
+      {
+        "name": "Writ for Larrius Varro (Grandmaster)",
+        "quest_giver": "Grandmaster writs",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "Grandmaster",
+        "summary": "Execute Larrius Varro at Moonmoth Legion Fort. This is a post-main-quest Grandmaster-level writ.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Baladas Demnevanni (Grandmaster)",
+        "quest_giver": "Grandmaster writs",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "Grandmaster",
+        "summary": "Execute the powerful spellcaster Baladas Demnevanni in Gnisis. A dangerous post-main-quest assassination.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Dram Bero (Grandmaster)",
+        "quest_giver": "Grandmaster writs",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "Grandmaster",
+        "summary": "Execute Hlaalu council member Dram Bero in his hidden Vivec manor. A post-main-quest Grandmaster writ.",
+        "reward": "Faction reputation"
+      },
+      {
+        "name": "Writ for Mistress Therana (Grandmaster)",
+        "quest_giver": "Grandmaster writs",
+        "location": "Vivec, Arena Canton Hidden Area",
+        "rank_required": "Grandmaster",
+        "summary": "Execute the eccentric Telvanni council member Mistress Therana at Tel Branora. A post-main-quest Grandmaster writ.",
+        "reward": "Faction reputation"
+      }
+    ]
+  }
+]

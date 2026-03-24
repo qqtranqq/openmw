@@ -1,0 +1,235 @@
+{
+  "source": "UESP Wiki (en.uesp.net)",
+  "game": "The Elder Scrolls III: Morrowind",
+  "combat": {
+    "mechanics": {
+      "hit_chance_formula": "Hit Rate = Weapon Skill + (Agility / 5) + (Luck / 10), multiplied by fatigue factor (0.75 to 1.25). Fortify Attack effects also modify accuracy. Final hit chance = Attacker Hit Rate - Defender Evasion.",
+      "damage_formula": "Damage = (Weapon Base Damage * Strength Modifier * Condition Modifier * Critical Hit Multiplier) / Armor Reduction. Strength Modifier = (Strength + 50) / 100, so at 50 Strength you deal normal damage.",
+      "armor_formula": "Damage / min(1 + Armor Rating / Damage, 4). Diminishing returns; max 75% damage reduction.",
+      "blocking": "Block chance = Defender Block Rate - Attacker Hit Chance. Ranges 10%-50% with shield equipped. Standing still increases block effectiveness by 25%.",
+      "fatigue_effects": "Depleted fatigue reduces hit accuracy and damage output by up to 25%. Always keep fatigue high in combat."
+    },
+    "weapon_types": [
+      {"type": "Axes", "best_attack": "Chop", "advantages": "Highest damage output", "disadvantages": "Heavy, slow, narrow range"},
+      {"type": "Blunt Weapons", "best_attack": "Varies", "advantages": "Predictable damage ranges; staves have high enchantment capacity", "disadvantages": "Lower damage than axes"},
+      {"type": "Long Blades", "best_attack": "Versatile", "advantages": "Good for all attack types; most abundant weapon type", "disadvantages": "Limited range"},
+      {"type": "Short Blades", "best_attack": "Thrust/Chop", "advantages": "Fastest weapons available", "disadvantages": "Lower damage per hit"},
+      {"type": "Spears", "best_attack": "Thrust", "advantages": "Longest reach for distance combat", "disadvantages": "Weak chops/slashes; fewer quality options"},
+      {"type": "Hand-to-Hand", "best_attack": "Any", "advantages": "Drains fatigue first causing knockdowns; effective 1v1", "disadvantages": "No weapon damage bonus; requires close range"}
+    ],
+    "tips": [
+      "Sujamma raises Strength by 50 points for 1 minute; multiple bottles stack for devastating damage.",
+      "Maintain full fatigue before engaging enemies - it affects both hit chance and damage by up to 25%.",
+      "Match your attack type (chop/slash/thrust) to your weapon's strongest damage range.",
+      "Keep weapons repaired - a weapon at 50% condition deals only 50% normal damage.",
+      "Cast Levitate on melee-only enemies to severely hamper their movement.",
+      "Hand-to-hand is most effective against single opponents; stagger effects prevent counterattacks.",
+      "Standing still while blocking increases effectiveness by 25%.",
+      "Isolate enemies using terrain; exploit weapon reach and attack speed differences.",
+      "For ranged combat, avoid heavy armor and maintain distance."
+    ]
+  },
+  "character_creation": {
+    "recommended_races": [
+      {"race": "Redguard (Male)", "why": "High starting Strength and Endurance. Excellent for warrior builds. Natural Adrenaline Rush power."},
+      {"race": "Nord", "why": "Excels in strength-based builds. High starting Strength and Endurance. Frost resistance useful in Solstheim."},
+      {"race": "High Elf (Altmer)", "why": "Gains significantly more Magicka than other races (+100 Magicka). Best for pure mage builds despite weakness to magic."},
+      {"race": "Dark Elf (Dunmer)", "why": "Well-rounded with fire resistance. Good evasion abilities. Versatile for hybrid builds. Fits lore naturally."},
+      {"race": "Orc", "why": "Unique bonuses to Armorer and Block skills. High Endurance. Berserk power is devastating in early game combat."},
+      {"race": "Breton", "why": "50% Magicka resistance and bonus Magicka. Excellent for spellsword or battlemage builds. Dragon Skin power absorbs spells."},
+      {"race": "Argonian", "why": "Free Water Breathing ability. 75% disease resistance. Good for exploring underwater areas without potions."},
+      {"race": "Khajiit", "why": "Free Night Eye ability. Good Agility for stealth builds. Eye of Night power aids dungeon exploration."}
+    ],
+    "recommended_birthsigns": [
+      {"sign": "The Lady", "why": "+25 Endurance and +25 Personality. Endurance boost increases HP per level permanently. Great for any build."},
+      {"sign": "The Atronach", "why": "+2.0x INT Magicka multiplier but no natural Magicka regeneration. Massive Magicka pool. Absorb 50% of spells. Requires shrine visits or Ancestral Ghost trick to restore Magicka."},
+      {"sign": "The Lover", "why": "+25 Agility. Paralyze touch power once per day. Agility boosts hit chance and evasion."},
+      {"sign": "The Steed", "why": "+25 Speed. Faster movement from the start. Quality of life improvement for the entire game."},
+      {"sign": "The Warrior", "why": "+10 Attack. Simple and effective for combat-focused characters, especially early game."}
+    ],
+    "custom_class_tips": [
+      "If this is your first time playing, use a predefined class or the class quiz rather than custom creation.",
+      "Plan race, class, and birthsign together as they interconnect - all three shape your attributes, abilities, and spells.",
+      "Spread Major/Minor skills across different governing attributes to maximize level-up multipliers.",
+      "Include at least one combat skill as Major to survive early encounters.",
+      "Consider putting skills you use constantly as Misc skills to control leveling pace.",
+      "Prioritize Endurance as a favored attribute - it increases HP every level and the bonus is retroactive only if gained early."
+    ],
+    "tips": [
+      "Choose race based on intended playstyle rather than seeking a single 'best' option.",
+      "High Elves get the most Magicka but have elemental weaknesses - plan mitigation.",
+      "The Atronach birthsign requires strategic planning: use shrine blessings, summon Ancestral Ghost and punch it to trigger spell absorption, or fight Bull Netches for Magicka recovery.",
+      "Argonians and several other races have 75% disease resistance naturally.",
+      "Dark Elves fit the game's lore most naturally and are solid all-rounders."
+    ]
+  },
+  "leveling": {
+    "mechanics": "You gain a level after 10 increases to Major or Minor skills (training, skill books, and natural use all count). You must rest (not wait) to level up. At level-up, choose 3 attributes to increase. Miscellaneous skill increases do NOT count toward the 10-skill threshold but DO affect attribute multipliers.",
+    "attribute_multipliers": {
+      "description": "The multiplier for each attribute depends on how many skill increases (Major, Minor, AND Miscellaneous) in skills governed by that attribute since last level-up.",
+      "table": [
+        {"skill_increases": "0", "multiplier": "1x"},
+        {"skill_increases": "1-4", "multiplier": "2x"},
+        {"skill_increases": "5-7", "multiplier": "3x"},
+        {"skill_increases": "8-9", "multiplier": "4x"},
+        {"skill_increases": "10+", "multiplier": "5x"}
+      ]
+    },
+    "optimization": "Plan skill increases so you get exactly 10 increases in each of 3 different governing attributes, with exactly 10 of those being Major/Minor skills. This gives you three 5x multipliers per level. Spread your Major/Minor skills across different attributes at character creation to make this easier.",
+    "tips": [
+      "Prioritize Endurance early - it increases Health gained at every level up.",
+      "Track skill progress manually; the UI does not show counts toward attribute multipliers.",
+      "Both trainer-purchased and skill book increases count toward leveling.",
+      "Miscellaneous skills count toward attribute multipliers but not the 10-skill level threshold - use this strategically.",
+      "Do not let Major/Minor progress exceed 10 before resting - excess increases do NOT roll over to next level.",
+      "Avoid unplanned skill increases that waste multiplier potential.",
+      "Coordinate equipment choices and combat tactics with your leveling plan.",
+      "Stay adaptable when accidental skill increases occur - adjust your plan rather than forcing it."
+    ]
+  },
+  "money_making": [
+    {
+      "method": "Potion Making (Alchemy)",
+      "gold_estimate": "500-2000 per batch",
+      "requirements": "Buy ingredients from restocking merchants. Higher quality alchemy apparatus yields better potions worth more gold.",
+      "difficulty": "Easy"
+    },
+    {
+      "method": "Glass Dagger Repair",
+      "gold_estimate": "500-1500 per dagger",
+      "requirements": "Buy damaged glass daggers from Lucretinaus Olcinius in Vivec St. Delyn Plaza and other merchants. Repair with Armorer skill and sell.",
+      "difficulty": "Easy"
+    },
+    {
+      "method": "Daedric Weapon from Vassir-Didanat Cave",
+      "gold_estimate": "1000-2000",
+      "requirements": "Travel to Vassir-Didanat Cave, find the ebony mine, report to Dram Bero in Vivec for a Daedric weapon reward.",
+      "difficulty": "Easy"
+    },
+    {
+      "method": "Glass Netch Dagger (Gnaar Mok)",
+      "gold_estimate": "800-1200",
+      "requirements": "Travel to Gnaar Mok and locate a hollow tree stump containing the dagger.",
+      "difficulty": "Easy"
+    },
+    {
+      "method": "Sword of White Woe",
+      "gold_estimate": "1500-2500",
+      "requirements": "Located in Balmora guard tower. Hide behind a pillar to avoid guard detection while taking it.",
+      "difficulty": "Medium"
+    },
+    {
+      "method": "Soul Hunting",
+      "gold_estimate": "1000-5000 per cycle",
+      "requirements": "Soul gems (buy from restocking merchants) and Soultrap spell. Trap creature souls and sell filled gems.",
+      "difficulty": "Medium"
+    },
+    {
+      "method": "Glass Armor Set (steal)",
+      "gold_estimate": "2000-3000",
+      "requirements": "Lockpicking or Open spell at 80 points. Stealth skills recommended.",
+      "difficulty": "Medium"
+    },
+    {
+      "method": "Orcish Armor (Ghorak Manor)",
+      "gold_estimate": "1500-2500",
+      "requirements": "Access the top floor of Ghorak Manor in Caldera.",
+      "difficulty": "Medium"
+    },
+    {
+      "method": "Looting Daedra (renewable)",
+      "gold_estimate": "500-1500 per kill",
+      "requirements": "Access to respawning Daedra locations. Combat capability to defeat Daedra.",
+      "difficulty": "Medium"
+    },
+    {
+      "method": "Looting Dark Brotherhood Assassins",
+      "gold_estimate": "1000-3000 per assassin",
+      "requirements": "Tribunal DLC installed. Assassins attack periodically while resting.",
+      "difficulty": "Medium-Hard"
+    },
+    {
+      "method": "Master Alchemy Set (steal)",
+      "gold_estimate": "800-1500",
+      "requirements": "Steal from Mages Guild or Nalcarya's shop. Stealth or high security skill needed.",
+      "difficulty": "Medium-Hard"
+    },
+    {
+      "method": "Looting Guards",
+      "gold_estimate": "800-2000 per guard",
+      "requirements": "Commit a minor crime, resist arrest, and defeat the guards for their equipment.",
+      "difficulty": "Hard"
+    }
+  ],
+  "diseases": {
+    "common_diseases": [
+      {"name": "Ataxia", "effects": "Drain Strength 10 pts, Drain Agility", "cure": "Cure Common Disease spell/potion/shrine", "source": "Diseased alits"},
+      {"name": "Brown Rot", "effects": "Drain Strength, Drain Personality", "cure": "Cure Common Disease spell/potion/shrine", "source": "Bonewalkers"},
+      {"name": "Chills", "effects": "Drain Intelligence, Drain Agility, Drain Willpower (up to 30 pts each). Extremely dangerous.", "cure": "Cure Common Disease spell/potion/shrine", "source": "Various creatures"},
+      {"name": "Swamp Fever", "effects": "Drain Strength, Drain Endurance", "cure": "Cure Common Disease spell/potion/shrine", "source": "Mudcrabs"},
+      {"name": "Rockjoint", "effects": "Drain Agility", "cure": "Cure Common Disease spell/potion/shrine", "source": "Rats and other creatures"},
+      {"name": "Rust Chancre", "effects": "Drain Strength, Drain Endurance", "cure": "Cure Common Disease spell/potion/shrine", "source": "Various creatures"},
+      {"name": "Collywobbles", "effects": "Drain Personality, Drain Endurance, Drain Willpower", "cure": "Cure Common Disease spell/potion/shrine", "source": "Various creatures"},
+      {"name": "Droops", "effects": "Drain Willpower", "cure": "Cure Common Disease spell/potion/shrine", "source": "Various creatures"},
+      {"name": "Greenspore", "effects": "Drain Personality, Drain Speed", "cure": "Cure Common Disease spell/potion/shrine", "source": "Various creatures"},
+      {"name": "Helljoint", "effects": "Drain Speed, Drain Agility", "cure": "Cure Common Disease spell/potion/shrine", "source": "Various creatures"},
+      {"name": "Witbane", "effects": "Drain Intelligence", "cure": "Cure Common Disease spell/potion/shrine", "source": "Various creatures"},
+      {"name": "Yellow Tick", "effects": "Drain Luck, Drain Personality", "cure": "Cure Common Disease spell/potion/shrine", "source": "Various creatures"},
+      {"name": "Serpiginous Dementia", "effects": "Drain Willpower, Drain Intelligence", "cure": "Cure Common Disease spell/potion/shrine", "source": "Various creatures"},
+      {"name": "Black-Heart Blight", "effects": "Drain Strength, Drain Endurance", "cure": "Cure Common Disease spell/potion/shrine", "source": "Various creatures"},
+      {"name": "Dampworm", "effects": "Drain Speed", "cure": "Cure Common Disease spell/potion/shrine", "source": "Various creatures"},
+      {"name": "Wither", "effects": "Drain Strength, Drain Intelligence, Drain Willpower", "cure": "Cure Common Disease spell/potion/shrine", "source": "Various creatures"}
+    ],
+    "blight_diseases": [
+      {"name": "Ash Woe Blight", "effects": "Drain Intelligence, Drain Willpower", "cure": "Cure Blight Disease potion/scroll/enchanted item", "source": "Ash creatures, Red Mountain region"},
+      {"name": "Ash-chancre", "effects": "Drain Personality, Drain Endurance", "cure": "Cure Blight Disease potion/scroll/enchanted item", "source": "Ash creatures, Red Mountain region"},
+      {"name": "Black-Heart Blight", "effects": "Drain Strength, Drain Endurance (severe)", "cure": "Cure Blight Disease potion/scroll/enchanted item", "source": "Ash creatures, Red Mountain region"},
+      {"name": "Chanthrax Blight", "effects": "Drain Agility, Drain Speed", "cure": "Cure Blight Disease potion/scroll/enchanted item", "source": "Ash creatures, Red Mountain region"}
+    ],
+    "special_diseases": [
+      {"name": "Corprus", "effects": "Progressive stat drain. Contracted unavoidably during the Sixth House Base main quest. Represents Dagoth Ur's divine corruption of mortal flesh.", "cure": "Only cured via main quest at Corprusarium by Divayth Fyr. The cure removes negative effects but keeps the positive immunity to all other diseases.", "source": "Main quest (unavoidable)"},
+      {"name": "Vampirism", "effects": "Attribute bonuses but sun damage, NPC hostility, and social penalties.", "cure": "Cure requires specific vampire clan quests.", "source": "Vampire attacks"}
+    ],
+    "cure_methods": [
+      {"method": "Cure Common Disease spell", "details": "Available from spell merchants. Cast on self to remove any common disease."},
+      {"method": "Cure Common Disease potion", "details": "Cheapest and most accessible cure. Buy from alchemists or brew your own."},
+      {"method": "Temple/Imperial Cult shrines", "details": "Almsivi Restoration blessing at Tribunal Temple shrines cures diseases."},
+      {"method": "Cure Blight Disease spell", "details": "Available but expensive. Blight cures are rarer than common disease cures."},
+      {"method": "Cure Blight Disease potion/scroll", "details": "Carry these when exploring Ashlands, Molag Amur, or near Red Mountain."},
+      {"method": "Resist Common Disease", "details": "Preventative. Some races have 75% natural resistance (Argonians, Bosmer, Altmer, Redguards)."},
+      {"method": "100% Disease Resistance", "details": "Achievable through main quest progression (Corprus cure grants immunity)."}
+    ]
+  },
+  "general_tips": [
+    "Dropped items never disappear - establish loot caches near transport hubs (silt striders, boats, Mages Guild teleporters).",
+    "Use Mark/Recall spell combo near a permanent container for unlimited portable storage.",
+    "Teleportation spells (Mark/Recall, Divine/Almsivi Intervention) work even when overencumbered - use for loot transport.",
+    "Cast 100% Resist Magicka on yourself, then immediately equip Boots of Blinding Speed to gain speed without blindness.",
+    "Create cheap 1-point magnitude training spells to efficiently level magic skills.",
+    "Lock spell + lockpick combo lets you train Security skill anywhere with containers.",
+    "Jump constantly on hills and staircases to train Acrobatics passively.",
+    "Let mudcrabs attack you without retaliating to train armor skills safely.",
+    "Swim into walls repeatedly to train Athletics.",
+    "Cast Fortify Personality before talking to trainers to lower their prices.",
+    "Items with unfamiliar names may be quest-related - store them separately, never sell them.",
+    "Different merchants offer varying prices - test multiple vendors for the best deals.",
+    "Creature merchants (Creeper in Caldera, Mudcrab merchant) buy at base price with no disposition requirement.",
+    "Crates and barrels respawn random loot when you leave and re-enter a cell without taking anything first.",
+    "Remove armor or go invisible to talk to normally-hostile NPCs who refuse dialogue.",
+    "Save often and in multiple slots - Morrowind can be unforgiving.",
+    "Fortify Skill spells can raise any trainer to master level for cheaper training.",
+    "Enchant items with constant effect Restore Health or Fortify Attribute for permanent passive bonuses.",
+    "For Atronach birthsign: summon Ancestral Ghost (6 Magicka cost) and punch it to trigger spell absorption for Magicka recovery.",
+    "For Atronach birthsign: fight Bull Netches - their Poisonbloom spell can restore up to 39 Magicka per cast via absorption."
+  ],
+  "skill_training_exploits": {
+    "Acrobatics": "Jump on staircases/hills. Falling damage also increases skill. Use Vivec ramps or Ald'ruhn Silt Strider area.",
+    "Armor_skills": "Let mudcrabs attack while not retaliating. Remove shield to avoid training Block instead.",
+    "Athletics": "Swim repeatedly into river walls or coastline.",
+    "Enchanting": "Create weak trinkets (1-pt Restore Health) and activate repeatedly. Recharging enchanted items with soul gems levels 50x faster than other methods.",
+    "Mercantile": "Buy and sell the same item repeatedly to a single merchant.",
+    "Security": "Cast Lock spell on containers, then pick them repeatedly with lockpicks.",
+    "Sneak": "Hide in a room with an NPC, standing in their line of sight. Or cast Invisibility repeatedly while sneaking.",
+    "Weapon_skills": "Use low-damage weapons on weak enemies. More individual hits means faster skill training."
+  }
+}

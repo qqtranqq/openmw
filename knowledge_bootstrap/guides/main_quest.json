@@ -1,0 +1,739 @@
+[
+  {
+    "name": "Report to Caius Cosades",
+    "quest_giver": "Sellus Gravius",
+    "quest_giver_location": "Census and Excise Office, Seyda Neen",
+    "prerequisites": [],
+    "steps": [
+      "Complete character creation by discussing your duties with Sellus Gravius at the Census and Excise Office.",
+      "Accept the Coded Package and 87 gold from Gravius.",
+      "Travel to Balmora via silt strider (pay Darvame Hleran) or walk following directions from Elone at Arrille's Tradehouse.",
+      "Visit the South Wall Cornerclub in southeastern Balmora (optional but recommended).",
+      "Speak with patrons about Caius Cosades, then locate Bacola Closcius upstairs.",
+      "Obtain directions from Closcius to Cosades' residence in the northeastern section of Balmora.",
+      "Enter Cosades' house and identify him as 'the shirtless man'.",
+      "Deliver the Coded Package to Caius Cosades.",
+      "Answer 'yes' to all his questions regarding the Emperor's orders and Blades membership.",
+      "Accept the rank of Novice in the Blades.",
+      "Request orders; receive 200 gold if your level is 3 or below."
+    ],
+    "key_npcs": [
+      { "name": "Sellus Gravius", "location": "Census and Excise Office, Seyda Neen" },
+      { "name": "Darvame Hleran", "location": "Silt Strider, Seyda Neen" },
+      { "name": "Elone", "location": "Arrille's Tradehouse, Seyda Neen" },
+      { "name": "Bacola Closcius", "location": "South Wall Cornerclub, Balmora" },
+      { "name": "Caius Cosades", "location": "His residence, northeastern Balmora" }
+    ],
+    "key_items": [
+      "Coded Package (received from Gravius)"
+    ],
+    "rewards": [
+      "200 gold (if level 3 or below)",
+      "Novice rank in the Blades"
+    ],
+    "next_quest": "Antabolis Informant"
+  },
+  {
+    "name": "Antabolis Informant",
+    "quest_giver": "Caius Cosades",
+    "quest_giver_location": "Balmora",
+    "prerequisites": [
+      "Report to Caius Cosades"
+    ],
+    "steps": [
+      "Speak with Caius Cosades in Balmora and request orders.",
+      "Travel to the Balmora Fighters Guild and locate Hasphat Antabolis in the training room.",
+      "Discuss the Nerevarine Cult and Sixth House with Antabolis.",
+      "Accept his favor: retrieve a Dwemer puzzle box from Arkngthand ruins.",
+      "Exit Balmora southward and head east toward Moonmoth Legion Fort.",
+      "At the fork near the fort, take the northeast path toward Molag Mar.",
+      "Cross the ancient Dwemer bridge over Foyada Mamaea.",
+      "Locate Arkngthand Dwemer ruin on your right; turn the crank handle and enter.",
+      "Descend to the bottom level where bandits Frink Ruuz and Surus Velvus are stationed.",
+      "Face west toward three doors leading to Weepingbell Hall.",
+      "Climb the rocky ramp above those doors.",
+      "Enter the left door (Cells of Hollow Hand).",
+      "Retrieve the puzzle box from the shelves on your left.",
+      "Defeat Boss Crito if necessary.",
+      "Return to Hasphat Antabolis at the Balmora Fighters Guild.",
+      "Deliver the puzzle box and receive notes for Caius.",
+      "Return to Caius Cosades and deliver the notes."
+    ],
+    "key_npcs": [
+      { "name": "Caius Cosades", "location": "Balmora" },
+      { "name": "Hasphat Antabolis", "location": "Balmora Fighters Guild, training room" },
+      { "name": "Boss Crito", "location": "Arkngthand, Cells of Hollow Hand" },
+      { "name": "Frink Ruuz", "location": "Arkngthand" },
+      { "name": "Surus Velvus", "location": "Arkngthand" }
+    ],
+    "key_items": [
+      "Dwemer puzzle box (found in Arkngthand)"
+    ],
+    "rewards": [
+      "Hasphat's notes for Cosades",
+      "Blades faction advancement"
+    ],
+    "next_quest": "Gra-Muzgob Informant"
+  },
+  {
+    "name": "Gra-Muzgob Informant",
+    "quest_giver": "Caius Cosades",
+    "quest_giver_location": "Balmora",
+    "prerequisites": [
+      "Antabolis Informant"
+    ],
+    "steps": [
+      "Speak with Caius Cosades in Balmora to receive orders about obtaining information from Sharn gra-Muzgob.",
+      "Travel to the Balmora Mages Guild and locate Sharn gra-Muzgob.",
+      "Ask Sharn gra-Muzgob about the errand she requires; she will request the Skull of Llevule Andrano.",
+      "Accept supplies from Sharn: an enchanted blade and scrolls (useful against undead immune to normal weapons).",
+      "Travel to Andrano Ancestral Tomb, located south of Pelagiad and northeast of Seyda Neen.",
+      "Enter the tomb and locate the burial chamber containing the skull.",
+      "Retrieve the Skull of Llevule Andrano from the chamber.",
+      "Return to Sharn gra-Muzgob in Balmora and deliver the skull.",
+      "Receive the Nerevarine cult notes from Sharn.",
+      "Return to Caius Cosades and deliver the notes.",
+      "Receive promotion to Blades Apprentice and additional scrolls."
+    ],
+    "key_npcs": [
+      { "name": "Caius Cosades", "location": "Balmora" },
+      { "name": "Sharn gra-Muzgob", "location": "Balmora Mages Guild" }
+    ],
+    "key_items": [
+      "Skull of Llevule Andrano",
+      "Fireblade (enchanted blade from Sharn)",
+      "Scrolls (from Sharn)"
+    ],
+    "rewards": [
+      "Nerevarine cult notes",
+      "Promotion to Blades Apprentice",
+      "Additional scrolls"
+    ],
+    "next_quest": "Vivec Informants"
+  },
+  {
+    "name": "Vivec Informants",
+    "quest_giver": "Caius Cosades",
+    "quest_giver_location": "Balmora",
+    "prerequisites": [
+      "Gra-Muzgob Informant",
+      "Must be level 3 or higher"
+    ],
+    "steps": [
+      "Return to Caius Cosades in Balmora after reaching level 3 for new orders.",
+      "Travel to Vivec using Silt Strider or Mages Guild transport.",
+      "Huleeya Task: Locate Huleeya at Black Shalk Cornerclub (Foreign Quarter Lower Waistworks).",
+      "Persuade the troublemakers (Ethys Savil and associates) bothering Huleeya to leave him alone.",
+      "Escort Huleeya to Jobasha's Rare Books (same level, opposite side of cornerclub).",
+      "Receive notes from Huleeya and collect the 'Progress of Truth' book (second floor, left bookcase).",
+      "Addhiranirr Task: Find Addhiranirr hiding in St. Olms Underworks (northeast area).",
+      "Locate Census and Excise agent Duvianus Platorius in St. Olms Waistworks.",
+      "Persuade or lie to Duvianus that Addhiranirr fled to the mainland.",
+      "Return to Addhiranirr and receive her information about Sixth House smuggling.",
+      "Mehra Milo Task: Travel to Library of Vivec (Hall of Wisdom, Temple Canton).",
+      "Meet Mehra Milo and follow her to the library's back section.",
+      "Obtain the book 'Progress of Truth' (steal from library or purchase from Jobasha for 150 gold).",
+      "Return all gathered information and the book to Caius Cosades in Balmora."
+    ],
+    "key_npcs": [
+      { "name": "Caius Cosades", "location": "Balmora" },
+      { "name": "Huleeya", "location": "Black Shalk Cornerclub, Foreign Quarter, Vivec" },
+      { "name": "Addhiranirr", "location": "St. Olms Underworks, Vivec" },
+      { "name": "Duvianus Platorius", "location": "St. Olms Waistworks, Vivec" },
+      { "name": "Mehra Milo", "location": "Library of Vivec, Temple Canton" },
+      { "name": "Jobasha", "location": "Jobasha's Rare Books, Foreign Quarter, Vivec" }
+    ],
+    "key_items": [
+      "Progress of Truth (book)",
+      "Notes from Huleeya",
+      "200 gold (provided by Caius for expenses)"
+    ],
+    "rewards": [
+      "200 gold",
+      "Promotion to Journeyman in Blades",
+      "+1 reputation point"
+    ],
+    "next_quest": "Zainsubani Informant"
+  },
+  {
+    "name": "Zainsubani Informant",
+    "quest_giver": "Caius Cosades",
+    "quest_giver_location": "Balmora",
+    "prerequisites": [
+      "Vivec Informants"
+    ],
+    "steps": [
+      "Return to Caius Cosades in Balmora and accept the assignment to investigate an Ashlander informant.",
+      "Travel to Ald'ruhn (north of Balmora past Caldera; use Silt Strider or Mages Guild teleportation).",
+      "Locate the Ald Skar Inn southwest of the Manor District building.",
+      "Find Hassour Zainsubani on the middle level of the inn.",
+      "Initiate dialogue and select the 'business' topic to discuss gift-giving customs.",
+      "Learn that Hassour enjoys poetry and prefers thoughtful gifts.",
+      "Visit Codus Callonus's bookstore and purchase a poetry book ('Words of the Wind' 45g, 'Ashland Hymns' 35g, or 'The Five Far Stars' 25g).",
+      "Return to Hassour and present the book as a gift.",
+      "Request information about the Ashlanders and Nerevarine Cult.",
+      "Receive Zainsubani's Notes documenting his findings.",
+      "Return to Caius in Balmora with the notes."
+    ],
+    "key_npcs": [
+      { "name": "Hassour Zainsubani", "location": "Ald Skar Inn, Ald'ruhn (middle level)" },
+      { "name": "Codus Callonus", "location": "Bookstore, Ald'ruhn" },
+      { "name": "Caius Cosades", "location": "Balmora" }
+    ],
+    "key_items": [
+      "Poetry book (Words of the Wind, Ashland Hymns, or The Five Far Stars)"
+    ],
+    "rewards": [
+      "200 gold",
+      "Blades faction promotion",
+      "Zainsubani's Notes",
+      "Decoded package copy"
+    ],
+    "next_quest": "Meet Sul-Matuul"
+  },
+  {
+    "name": "Meet Sul-Matuul",
+    "quest_giver": "Caius Cosades",
+    "quest_giver_location": "Balmora",
+    "prerequisites": [
+      "Zainsubani Informant"
+    ],
+    "steps": [
+      "Return to Caius in Balmora; receive decoded orders revealing the Emperor's plan to use you to fulfill the Nerevarine Prophecies.",
+      "Travel to Moonmoth Legion Fort (optional) to obtain supplies from Somutis Vunnis and Crulius Pontanian.",
+      "Journey to Urshilaku Camp on the northern coast; fastest route uses silt striders via Ald'ruhn to Khuul.",
+      "Locate and speak with Zabamund (Sul-Matuul's champion); raise disposition to approximately 70 or use one of four persuasion methods.",
+      "Enter the Ashkhan's yurt to meet Sul-Matuul after obtaining Zabamund's permission.",
+      "Travel south-southeast to Urshilaku Burial Caverns and navigate through chambers: Astral Burial, Karma Burial, Laterus Burial, Juno Burial.",
+      "Defeat the Wraith of Sul-Senipul and retrieve the Bonebiter Bow.",
+      "Return to Sul-Matuul with the bow; receive 'Clanfriend' status.",
+      "Enter the Wise Woman's Yurt and speak with Nibani Maesa about prophecies; ask about 'passing the test'.",
+      "Report findings to Caius in Balmora."
+    ],
+    "key_npcs": [
+      { "name": "Caius Cosades", "location": "Balmora" },
+      { "name": "Zabamund", "location": "Urshilaku Camp" },
+      { "name": "Sul-Matuul", "location": "Urshilaku Camp, Ashkhan's Yurt" },
+      { "name": "Nibani Maesa", "location": "Urshilaku Camp, Wise Woman's Yurt" },
+      { "name": "Wraith of Sul-Senipul", "location": "Urshilaku Burial Caverns" }
+    ],
+    "key_items": [
+      "Bonebiter Bow of Sul-Senipul",
+      "The Stranger (prophecy text)",
+      "The Seven Visions (prophecy text)"
+    ],
+    "rewards": [
+      "Clanfriend status with Urshilaku",
+      "Bonebiter Bow (keep)",
+      "400 gold"
+    ],
+    "next_quest": "Sixth House Base"
+  },
+  {
+    "name": "Sixth House Base",
+    "quest_giver": "Caius Cosades",
+    "quest_giver_location": "Balmora",
+    "prerequisites": [
+      "Meet Sul-Matuul"
+    ],
+    "steps": [
+      "Return to Caius in Balmora after meeting Nibani Maesa for your next assignment.",
+      "Travel to Buckmoth Legion Fort (south of Ald'ruhn) and speak with Raesa Pullia.",
+      "Learn about the Sixth House base location from Raesa's report on the scouting party.",
+      "Journey to Gnaar Mok on the west coast and speak with locals (requiring disposition 50+).",
+      "Discover the caverns are located on Khartag Point, northwest of Gnaar Mok.",
+      "Enter 'Ilunibi, Carcass of the Saint' caverns and navigate through multiple enemy encounters.",
+      "Reach the final section called Soul's Rattle and locate Dagoth Gares.",
+      "Initiate conversation with Dagoth Gares to learn lore before combat.",
+      "Defeat Dagoth Gares (unique Ash Ghoul enemy).",
+      "Loot the bell chamber for valuable items including Fists of Randagulf.",
+      "Return to Caius in Balmora to report quest completion."
+    ],
+    "key_npcs": [
+      { "name": "Caius Cosades", "location": "Balmora" },
+      { "name": "Raesa Pullia", "location": "Buckmoth Legion Fort" },
+      { "name": "Dagoth Gares", "location": "Ilunibi Caverns, Soul's Rattle" }
+    ],
+    "key_items": [
+      "Fists of Randagulf (found in bell chamber)"
+    ],
+    "rewards": [
+      "Promotion to Traveller in the Blades",
+      "Corprus disease (contracted upon defeating Dagoth Gares)"
+    ],
+    "next_quest": "Corprus Cure"
+  },
+  {
+    "name": "Corprus Cure",
+    "quest_giver": "Caius Cosades",
+    "quest_giver_location": "Balmora",
+    "prerequisites": [
+      "Sixth House Base"
+    ],
+    "steps": [
+      "Return to Caius Cosades in Balmora after contracting Corprus disease and receive a Dwemer Coherer artifact, 1000 gold, and levitation potions.",
+      "Travel to Tel Fyr on an island in Azura's Coast (use Guild Guide to reach Sadrith Mora, then ask Sondryn Irathi at Wolverine Hall for directions).",
+      "Enter Tel Fyr's Onyx Hall and speak with Beyte Fyr to learn Divayth's location.",
+      "Levitate to Divayth Fyr's study in the Hall of Fyr.",
+      "Give Divayth the Dwemer Coherer and discuss corprus disease with him.",
+      "Accept his offer: retrieve Dwemer Boots of Flying from Yagrum Bagarn in the Corprusarium below.",
+      "Descend to the Corprusarium and avoid or disable hostile Corprus creatures using invisibility, sneak, or knockouts.",
+      "Locate Yagrum Bagarn in Corprusarium Bowels and obtain the boots.",
+      "Optionally find a guarskin drum and return it to Uupse Fyr to safely exit without combat.",
+      "Return to Divayth Fyr with the boots.",
+      "Accept and consume the potion to receive disease immunity while retaining Corprus benefits."
+    ],
+    "key_npcs": [
+      { "name": "Caius Cosades", "location": "Balmora" },
+      { "name": "Divayth Fyr", "location": "Tel Fyr, Hall of Fyr study" },
+      { "name": "Beyte Fyr", "location": "Tel Fyr, Onyx Hall" },
+      { "name": "Yagrum Bagarn", "location": "Corprusarium Bowels, Tel Fyr" },
+      { "name": "Uupse Fyr", "location": "Corprusarium, Tel Fyr" },
+      { "name": "Vistha-Kai", "location": "Corprusarium, Tel Fyr" }
+    ],
+    "key_items": [
+      "Dwemer Coherer (given by Caius)",
+      "Dwemer Boots of Flying (retrieved from Yagrum Bagarn)",
+      "Levitation potions",
+      "Guarskin drum (optional)"
+    ],
+    "rewards": [
+      "Corprus cure potion (removes negative effects, preserves disease immunity)",
+      "1000 gold (from Caius)"
+    ],
+    "next_quest": "Mehra Milo and the Lost Prophecies"
+  },
+  {
+    "name": "Mehra Milo and the Lost Prophecies",
+    "quest_giver": "Caius Cosades",
+    "quest_giver_location": "Balmora",
+    "prerequisites": [
+      "Corprus Cure"
+    ],
+    "steps": [
+      "Return to Caius Cosades in Balmora after completing the Corprus cure. Accept promotion to Operative and receive his final orders about locating the lost prophecies.",
+      "Travel to Vivec's Hall of Wisdom in the Temple Canton to find Mehra Milo.",
+      "Search the Library of Vivec; discover Milo is no longer there and locate her private quarters opposite the Canon Offices.",
+      "Unlock her quarters (level 20 lock) and find a coded note explaining she is imprisoned at the Ministry of Truth. The note instructs you to obtain two Divine Intervention scrolls.",
+      "Acquire two Divine Intervention scrolls (purchasable from Janand Maulinie at the Mages Guild in Foreign Quarter).",
+      "Travel to the Ministry of Truth (the floating meteor above Temple Canton) using levitation potions or spells, or donate a levitation potion at the Shrine to Stop the Moon.",
+      "Locate guard Alvela Saram at the Ministry's entrance and mention Mehra Milo. Receive the main key and back door access instructions.",
+      "Navigate through the Ministry stealthily or using invisibility. Locate the Prison Keep (level 20 lock) and find the Ministry of Truth Sector Key in the Grand Inquisitor's desk.",
+      "Alternatively, obtain Ordinator armor and bluff your way through using the 'proper authorization' dialogue option if disposition permits.",
+      "Find Mehra Milo in the rightmost prison cell. Give her one Divine Intervention scroll for her escape.",
+      "Use your own Divine Intervention scroll to teleport to Ebonheart.",
+      "Go to Ebonheart's east docks and locate Blatta Hateria. Tell her Mehra sent you and that you want to 'go fishing'.",
+      "Pay Blatta for passage to Holamayan (Azura's Coast Region).",
+      "Upon arrival at Holamayan, speak with Vevrana Aryon about the magical entrance. Rest until dusk (6pm-8pm) or dawn (6am-8am) when the shield opens.",
+      "Enter Holamayan monastery and locate Mehra Milo with Gilvas Barelo in the library.",
+      "Speak with Gilvas Barelo to receive three prophecy documents: 'The Lost Prophecy', 'The Seven Curses', and 'Kagrenac's Tools'.",
+      "Exhaust all dialogue options with Barelo to gather comprehensive lore information.",
+      "Travel to Urshilaku Camp and deliver the lost prophecies to Nibani Maesa."
+    ],
+    "key_npcs": [
+      { "name": "Caius Cosades", "location": "Balmora" },
+      { "name": "Mehra Milo", "location": "Hall of Wisdom, Vivec / Ministry of Truth / Holamayan" },
+      { "name": "Alvela Saram", "location": "Ministry of Truth entrance" },
+      { "name": "Janand Maulinie", "location": "Mages Guild, Foreign Quarter, Vivec" },
+      { "name": "Blatta Hateria", "location": "Ebonheart east docks" },
+      { "name": "Vevrana Aryon", "location": "Holamayan docks" },
+      { "name": "Gilvas Barelo", "location": "Holamayan monastery library" },
+      { "name": "Nibani Maesa", "location": "Urshilaku Camp" }
+    ],
+    "key_items": [
+      "Two Divine Intervention scrolls",
+      "Levitation potion or spell",
+      "The Lost Prophecy (document)",
+      "The Seven Curses (document)",
+      "Kagrenac's Tools (document)"
+    ],
+    "rewards": [
+      "Promotion to Operative in Blades",
+      "+60 disposition with Mehra Milo",
+      "Three prophecy documents"
+    ],
+    "next_quest": "The Path of the Incarnate"
+  },
+  {
+    "name": "The Path of the Incarnate",
+    "quest_giver": "Nibani Maesa",
+    "quest_giver_location": "Urshilaku Camp",
+    "prerequisites": [
+      "Mehra Milo and the Lost Prophecies"
+    ],
+    "steps": [
+      "Return to Urshilaku Camp and speak with Nibani Maesa about the lost prophecies.",
+      "Wait one day (or speak to her again immediately) to receive her judgment.",
+      "Learn about the Seven Trials; discover the first two are already complete.",
+      "Consult with Sul-Matuul regarding the Third Trial.",
+      "Travel to Kogoruhn, an ancient Sixth House stronghold southeast of camp.",
+      "Collect three tokens from Kogoruhn: corprus weepings, a House Dagoth cup, and the Shadow Shield.",
+      "Return tokens to Sul-Matuul to receive Malipu-Ataman's Belt and learn the Third Trial riddle.",
+      "Solve the riddle by consulting Ashlanders: identify Valley of the Wind, Airan's Teeth rock spires, and Azura's Star.",
+      "Navigate to Cavern of the Incarnate at the valley's base.",
+      "Wait for dawn or dusk when Azura's Star appears to unlock the cavern door.",
+      "Enter the cavern and retrieve the Moon-and-Star ring from Azura's statue.",
+      "Optionally speak with ghosts of failed incarnates to receive enchanted items.",
+      "Report back to Nibani Maesa and Sul-Matuul (optional but recommended)."
+    ],
+    "key_npcs": [
+      { "name": "Nibani Maesa", "location": "Urshilaku Camp" },
+      { "name": "Sul-Matuul", "location": "Urshilaku Camp" },
+      { "name": "Azura", "location": "Cavern of the Incarnate" },
+      { "name": "Failed Incarnate Ghosts", "location": "Cavern of the Incarnate" }
+    ],
+    "key_items": [
+      "Corprus Weepings (from Kogoruhn)",
+      "House Dagoth Cup (from Kogoruhn)",
+      "Shadow Shield (from Kogoruhn)",
+      "Malipu-Ataman's Belt (from Sul-Matuul)"
+    ],
+    "rewards": [
+      "Moon-and-Star ring (enchanted)",
+      "+5 reputation"
+    ],
+    "next_quest": "Hortator and Nerevarine"
+  },
+  {
+    "name": "Redoran Hortator",
+    "quest_giver": "Athyn Sarethi",
+    "quest_giver_location": "Sarethi Manor, Ald'ruhn (Manor District)",
+    "prerequisites": [
+      "The Path of the Incarnate"
+    ],
+    "steps": [
+      "Visit Athyn Sarethi at Sarethi Manor in Ald'ruhn's Manor District to learn about House Redoran council members.",
+      "If not a House member, rescue Varvur Sarethi from Venim Manor's Right Wing.",
+      "Locate the note to Malsa Ules on a bench in the large room containing the hidden chamber key.",
+      "Use the key to open the door behind the tapestry (50-level lock) where Varvur is imprisoned.",
+      "Escort Varvur back to Sarethi Manor, avoiding or defeating guards without killing Bolvyn Venim.",
+      "Obtain Athyn Sarethi's vote and receive the Red Book of 3E 426 listing council members.",
+      "Visit Miner Arobar at Arobar Manor to secure his vote.",
+      "Visit Garisa Llethri at Llethri Manor for his support.",
+      "Visit Hlaren Ramoran at Ramoran Manor for his agreement.",
+      "Visit Brara Morvayn (widow of Remas) at Morvayn Quarters (accessible via Redoran Council Hall).",
+      "Confront Bolvyn Venim; he refuses and offers a duel challenge.",
+      "Travel to Vivec's Arena to duel Bolvyn Venim to the death.",
+      "Return to Athyn Sarethi to receive official Hortator designation and Ring of the Hortator."
+    ],
+    "key_npcs": [
+      { "name": "Athyn Sarethi", "location": "Sarethi Manor, Ald'ruhn" },
+      { "name": "Varvur Sarethi", "location": "Venim Manor (imprisoned)" },
+      { "name": "Miner Arobar", "location": "Arobar Manor, Ald'ruhn" },
+      { "name": "Garisa Llethri", "location": "Llethri Manor, Ald'ruhn" },
+      { "name": "Hlaren Ramoran", "location": "Ramoran Manor, Ald'ruhn" },
+      { "name": "Brara Morvayn", "location": "Morvayn Quarters, Redoran Council Hall, Ald'ruhn" },
+      { "name": "Bolvyn Venim", "location": "Venim Manor / Vivec Arena" }
+    ],
+    "key_items": [
+      "Red Book of 3E 426 (provided by Sarethi)",
+      "Healing potions/scrolls (for Bolvyn Venim duel)"
+    ],
+    "rewards": [
+      "Ring of the Hortator",
+      "Note from the Archcanon",
+      "+4 reputation"
+    ],
+    "next_quest": "Hortator and Nerevarine"
+  },
+  {
+    "name": "Hlaalu Hortator",
+    "quest_giver": "Crassius Curio",
+    "quest_giver_location": "Curio Manor, Vivec Hlaalu Plaza",
+    "prerequisites": [
+      "The Path of the Incarnate"
+    ],
+    "steps": [
+      "Obtain the Yellow Book of 3E 426 from Nileno Dorvayn (costs 50 gold) to identify all council members.",
+      "Visit Crassius Curio at Curio Manor; secure his vote via kiss (70+ disposition) or payment (500-1000 gold).",
+      "Locate Dram Bero in the Haunted Manor basement (St. Olms, Vivec); pick the locked door and speak with him.",
+      "Find Yngling Half-Troll at Yngling Manor (St. Olms Plaza, Vivec); pay 1000 gold (House members) or 2000 gold (non-members), or kill him.",
+      "Travel to Dren Plantation north of Vivec; deal with Orvas Dren through negotiation, blackmail, or combat.",
+      "Visit Velanda Omani at Omani Manor on Elmas Island (east of St. Olms); obtain her vote.",
+      "Travel to Ules Manor west of Suran; speak with Nevena Ules to secure her vote.",
+      "Return to Crassius Curio to receive the Belt of the Hortator."
+    ],
+    "key_npcs": [
+      { "name": "Crassius Curio", "location": "Curio Manor, Vivec Hlaalu Plaza" },
+      { "name": "Dram Bero", "location": "Haunted Manor basement, St. Olms, Vivec" },
+      { "name": "Yngling Half-Troll", "location": "Yngling Manor, St. Olms Plaza, Vivec" },
+      { "name": "Orvas Dren", "location": "Dren Plantation, north of Vivec" },
+      { "name": "Velanda Omani", "location": "Omani Manor, Elmas Island" },
+      { "name": "Nevena Ules", "location": "Ules Manor, west of Suran" },
+      { "name": "Nileno Dorvayn", "location": "Vivec (provides Yellow Book)" }
+    ],
+    "key_items": [
+      "Yellow Book of 3E 426 (50 gold from Nileno Dorvayn)",
+      "Approximately 3000 gold (for bribes and votes)"
+    ],
+    "rewards": [
+      "Belt of the Hortator"
+    ],
+    "next_quest": "Hortator and Nerevarine"
+  },
+  {
+    "name": "Telvanni Hortator",
+    "quest_giver": "Master Aryon",
+    "quest_giver_location": "Tel Vos, Upper Chamber",
+    "prerequisites": [
+      "The Path of the Incarnate"
+    ],
+    "steps": [
+      "Travel to Tel Vos and locate Master Aryon in his upper chamber.",
+      "Speak with Aryon to receive an overview of House Telvanni council members.",
+      "Secure Aryon's vote (automatic upon discussion).",
+      "Travel to Tel Mora and convince Mistress Dratha in the Upper Tower (requires disposition 80+).",
+      "Journey to Sadrith Mora and persuade Master Neloth at Tel Naga (requires disposition 70+).",
+      "Reach Tel Branora and gain support from Mistress Therana in the Upper Tower (requires Speechcraft 30+).",
+      "Visit Gnisis and obtain Master Baladas's vote at Arvs-Drelen (requires disposition 40+).",
+      "Confront Archmagister Gothren at Tel Aruhn's Upper Tower and eliminate him.",
+      "Return to Master Aryon to receive Hortator designation."
+    ],
+    "key_npcs": [
+      { "name": "Master Aryon", "location": "Tel Vos, Upper Chamber" },
+      { "name": "Mistress Dratha", "location": "Tel Mora, Upper Tower" },
+      { "name": "Master Neloth", "location": "Tel Naga, Sadrith Mora" },
+      { "name": "Mistress Therana", "location": "Tel Branora, Upper Tower" },
+      { "name": "Master Baladas", "location": "Arvs-Drelen, Gnisis" },
+      { "name": "Archmagister Gothren", "location": "Tel Aruhn, Upper Tower" }
+    ],
+    "key_items": [
+      "Levitate spell (highly recommended)"
+    ],
+    "rewards": [
+      "Robe of the Hortator",
+      "+4 reputation"
+    ],
+    "next_quest": "Hortator and Nerevarine"
+  },
+  {
+    "name": "Urshilaku Nerevarine",
+    "quest_giver": "Sul-Matuul",
+    "quest_giver_location": "Urshilaku Camp",
+    "prerequisites": [
+      "The Path of the Incarnate"
+    ],
+    "steps": [
+      "Travel to Urshilaku Camp and locate Sul-Matuul.",
+      "Initiate conversation with Sul-Matuul regarding the Nerevarine role.",
+      "Select the 'Counsel' dialogue option to learn about Nerevarine duties (optional but recommended).",
+      "Choose the 'Urshilaku Nerevarine' dialogue option to be formally recognized.",
+      "Receive the Teeth of the Urshilaku as proof of status to other Dunmer."
+    ],
+    "key_npcs": [
+      { "name": "Sul-Matuul", "location": "Urshilaku Camp" },
+      { "name": "Nibani Maesa", "location": "Urshilaku Camp" },
+      { "name": "Kurapli", "location": "Urshilaku Camp" }
+    ],
+    "key_items": [],
+    "rewards": [
+      "Teeth of the Urshilaku (enchanted heirloom)",
+      "+10 disposition with Sul-Matuul",
+      "+2 reputation"
+    ],
+    "next_quest": "Hortator and Nerevarine"
+  },
+  {
+    "name": "Ahemmusa Nerevarine",
+    "quest_giver": "Sinnammu Mirpal",
+    "quest_giver_location": "Ahemmusa Camp (northeast corner of main island)",
+    "prerequisites": [
+      "The Path of the Incarnate"
+    ],
+    "steps": [
+      "Travel to Ahemmusa Camp in the far northeast and speak with any Ashlander about protocol.",
+      "Show courtesy to the three Gulakhans: Kausi (in his yurt), Dutadalk, and Yenammu (in Dutadalk's yurt).",
+      "Speak with Sinnammu Mirpal about becoming Nerevarine.",
+      "Accept her condition: secure Ald Daedroth shrine, located directly north of camp.",
+      "Travel to Ald Daedroth (swimming or water walking recommended).",
+      "Navigate to the Antechamber via the Inner Shrine (straight across the main hall, down stairs).",
+      "Encounter priestess Hlireni Indavel: either persuade her (disposition 90+), threaten her, or leave her be.",
+      "Return to Sinnammu Mirpal at camp.",
+      "Escort Sinnammu to Ald Daedroth's Inner Shrine statue.",
+      "Speak with Sinnammu to receive formal Nerevarine recognition."
+    ],
+    "key_npcs": [
+      { "name": "Sinnammu Mirpal", "location": "Ahemmusa Camp, Wise Woman's Yurt" },
+      { "name": "Kausi", "location": "Ahemmusa Camp, his yurt" },
+      { "name": "Dutadalk", "location": "Ahemmusa Camp, Dutadalk's yurt" },
+      { "name": "Yenammu", "location": "Ahemmusa Camp, Dutadalk's yurt" },
+      { "name": "Hlireni Indavel", "location": "Ald Daedroth Antechamber" }
+    ],
+    "key_items": [],
+    "rewards": [
+      "Madstone of the Ahemmusa (enchanted heirloom)",
+      "+10 disposition with Sinnammu Mirpal",
+      "+2 reputation"
+    ],
+    "next_quest": "Hortator and Nerevarine"
+  },
+  {
+    "name": "Zainab Nerevarine",
+    "quest_giver": "Kaushad",
+    "quest_giver_location": "Zainab Camp, Grazelands",
+    "prerequisites": [
+      "The Path of the Incarnate"
+    ],
+    "steps": [
+      "Travel to Zainab Camp (southwest of Vos, southeast of Cavern of the Incarnate).",
+      "Visit the Wise Woman's Yurt and speak with Sonummu Zabamat to present proofs of the Nerevarine Prophecies.",
+      "Talk to Ashkhan Kaushad; raise his disposition to approximately 70 or gift him exquisite shoes.",
+      "Ask Kaushad to set a task; he assigns you to eliminate vampire Calvario.",
+      "Navigate to Nerano Ancestral Tomb (north and slightly west of camp).",
+      "Defeat Calvario and other undead in the tomb.",
+      "Return to Kaushad; he reveals the next requirement: securing a high-born Telvanni bride.",
+      "Consult Sonummu Zabamat about obtaining a bride.",
+      "Travel to Tel Aruhn and locate Savile Imayn at the slave market entrance.",
+      "Obtain exquisite shirt, skirt, and shoes from Elegnan in Tel Mora.",
+      "Acquire Telvanni Bug Musk from an apothecary.",
+      "Purchase slave Falura Llervu from Savile for approximately 1200 gold.",
+      "Provide Falura with the clothing and musk; instruct her to follow you.",
+      "Escort Falura back to Zainab Camp (boat to Vos recommended to avoid losing her).",
+      "Present Falura to Kaushad in his yurt.",
+      "Speak with Falura to confirm her acceptance.",
+      "Complete dialogue with Kaushad to receive the Nerevarine title."
+    ],
+    "key_npcs": [
+      { "name": "Kaushad", "location": "Zainab Camp, Ashkhan's Yurt" },
+      { "name": "Sonummu Zabamat", "location": "Zainab Camp, Wise Woman's Yurt" },
+      { "name": "Calvario", "location": "Nerano Ancestral Tomb" },
+      { "name": "Savile Imayn", "location": "Tel Aruhn, Festival Slave Market" },
+      { "name": "Elegnan", "location": "Tel Mora (clothier)" },
+      { "name": "Falura Llervu", "location": "Tel Aruhn (slave)" }
+    ],
+    "key_items": [
+      "Exquisite shirt",
+      "Exquisite skirt",
+      "Exquisite shoes",
+      "Telvanni Bug Musk",
+      "Approximately 1200 gold (to purchase Falura)"
+    ],
+    "rewards": [
+      "Thong of Zainab (enchanted heirloom)",
+      "Ashkhan's Wedding Gift (exquisite shirt)",
+      "+20 disposition with Kaushad"
+    ],
+    "next_quest": "Hortator and Nerevarine"
+  },
+  {
+    "name": "Erabenimsun Nerevarine",
+    "quest_giver": "Manirai",
+    "quest_giver_location": "Wise Woman's Yurt, Erabenimsun Camp",
+    "prerequisites": [
+      "The Path of the Incarnate"
+    ],
+    "steps": [
+      "Travel to Erabenimsun Camp (southwest of Tel Fyr, south of Tel Aruhn).",
+      "Speak with Manirai about Nerevarine prophecies in the Wise Woman's Yurt.",
+      "Eliminate Ashkhan Ulath-Pal and three supporters: Ahaz, Ranabi, and Ashu-Ahhe.",
+      "Return to Manirai after eliminating opposition.",
+      "Locate Gulakhan Han-Ammu and discuss his reluctance to become Ashkhan.",
+      "Collect three magical items: War Axe of Airan Ammu, Sanit-Kil's Heart of Fire, and Robe of Erur-Dan the Wise.",
+      "Present the items to Han-Ammu and persuade him to accept leadership.",
+      "Ask Han-Ammu to officially name you Nerevarine.",
+      "Return to Manirai and request 'The Seizing of the Erabenimsun'."
+    ],
+    "key_npcs": [
+      { "name": "Manirai", "location": "Erabenimsun Camp, Wise Woman's Yurt" },
+      { "name": "Han-Ammu", "location": "Erabenimsun Camp, his yurt" },
+      { "name": "Ulath-Pal", "location": "Erabenimsun Camp, Ulath-Pal's Yurt" },
+      { "name": "Ahaz", "location": "Erabenimsun Camp" },
+      { "name": "Ranabi", "location": "Erabenimsun Camp" },
+      { "name": "Ashu-Ahhe", "location": "Erabenimsun Camp" }
+    ],
+    "key_items": [
+      "War Axe of Airan Ammu",
+      "Sanit-Kil's Heart of Fire",
+      "Robe of Erur-Dan the Wise"
+    ],
+    "rewards": [
+      "The Seizing of the Erabenimsun (enchanted heirloom token)"
+    ],
+    "next_quest": "Hortator and Nerevarine"
+  },
+  {
+    "name": "Hortator and Nerevarine",
+    "quest_giver": "Archcanon Tholer Saryoni",
+    "quest_giver_location": "High Fane, Temple Canton, Vivec",
+    "prerequisites": [
+      "Redoran Hortator",
+      "Hlaalu Hortator",
+      "Telvanni Hortator",
+      "Urshilaku Nerevarine",
+      "Ahemmusa Nerevarine",
+      "Zainab Nerevarine",
+      "Erabenimsun Nerevarine"
+    ],
+    "steps": [
+      "Travel to the Temple Canton in Vivec after becoming both Hortator of all three Great Houses and Nerevarine of all four Ashlander tribes.",
+      "Locate and speak with Danso Indules near the High Fane entrance.",
+      "Arrange a meeting with Archcanon Saryoni through Danso.",
+      "Navigate to the Hall of Wisdom and locate the locked back door (requires lockpick or Open spell at difficulty 50).",
+      "Enter Archcanon Saryoni's office via the back entrance.",
+      "Discuss 'Temple's doctrine' with Saryoni to arrange a meeting with Vivec.",
+      "Accept the two keys provided: one for the Archcanon's office, one for Palace of Vivec.",
+      "Proceed south to the Palace of Vivec at the top of the puzzle canal.",
+      "Speak with the god Vivec inside the palace entrance.",
+      "Accept Wraithguard and swear the oath to defeat Dagoth Ur.",
+      "Receive the detailed five-step plan for defeating Dagoth Ur."
+    ],
+    "key_npcs": [
+      { "name": "Danso Indules", "location": "Temple Canton, High Fane entrance, Vivec" },
+      { "name": "Archcanon Tholer Saryoni", "location": "High Fane, private quarters (East Chapel), Vivec" },
+      { "name": "Vivec", "location": "Palace of Vivec" }
+    ],
+    "key_items": [
+      "Two keys (Archcanon's office and Palace of Vivec)"
+    ],
+    "rewards": [
+      "Wraithguard (essential right gauntlet for final confrontation)",
+      "Plan to Defeat Dagoth Ur (detailed instructions)"
+    ],
+    "next_quest": "The Citadels of the Sixth House"
+  },
+  {
+    "name": "The Citadels of the Sixth House",
+    "quest_giver": "Vivec",
+    "quest_giver_location": "Palace of Vivec, Vivec",
+    "prerequisites": [
+      "Hortator and Nerevarine"
+    ],
+    "steps": [
+      "Visit Ghostgate (east of Caldera/Ald'ruhn) and speak with a Buoyant Armiger to obtain a Map of Red Mountain.",
+      "Scout the Red Mountain region inside the Ghostfence to familiarize yourself with locations.",
+      "Optional: Assault seven Ash Vampire citadels to collect magical artifacts from each Ash Vampire.",
+      "Enter Citadel Vemynal and defeat Dagoth Vemyn to retrieve the Sunder artifact.",
+      "Enter Citadel Odrosal and defeat Dagoth Odros; obtain the Keening artifact from the Tower area.",
+      "Proceed to Dagoth Ur's Citadel in Red Mountain's crater.",
+      "Enter Akulakhan's Chamber (note: you cannot exit until the Heart is destroyed).",
+      "Defeat Dagoth Ur's first incarnation.",
+      "Equip Wraithguard, then strike the Heart of Lorkhan once with Sunder and five times with Keening.",
+      "Escape as Akulakhan collapses.",
+      "Meet Azura in the cavern to complete the main quest."
+    ],
+    "key_npcs": [
+      { "name": "Dagoth Vemyn", "location": "Citadel Vemynal, Hall of Torque (lower level)" },
+      { "name": "Dagoth Odros", "location": "Citadel Odrosal, Dwemer Training Academy (Level 2)" },
+      { "name": "Dagoth Ur", "location": "Dagoth Ur Facility Cavern" },
+      { "name": "Azura", "location": "Dagoth Ur Facility (appears after Heart destruction)" }
+    ],
+    "key_items": [
+      "Wraithguard (gauntlet from Vivec)",
+      "Sunder (warhammer from Citadel Vemynal)",
+      "Keening (short blade from Citadel Odrosal)",
+      "Map of Red Mountain",
+      "Open lock skill (30+) or alternative methods"
+    ],
+    "rewards": [
+      "Sunder",
+      "Keening",
+      "Belt of Heartfire",
+      "Amulets of Heartfire, Heartthrum, Heartrime, Heartheal",
+      "Soul Ring",
+      "Blood Ring",
+      "Heart Ring",
+      "Ring of Azura"
+    ],
+    "next_quest": null
+  }
+]

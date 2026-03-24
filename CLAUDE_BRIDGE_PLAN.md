@@ -288,3 +288,145 @@ survive. Think step by step about what you see and what to do next.
 - `apps/openmw/CMakeLists.txt` — Build configuration for mwlua
 - `files/data/scripts/omw/input/playercontrols.lua` — Reference for how player controls work from Lua
 - `apps/openmw/mwlua/worldbindings.cpp` — World manipulation API bindings
+
+---
+
+## Phase 5: Autonomous Learning Extensions
+
+Extensions required for Claude to independently play and learn Morrowind. Organized into three sub-phases by dependency and complexity.
+
+### Phase 5A: Core Gameplay (Lua + Python, no C++ changes)
+
+These three extensions are required for Claude to actually play the game. Without them, it can move around but can't follow quests, navigate, or talk to NPCs.
+
+#### Extension 1: Dialogue System
+
+Morrowind is 90% dialogue. The Lua API already exposes dialogue text — this just needs wiring.
+
+**Existing APIs:**
+- `DialogueResponse` engine event fires when NPC speaks (provides `actor`, `type`, `infoId`, `recordId`)
+- `core.dialogue.topic.records[id].infos[i].text` — raw dialogue text
+- `core.dialogue.greeting`, `core.dialogue.journal`, `core.dialogue.persuasion` — other dialogue types
+- `ui._getUiModeStack()` — detect when `"Dialogue"` UI is open
+- `types.Player.journal(player).topics` — known conversation topics
+
+**New file: `files/data/scripts/claude_bridge/dialogue.lua`**
+- Event handler for `DialogueResponse`: looks up text via `core.dialogue`, sends over bridge
+- Detects dialogue UI open/closed via `ui._getUiModeStack()`
+- Gathers available topics the player knows
+- Sends: `{"type": "dialogue", "npc": "Caius Cosades", "text": "...", "availableTopics": ["little secret", "duties", ...]}`
+
+**Modify: `actions.lua`**
+- `select_topic` action: select a dialogue topic during conversation
+- `end_dialogue` action: close the dialogue window
+
+**Modify: `claude_agent.py`**
+- `talk_to` tool: activate an NPC and wait for dialogue response
+- `select_topic` tool: choose a topic during conversation
+- `end_conversation` tool: close dialogue
+
+#### Extension 2: Journal & Book Text Reading
+
+The APIs exist — `types.Player.journal()` and `types.Book.records[id].text` — just not wired to the bridge.
+
+**Modify: `player.lua` observations**
+- Expand quest observation: include `types.Player.journal(self.object).journalTextEntries[i].text` for the last 10 entries
+- Include `topics` with conversation text from `types.Player.journal(self.object).topics`
+
+**Modify: `actions.lua`**
+- `read_book` action: given a book name, find in inventory or nearby, return `types.Book.record(item).text`
+- Send: `{"type": "book_content", "title": "...", "text": "...", "isScroll": bool}`
+
+**Modify: `claude_agent.py`**
+- `read_journal` tool: returns full journal text (not just quest IDs)
+- `read_book` tool: returns text content of a book/scroll
+
+#### Extension 3: Navigation & Pathfinding
+
+The `nearby.findPath()` API already provides full navmesh pathfinding. This extension wraps it as a high-level action.
+
+**New file: `files/data/scripts/claude_bridge/navigation.lua`**
+- `navigate_to(position)` action: calls `nearby.findPath(self.position, dest)`
+- Returns list of waypoints; each `onFrame`, faces and moves toward next waypoint
+- Reports progress: `{"type": "navigation_progress", "waypointsRemaining": N, "distance": D}`
+- Reports completion: `{"type": "action_complete", "id": "...", "success": true}`
+- Stuck detection: if position unchanged for 2s, try jump/sidestep, then retry path. After 3 failures, report stuck.
+
+**Named location registry** (hardcoded table in navigation.lua):
+```lua
+local LOCATIONS = {
+    ["Seyda Neen"] = {x = ..., y = ..., z = ...},
+    ["Balmora"] = {x = ..., y = ..., z = ...},
+    ["Vivec"] = {x = ..., y = ..., z = ...},
+    -- etc.
+}
+```
+Claude can say `navigate_to("Balmora")` instead of raw coordinates.
+
+**Modify: `claude_agent.py`**
+- `navigate_to` tool: accepts a location name or `{x, y, z}` coordinates
+- Waits for `navigation_progress` and `action_complete` messages
+- Reports progress to Claude during long walks
+
+### Phase 5B: Persistent Memory (Python only)
+
+Allows Claude to learn across sessions. No Lua or C++ changes.
+
+**New file: `bridge_server/knowledge.py`**
+- File-backed JSON store at `bridge_server/knowledge/`
+- Categories: `locations.json`, `npcs.json`, `quests.json`, `strategies.json`, `discoveries.json`
+- API:
+  - `save(category, key, value)` — store a note
+  - `load(category, key)` — retrieve a note
+  - `search(query)` — fuzzy search across all categories
+  - `list(category)` — list all keys in a category
+- Auto-saves after writes, loads on startup
+
+**Modify: `claude_agent.py`**
+- `remember` tool: save a note (category + key + content)
+- `recall` tool: search knowledge base by query
+- `review_notes` tool: list all notes in a category
+
+**Modify: `main.py` / agent startup**
+- On startup, load all knowledge and inject summary into system prompt as "prior knowledge from previous sessions"
+- Claude starts each session knowing what it learned before
+
+### Phase 5C: Screen Capture / Vision (C++ + Lua + Python)
+
+Gives Claude visual understanding of the game. The only extension requiring C++ changes.
+
+**Existing C++ infrastructure:**
+- `MWRender::ScreenshotManager::screenshot(osg::Image*, w, h)` — captures framebuffer
+- Uses `ReadImageFromFramebufferCallback` on the render thread
+- Not currently exposed to Lua
+
+**New C++ bindings: extend `bridgebindings.cpp`**
+- Add `bridge.screenshot(path)` function to existing `openmw.bridge` package
+- Queues a screenshot request for the render thread
+- Saves PNG to the specified file path
+- Returns success/failure
+- Threading: must synchronize with render thread (use callback similar to existing screenshot mechanism)
+
+**Alternative approach (simpler):** Instead of Lua bindings, have the Python side send a keypress to trigger OpenMW's built-in screenshot (F12), then read the file. Less elegant but zero C++ changes.
+
+**Modify: `claude_agent.py`**
+- `look_around_visual` tool: triggers screenshot, reads PNG file, sends to Claude as an image content block via the Anthropic API's multimodal input
+- Use sparingly — visual processing is slower and more expensive than structured data
+- Best for: spatial orientation, finding paths, reading signs, understanding room layouts
+
+---
+
+## Full Implementation Order
+
+| Step | Phase | What | Changes | Verify |
+|------|-------|------|---------|--------|
+| 1 | Phase 1 ✅ | C++ IPC Extension | C++ socket + sol2 bindings | Lua ↔ Python message exchange |
+| 2 | Phase 2 ✅ | Lua Mod | player.lua + actions.lua + global.lua + json.lua | Python receives observations, sends actions |
+| 3 | Phase 3 ✅ | Python Bridge | connection + game_state + action_builder + claude_agent | Claude walks around, interacts |
+| 4 | Phase 5A.1 | Dialogue System | dialogue.lua + actions.lua + claude_agent.py | Claude talks to NPCs, reads responses, chooses topics |
+| 5 | Phase 5A.2 | Journal/Book Text | player.lua + actions.lua + claude_agent.py | Claude reads journal text and books |
+| 6 | Phase 5A.3 | Navigation | navigation.lua + claude_agent.py | Claude pathfinds between locations |
+| 7 | Phase 5B | Persistent Memory | knowledge.py + claude_agent.py + main.py | Claude remembers across sessions |
+| 8 | Phase 5C | Screen Capture | bridgebindings.cpp or F12 workaround + claude_agent.py | Claude sees the game visually |
+
+**Milestone:** After steps 1–6, Claude can autonomously explore Morrowind, talk to NPCs, follow quest instructions, navigate between cities, and manage combat. Step 7 adds cross-session learning. Step 8 adds visual awareness.

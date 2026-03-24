@@ -1,0 +1,2 @@
+GLOBAL: scripts/claude_bridge/global.lua
+PLAYER: scripts/claude_bridge/player.lua

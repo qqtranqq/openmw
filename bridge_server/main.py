@@ -17,6 +17,7 @@ import sys
 from connection import BridgeConnection
 from game_state import GameState
 from claude_agent import run_agent
+from knowledge import KnowledgeBase
 
 
 def setup_logging(verbose: bool = False):
@@ -45,13 +46,18 @@ async def async_main(args):
     else:
         print("Warning: No ping response. The bridge mod may not be loaded.")
 
+    knowledge = KnowledgeBase()
+    prior_count = sum(len(knowledge.get_all(cat)) for cat in knowledge._cache)
+    if prior_count > 0:
+        print(f"Loaded {prior_count} prior knowledge entries.")
+
     print(f"Starting Claude agent (model: {args.model})...")
     if args.goal:
         print(f"Goal: {args.goal}")
     print("Press Ctrl+C to stop.\n")
 
     try:
-        await run_agent(conn, state, model=args.model, goal=args.goal)
+        await run_agent(conn, state, model=args.model, goal=args.goal, knowledge=knowledge)
     except KeyboardInterrupt:
         print("\nStopping agent...")
     finally:

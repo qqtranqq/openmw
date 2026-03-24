@@ -194,6 +194,71 @@ TOOLS = [
             "required": [],
         },
     },
+    {
+        "name": "talk_to",
+        "description": "Start a conversation with a nearby NPC. Activates the NPC and waits for their greeting dialogue.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "npc": {
+                    "type": "string",
+                    "description": "Name of the NPC to talk to",
+                },
+            },
+            "required": ["npc"],
+        },
+    },
+    {
+        "name": "select_topic",
+        "description": "During a conversation, select a dialogue topic to ask the NPC about. Use the exact topic name from the available topics list.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "topic": {
+                    "type": "string",
+                    "description": "The dialogue topic to select",
+                },
+            },
+            "required": ["topic"],
+        },
+    },
+    {
+        "name": "navigate_to",
+        "description": "Auto-walk to a named location or coordinates using pathfinding. Known locations: Seyda Neen, Balmora, Vivec, Ald-Ruhn, Caldera, Suran, Pelagiad, Gnisis, Molag Mar, Sadrith Mora, Ebonheart, Hla Oad, Tel Mora, Maar Gan.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "destination": {
+                    "type": "string",
+                    "description": "Location name (e.g. 'Balmora') or coordinates as 'x,y,z'",
+                },
+            },
+            "required": ["destination"],
+        },
+    },
+    {
+        "name": "read_journal",
+        "description": "Read your quest journal with full text entries. Shows recent journal entries and active quest details.",
+        "input_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+        },
+    },
+    {
+        "name": "read_book",
+        "description": "Read a book or scroll. Searches inventory first, then nearby items.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "book": {
+                    "type": "string",
+                    "description": "Name of the book or scroll to read",
+                },
+            },
+            "required": ["book"],
+        },
+    },
 ]
 
 SYSTEM_PROMPT = """You are playing The Elder Scrolls III: Morrowind through OpenMW. You observe the game world and take actions using the provided tools.
@@ -204,6 +269,9 @@ Your capabilities:
 - Manage inventory and equipment (check, equip)
 - Engage in combat (attack, cast spells)
 - Track quests and explore
+- Talk to NPCs and navigate dialogue topics (talk_to, select_topic)
+- Navigate between cities using pathfinding (navigate_to)
+- Read books, scrolls, and your quest journal for information
 
 Guidelines:
 - Use look_around frequently to stay aware of your surroundings
@@ -343,6 +411,106 @@ async def execute_tool(
             cmd = action_builder.stop()
             await conn.send(cmd)
             result = await conn.recv_by_id(cmd["id"], timeout=3.0)
+            return _format_result(result)
+
+        elif tool_name == "talk_to":
+            # Activate the NPC to start dialogue, then wait for dialogue response
+            cmd = action_builder.activate(target=tool_input["npc"])
+            await conn.send(cmd)
+            result = await conn.recv_by_id(cmd["id"], timeout=5.0)
+            if result and result.get("success"):
+                # Wait for dialogue response
+                dialogue_msg = await conn.recv_type("dialogue", timeout=5.0)
+                if dialogue_msg:
+                    lines = []
+                    lines.append(f"Talking to: {dialogue_msg.get('npc', '?')}")
+                    lines.append(f"Type: {dialogue_msg.get('dialogueType', '?')}")
+                    lines.append(f"Text: {dialogue_msg.get('text', '(no text)')}")
+                    return "\n".join(lines)
+                else:
+                    return "Activated NPC but no dialogue response received."
+            return _format_result(result)
+
+        elif tool_name == "select_topic":
+            cmd = action_builder._action("select_topic", {"topic": tool_input["topic"]})
+            await conn.send(cmd)
+            result = await conn.recv_by_id(cmd["id"], timeout=5.0)
+            # Also wait for the dialogue response with the topic text
+            dialogue_msg = await conn.recv_type("dialogue", timeout=5.0)
+            if dialogue_msg:
+                return f"Topic '{tool_input['topic']}':\n{dialogue_msg.get('text', '(no text)')}"
+            return _format_result(result)
+
+        elif tool_name == "navigate_to":
+            destination = tool_input["destination"]
+            # Parse "x,y,z" format if provided
+            params = {"destination": destination}
+            if "," in destination:
+                try:
+                    parts = [float(p.strip()) for p in destination.split(",")]
+                    if len(parts) == 3:
+                        params = {"destination": {"x": parts[0], "y": parts[1], "z": parts[2]}}
+                except ValueError:
+                    pass
+            cmd = action_builder._action("navigate_to", params)
+            await conn.send(cmd)
+            # Wait for initial result
+            result = await conn.recv_by_id(cmd["id"], timeout=10.0)
+            initial = _format_result(result)
+            if result and result.get("success"):
+                # Wait for completion or progress updates
+                progress_lines = [initial]
+                while True:
+                    msg = await conn.recv(timeout=30.0)
+                    if msg is None:
+                        progress_lines.append("Navigation timed out.")
+                        break
+                    if msg.get("type") == "action_complete":
+                        progress_lines.append(_format_result(msg))
+                        break
+                    elif msg.get("type") == "navigation_progress":
+                        wp = msg.get("waypointsRemaining", "?")
+                        dist = msg.get("distanceToGoal", "?")
+                        progress_lines.append(f"Progress: {wp} waypoints remaining, {dist}m to goal")
+                    elif msg.get("type") == "observation":
+                        state.update(msg)  # Keep state updated during navigation
+                return "\n".join(progress_lines)
+            return initial
+
+        elif tool_name == "read_journal":
+            # Get journal text from latest observation
+            obs = await conn.drain_observations()
+            if obs:
+                state.update(obs)
+            journal_texts = []
+            if state.current:
+                texts = state.current.get("journalTexts", [])
+                for entry in texts:
+                    quest_id = entry.get("questId", "")
+                    text = entry.get("text", "")
+                    journal_texts.append(f"[{quest_id}] {text}")
+            quests = state.quests or []
+            active = [q for q in quests if not q.get("finished")]
+            lines = []
+            if journal_texts:
+                lines.append("=== Recent Journal Entries ===")
+                lines.extend(journal_texts)
+            if active:
+                lines.append(f"\n=== Active Quests ({len(active)}) ===")
+                for q in active:
+                    lines.append(f"  {q.get('id', '?')} (stage {q.get('stage', '?')})")
+            return "\n".join(lines) if lines else "Journal is empty."
+
+        elif tool_name == "read_book":
+            cmd = action_builder._action("read_book", {"target": tool_input["book"]})
+            await conn.send(cmd)
+            result = await conn.recv_by_id(cmd["id"], timeout=5.0)
+            if result and result.get("success"):
+                title = result.get("bookTitle", tool_input["book"])
+                text = result.get("message", "(no text)")
+                is_scroll = result.get("isScroll", False)
+                kind = "Scroll" if is_scroll else "Book"
+                return f"=== {kind}: {title} ===\n{text}"
             return _format_result(result)
 
         else:

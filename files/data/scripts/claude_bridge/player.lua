@@ -10,6 +10,8 @@ local I = require('openmw.interfaces')
 
 local json = require('scripts/claude_bridge/json')
 local actions = require('scripts/claude_bridge/actions')
+local dialogue = require('scripts/claude_bridge/dialogue')
+local navigation = require('scripts/claude_bridge/navigation')
 
 -- Configuration
 local BRIDGE_PORT = 21003
@@ -238,11 +240,26 @@ local function buildQuests()
             result[#result + 1] = entry
         end
     end
-    return result
+    -- Include recent journal text entries
+    local journalTexts = {}
+    local ok2, journal = pcall(function() return Player.journal(selfModule.object) end)
+    if ok2 and journal and journal.journalTextEntries then
+        local entries = journal.journalTextEntries
+        local startIdx = math.max(1, #entries - 9)  -- last 10 entries
+        for i = startIdx, #entries do
+            local e = entries[i]
+            journalTexts[#journalTexts + 1] = {
+                text = e.text,
+                questId = e.questId,
+            }
+        end
+    end
+    return result, journalTexts
 end
 
 -- Build full observation
 local function buildObservation()
+    local questList, journalTexts = buildQuests()
     return {
         type = 'observation',
         timestamp = core.getSimulationTime(),
@@ -256,8 +273,10 @@ local function buildObservation()
             containers = buildNearbyContainers(),
             activators = buildNearbyActivators(),
         },
-        quests = buildQuests(),
+        quests = questList,
+        journalTexts = journalTexts,
         currentAction = actions.getCurrentAction(),
+        dialogue = dialogue.getDialogueState(selfModule.object),
     }
 end
 
@@ -300,6 +319,20 @@ local function processIncoming()
                     })
                 elseif cmd.action == 'get_world_info' then
                     core.sendGlobalEvent('ClaudeBridgeGetWorldInfo', {id = cmd.id})
+                elseif cmd.action == 'navigate_to' then
+                    local result = navigation.startNavigation(cmd.params.destination or cmd.params.target)
+                    if result.success then
+                        navigation.setActionId(cmd.id)
+                    end
+                    bridgeSend({type = 'action_result', id = cmd.id, success = result.success, message = result.message})
+                elseif cmd.action == 'cancel_navigation' then
+                    navigation.cancelNavigation()
+                    bridgeSend({type = 'action_result', id = cmd.id, success = true, message = 'Navigation cancelled'})
+                elseif cmd.action == 'read_book' then
+                    local result = actions.processCommand(cmd)
+                    if result then
+                        bridgeSend({type = 'action_result', id = result.id, success = result.success, message = result.message})
+                    end
                 else
                     -- Local player action
                     local result = actions.processCommand(cmd)
@@ -335,6 +368,16 @@ local function onFrame(dt)
     local completion = actions.update(dt)
     if completion then
         bridgeSend(completion)
+    end
+
+    -- Update navigation
+    if navigation.isNavigating() then
+        local navMessages = navigation.updateNavigation(dt)
+        if navMessages then
+            for _, msg in ipairs(navMessages) do
+                bridgeSend(msg)
+            end
+        end
     end
 
     -- Send observations periodically
@@ -376,6 +419,12 @@ return {
                 id = data.id,
                 info = data.info,
             }
+        end,
+        DialogueResponse = function(data)
+            local msg = dialogue.handleDialogueResponse(data)
+            if msg then
+                pendingResults[#pendingResults + 1] = msg
+            end
         end,
     },
 }

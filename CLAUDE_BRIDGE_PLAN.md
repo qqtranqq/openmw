@@ -430,3 +430,126 @@ Gives Claude visual understanding of the game. The only extension requiring C++ 
 | 8 | Phase 5C | Screen Capture | bridgebindings.cpp or F12 workaround + claude_agent.py | Claude sees the game visually |
 
 **Milestone:** After steps 1–6, Claude can autonomously explore Morrowind, talk to NPCs, follow quest instructions, navigate between cities, and manage combat. Step 7 adds cross-session learning. Step 8 adds visual awareness.
+
+---
+
+## Phase 6: Knowledge Bootstrap from Game Guides
+
+Pre-load the knowledge base with structured information from publicly available Morrowind strategy guides (e.g. GameFAQs text walkthroughs) so Claude starts each session with expert-level game knowledge.
+
+### Architecture
+
+```
+knowledge_bootstrap/
+    guides/                 # Raw downloaded guide text files
+    parsed/                 # Structured JSON output
+    parser.py               # Parse raw FAQ text into structured JSON
+    claude_parser.py        # Alternative: use Claude to parse guides
+    import_knowledge.py     # Load parsed data into knowledge base
+```
+
+### Step 1: Download Guides
+
+Manually download the most useful text guides from GameFAQs (they block automated fetching). Save as `.txt` files in `knowledge_bootstrap/guides/`.
+
+| Priority | Guide Type | What to Extract |
+|----------|-----------|-----------------|
+| 1 | Main Quest Walkthrough | Step-by-step quest instructions, NPC names, locations, dialogue choices |
+| 2 | NPC/Location Guide | Every NPC: name, role, location, services |
+| 3 | Item/Artifact Guide | Unique weapons, armor, their locations and stats |
+| 4 | Alchemy Ingredient Guide | All ingredients, their 4 effects, where to find them |
+| 5 | Trainer Guide | Skill trainers: name, skill, max level, location, cost |
+| 6 | Faction Walkthroughs | Fighters/Mages/Thieves Guild, Temple, Imperial Legion quest steps |
+| 7 | Map/Navigation Guide | Directions between cities, landmarks, silt strider/boat routes |
+
+### Step 2: Parse Guides
+
+Two approaches, use whichever fits:
+
+#### Approach A: Regex Parser (`parser.py`)
+
+GameFAQs text guides follow predictable formatting: section headers with `====`/`----` underlines, numbered steps, fixed-width tables.
+
+```python
+def parse_walkthrough(text) -> dict:
+    """Split by section headers, extract quest steps, NPC refs, locations."""
+
+def parse_npc_guide(text) -> dict:
+    """Extract NPC name, location, services, inventory."""
+
+def parse_item_guide(text) -> dict:
+    """Extract item name, type, stats, location."""
+
+def parse_alchemy_guide(text) -> dict:
+    """Extract ingredient, effects (1-4), weight, value, sources."""
+
+def parse_trainer_guide(text) -> dict:
+    """Extract trainer name, skill, max level, location, cost."""
+```
+
+#### Approach B: Claude-Assisted Parser (`claude_parser.py`)
+
+Use Claude to parse raw guide text into structured JSON. Slower/costlier but handles any format without custom parsers.
+
+```python
+async def parse_with_claude(guide_text: str, guide_type: str) -> dict:
+    """Send guide chunk to Claude, get back structured JSON."""
+    # Prompt Claude to extract into categories:
+    #   locations, npcs, quests, items, strategies
+    # Returns valid JSON matching knowledge base schema
+```
+
+For large guides (200KB+), split by section headers first, process each section independently, then merge results.
+
+### Step 3: Import to Knowledge Base (`import_knowledge.py`)
+
+Map parsed data into the existing `KnowledgeBase` categories:
+
+```python
+from bridge_server.knowledge import KnowledgeBase
+kb = KnowledgeBase()
+
+# Locations: name → {description, services, travel_connections, notable_npcs}
+# NPCs: name → {location, role, services, quests}
+# Quests: name → {faction, giver, location, steps[], reward}
+# Items: name → {type, location, stats, how_to_get}
+# Strategies: topic → advice text
+# Inventory: item → {type, location, stats}
+```
+
+### Step 4: Verify & Curate
+
+```bash
+# Check what was imported
+cd bridge_server
+python -c "from knowledge import KnowledgeBase; kb = KnowledgeBase(); print(kb.get_summary())"
+
+# Manually review/edit JSON files in bridge_server/knowledge/*.json
+```
+
+### Step 5: Run Bootstrap
+
+```bash
+# One-time setup
+cd knowledge_bootstrap
+
+# Option A: regex parsing
+python import_knowledge.py --guides-dir ./guides/ --method regex
+
+# Option B: Claude-assisted parsing
+export ANTHROPIC_API_KEY=...
+python import_knowledge.py --guides-dir ./guides/ --method claude
+```
+
+### Expected Output
+
+| Category | ~Entries | Source |
+|----------|---------|--------|
+| `locations` | ~50 | Map guide, walkthrough |
+| `npcs` | ~200 | NPC guide, trainer guide |
+| `quests` | ~100 | Main + faction walkthroughs |
+| `strategies` | ~30 | Character build, alchemy, combat guides |
+| `inventory` | ~100 | Item/artifact guide |
+| `discoveries` | ~50 | Lore, secrets, Easter eggs |
+
+**Result:** ~530 knowledge entries before Claude starts playing — equivalent to a player who has read the strategy guide. Claude will know where to go, who to talk to, and what items to look for from the first session.

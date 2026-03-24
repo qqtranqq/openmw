@@ -1,6 +1,7 @@
 """Claude agent loop for controlling OpenMW."""
 
 import asyncio
+import base64
 import logging
 import os
 from typing import Optional
@@ -311,6 +312,24 @@ TOOLS = [
             "required": [],
         },
     },
+    {
+        "name": "look_visual",
+        "description": "Take a screenshot of what you see in-game. Returns an image for visual analysis. Use this for spatial orientation, finding paths, reading signs, or understanding room layouts. More expensive than look_around, so use sparingly.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "width": {
+                    "type": "integer",
+                    "description": "Screenshot width in pixels (default 640)",
+                },
+                "height": {
+                    "type": "integer",
+                    "description": "Screenshot height in pixels (default 480)",
+                },
+            },
+            "required": [],
+        },
+    },
 ]
 
 SYSTEM_PROMPT = """You are playing The Elder Scrolls III: Morrowind through OpenMW. You observe the game world and take actions using the provided tools.
@@ -605,6 +624,50 @@ async def execute_tool(
                     return "Knowledge base is empty."
                 return "Categories:\n" + "\n".join(f"  {c}" for c in cats)
 
+        elif tool_name == "look_visual":
+            import os
+            screenshot_path = "/tmp/openmw_bridge_screenshot.png"
+            width = tool_input.get("width", 640)
+            height = tool_input.get("height", 480)
+
+            # Request screenshot
+            cmd = action_builder._action("screenshot", {
+                "path": screenshot_path,
+                "width": width,
+                "height": height,
+            })
+            await conn.send(cmd)
+
+            # Wait for acknowledgment
+            result = await conn.recv_by_id(cmd["id"], timeout=5.0)
+            if result and not result.get("success", False):
+                return _format_result(result)
+
+            # Wait for the screenshot file to be written (async from render thread)
+            screenshot_msg = await conn.recv_type("screenshot", timeout=10.0)
+            if not screenshot_msg:
+                return "Screenshot timed out."
+
+            actual_path = screenshot_msg.get("path", screenshot_path)
+
+            # Read the image and return as base64 for Claude's vision
+            # Wait briefly for file to be fully written
+            await asyncio.sleep(0.2)
+
+            if not os.path.exists(actual_path):
+                return f"Screenshot file not found: {actual_path}"
+
+            try:
+                with open(actual_path, "rb") as f:
+                    image_data = f.read()
+
+                # Return as a special marker that the agent loop will handle
+                # For now, return base64 that can be used in a content block
+                b64 = base64.b64encode(image_data).decode("utf-8")
+                return f"[SCREENSHOT:{actual_path}:{b64}]"
+            except IOError as e:
+                return f"Failed to read screenshot: {e}"
+
         else:
             return f"Unknown tool: {tool_name}"
 
@@ -700,11 +763,42 @@ async def run_agent(
                         result_text = await execute_tool(block.name, block.input, conn, state, knowledge)
                         logger.info(f"Result: {result_text[:200]}")
                         print(f"  📋 {result_text[:200]}")
-                        tool_results.append({
-                            "type": "tool_result",
-                            "tool_use_id": block.id,
-                            "content": result_text,
-                        })
+                        # Check if result contains a screenshot
+                        if result_text.startswith("[SCREENSHOT:"):
+                            # Parse: [SCREENSHOT:path:base64data]
+                            parts = result_text.split(":", 2)
+                            if len(parts) >= 3:
+                                b64_data = parts[2].rstrip("]")
+                                tool_results.append({
+                                    "type": "tool_result",
+                                    "tool_use_id": block.id,
+                                    "content": [
+                                        {
+                                            "type": "image",
+                                            "source": {
+                                                "type": "base64",
+                                                "media_type": "image/png",
+                                                "data": b64_data,
+                                            },
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "Screenshot captured. Describe what you see.",
+                                        },
+                                    ],
+                                })
+                            else:
+                                tool_results.append({
+                                    "type": "tool_result",
+                                    "tool_use_id": block.id,
+                                    "content": "Screenshot captured but could not be processed.",
+                                })
+                        else:
+                            tool_results.append({
+                                "type": "tool_result",
+                                "tool_use_id": block.id,
+                                "content": result_text,
+                            })
                 messages.append({"role": "user", "content": tool_results})
 
             elif response.stop_reason == "end_turn":

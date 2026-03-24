@@ -333,6 +333,11 @@ local function processIncoming()
                     if result then
                         bridgeSend({type = 'action_result', id = result.id, success = result.success, message = result.message})
                     end
+                elseif cmd.action == 'screenshot' then
+                    local result = actions.processCommand(cmd)
+                    if result then
+                        bridgeSend({type = 'action_result', id = result.id, success = result.success, message = result.message})
+                    end
                 else
                     -- Local player action
                     local result = actions.processCommand(cmd)

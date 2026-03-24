@@ -8,6 +8,7 @@
 #include "../mwworld/datetimemanager.hpp"
 
 #include "animationbindings.hpp"
+#include "bridgebindings.hpp"
 #include "camerabindings.hpp"
 #include "cellbindings.hpp"
 #include "contentbindings.hpp"
@@ -47,6 +48,7 @@ namespace MWLua
         initObjectBindingsForGlobalScripts(context);
         initCellBindingsForGlobalScripts(context);
         return {
+            { "openmw.bridge", initBridgePackage(context) },
             { "openmw.core", initCorePackage(context) },
             { "openmw.types", initTypesPackage(context) },
             { "openmw.world", initWorldPackage(context) },
@@ -70,6 +72,7 @@ namespace MWLua
     {
         return {
             { "openmw.ambient", initAmbientPackage(context) },
+            { "openmw.bridge", initBridgePackage(context) },
             { "openmw.camera", initCameraPackage(context.sol()) },
             { "openmw.debug", initDebugPackage(context) },
             { "openmw.input", initInputPackage(context) },

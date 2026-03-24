@@ -68,6 +68,7 @@ add_openmw_dir (mwlua
     types/creature types/player types/activator types/book types/lockpick types/probe types/apparatus
     types/potion types/ingredient types/misc types/repair types/armor types/light types/static
     types/clothing types/levelledlist types/terminal magictypebindings
+    bridgebindings
     )
 
 add_openmw_dir (mwsound
@@ -223,6 +224,10 @@ endif (ANDROID)
 
 if (USE_SYSTEM_TINYXML)
     target_link_libraries(openmw-lib ${TinyXML_LIBRARIES})
+endif()
+
+if (WIN32)
+    target_link_libraries(openmw-lib ws2_32)
 endif()
 
 if (NOT UNIX)

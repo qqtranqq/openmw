@@ -241,6 +241,20 @@ function actions.processCommand(cmd)
         -- For now, return the topic name so the Python side knows what was selected
         return {id = id, success = true, message = 'Topic selected: ' .. topicName}
 
+    elseif action == 'screenshot' then
+        local path = params.path or '/tmp/openmw_bridge_screenshot.png'
+        local width = params.width or 640
+        local height = params.height or 480
+        local ok, err = pcall(function()
+            local bridge = require('openmw.bridge')
+            bridge.screenshot(path, width, height)
+        end)
+        if ok then
+            return {id = id, success = true, message = 'Screenshot requested: ' .. path}
+        else
+            return {id = id, success = false, message = 'Screenshot failed: ' .. tostring(err)}
+        end
+
     else
         return {id = id, success = false, message = 'Unknown action: ' .. tostring(action)}
     end

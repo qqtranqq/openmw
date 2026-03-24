@@ -157,6 +157,26 @@ class GameState:
                 for q in active[:10]:
                     parts.append(f"  {q.get('id', '?')} (stage {q.get('stage', '?')})")
 
+        # Dialogue state
+        if self.current:
+            dlg = self.current.get("dialogue")
+            if dlg and dlg.get("active"):
+                parts.append(f"\n=== In Dialogue with {dlg.get('npc', '?')} ===")
+                history = dlg.get("history", [])
+                for h in history:
+                    parts.append(f"  [{h.get('dialogueType', '?')}] {h.get('text', '')[:200]}")
+                topics = dlg.get("topics", [])
+                if topics:
+                    parts.append(f"Available topics: {', '.join(topics[:20])}")
+
+        # Journal text
+        if self.current:
+            jt = self.current.get("journalTexts", [])
+            if jt:
+                parts.append(f"\n=== Recent Journal ({len(jt)} entries) ===")
+                for entry in jt[-5:]:
+                    parts.append(f"  [{entry.get('questId', '?')}] {entry.get('text', '')[:150]}")
+
         return "\n".join(parts)
 
     def summarize_changes(self) -> str:

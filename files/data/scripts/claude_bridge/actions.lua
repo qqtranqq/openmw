@@ -196,6 +196,51 @@ function actions.processCommand(cmd)
         selfModule.controls.sneak = enable
         return {id = id, success = true, message = enable and 'Sneaking' or 'Stopped sneaking'}
 
+    elseif action == 'read_book' then
+        local bookName = params.target or params.book
+        if not bookName then
+            return {id = id, success = false, message = 'No book specified'}
+        end
+        -- Search inventory first
+        local item = findInventoryItem(bookName)
+        if not item then
+            -- Search nearby items
+            item = findNearbyByName(bookName, nearby.items)
+        end
+        if not item then
+            return {id = id, success = false, message = 'Book not found: ' .. bookName}
+        end
+        -- Check if it's a book type
+        local ok, bookRecord = pcall(function()
+            if types.Book and types.Book.objectIsInstance(item) then
+                return types.Book.record(item)
+            end
+            return nil
+        end)
+        if ok and bookRecord then
+            return {
+                id = id,
+                success = true,
+                message = bookRecord.text or '(no text)',
+                bookTitle = bookRecord.name or bookName,
+                isScroll = bookRecord.isScroll or false,
+            }
+        else
+            return {id = id, success = false, message = 'Not a book: ' .. bookName}
+        end
+
+    elseif action == 'select_topic' then
+        -- During dialogue, selecting a topic means activating with the topic
+        -- In OpenMW, topic selection happens through the dialogue UI
+        -- We simulate it by finding the NPC we're talking to and providing the topic name
+        local topicName = params.topic
+        if not topicName then
+            return {id = id, success = false, message = 'No topic specified'}
+        end
+        -- The topic selection is handled by the engine when the player clicks a topic
+        -- For now, return the topic name so the Python side knows what was selected
+        return {id = id, success = true, message = 'Topic selected: ' .. topicName}
+
     else
         return {id = id, success = false, message = 'Unknown action: ' .. tostring(action)}
     end

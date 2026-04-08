@@ -1,0 +1,82 @@
+# Morrowind Early Game Goals - Starting from Seyda Neen
+# Based on UESP Starting Out guide
+
+# === SEYDA NEEN: GATHER RESOURCES AND DO SIDE QUESTS ===
+
+1. Talk to Fargoth in Seyda Neen. If you have the Engraved Ring of Healing, return it to him. This improves Arrille's prices.
+2. Go to Arrille's Tradehouse in Seyda Neen. Talk to Arrille and sell any items you don't need. Buy the best weapon you can afford that matches your weapon skills, and buy health potions if available.
+3. Explore the area around the Seyda Neen lighthouse. Look for free items around the base and inside the lighthouse — loot any containers and pick up items that aren't owned.
+4. Find Hrisskar Flat-Foot in the Census and Excise Office area in Seyda Neen. Talk to him to start his quest about Fargoth's hiding place.
+5. Find and enter the smugglers' cave Addamasartus near Seyda Neen. Kill all enemies inside. Find the Addamasartus Slave Key and free any slaves. Loot all bodies, chests, and containers.
+6. Return to Arrille's Tradehouse in Seyda Neen. Sell all loot from Addamasartus. Buy better armor and weapons with the money if available.
+
+# === ROAD TO BALMORA: EXPLORE AND LOOT ===
+
+7. Take the silt strider from Seyda Neen to Balmora. Talk to Darvame Hleran at the silt strider port and travel to Balmora.
+
+# === BALMORA: MAIN QUEST AND GUILDS ===
+
+8. Find Caius Cosades' house in Balmora and deliver the Package for Caius Cosades. Ask him about orders and duties to join the Blades.
+9. Go to Balmora Fighters Guild. Talk to Eydis Fire-Eye and join the Fighters Guild. Accept your first quest.
+10. Go to Balmora Mages Guild. Talk to Ranis Athrys and join the Mages Guild. Accept your first quest.
+11. Visit the armorer Meldor in Balmora. Buy chitin or netch leather armor pieces to fill any empty equipment slots. Equip all armor you buy.
+12. Complete the first Fighters Guild quest from Eydis Fire-Eye.
+13. Complete the first Mages Guild quest from Ranis Athrys.
+14. Return to Caius Cosades in Balmora and ask for orders to advance the main quest.
+
+# === MAIN QUEST: CAIUS COSADES' ORDERS ===
+
+15. Talk to Caius Cosades about orders. He sends you to talk to Hasphat Antabolis at the Balmora Fighters Guild about the Nerevarine cult and the Sixth House. Complete whatever task Hasphat asks of you in return.
+16. Return to Hasphat Antabolis with what he asked for. Get his notes on the Nerevarine and the Sixth House. Bring the notes back to Caius Cosades.
+17. Talk to Caius Cosades about orders. He sends you to talk to Sharn gra-Muzgob at the Balmora Mages Guild. Complete whatever task she asks of you in return.
+18. Return to Sharn gra-Muzgob with what she asked for. Get her notes. Bring the notes back to Caius Cosades.
+19. Talk to Caius Cosades about orders. He promotes you and sends you to Vivec to find informants — Huleeya at the Black Shalk Cornerclub in the Foreign Quarter, Addhiranirr in the St. Olms Underworks, and Mehra Milo at the Hall of Wisdom in the Temple.
+
+# === VIVEC: INFORMANTS ===
+
+20. Travel to Vivec. Find Huleeya at the Black Shalk Cornerclub in the Foreign Quarter. Talk to him about the Nerevarine and escort him to safety if needed.
+21. Find Addhiranirr in the Vivec St. Olms Underworks. Help her avoid the Census agent, then talk to her about the Nerevarine and Sixth House.
+22. Find Mehra Milo at the Hall of Wisdom in the Vivec Temple. Talk to her about the lost prophecies and the Nerevarine.
+23. Return to Caius Cosades in Balmora with all the information from the three informants.
+
+# === MAIN QUEST: DEEPER INTO THE PROPHECY ===
+
+24. Talk to Caius Cosades about orders. He sends you to the Urshilaku Camp in the Ashlands to meet Sul-Matuul and Nibani Maesa. Travel to Ald-ruhn by silt strider or guild guide, then head north into the Ashlands to find the camp.
+25. Find the Urshilaku Camp. Talk to Sul-Matuul, the Ashkhan. He requires you to retrieve your father's bow from the Urshilaku Burial Caverns before he will help you.
+26. Enter the Urshilaku Burial Caverns. Find and defeat the Wraith of Sul-Senipul. Retrieve the Bonebiter Bow of Sul-Senipul. Return to Sul-Matuul with the bow.
+27. Talk to Nibani Maesa at the Urshilaku Camp about the Nerevarine prophecies. She will interpret the prophecies and tell you what you must do to be recognized as Nerevarine.
+28. Return to Caius Cosades in Balmora and report what you learned from the Ashlanders.
+
+# === MAIN QUEST: THE SIXTH HOUSE ===
+
+29. Talk to Caius Cosades about orders. He sends you to investigate the Sixth House base at Ilunibi near Gnisis. Travel to Gnisis.
+30. Find and enter Ilunibi caverns near Gnisis. Fight through the Sixth House cultists. Find and confront Dagoth Gares in the deepest chamber.
+31. Return to Caius Cosades in Balmora. He tells you about corprus disease and sends you to Tel Fyr to see Divayth Fyr for a cure.
+
+# === MAIN QUEST: THE CORPRUS CURE ===
+
+32. Travel to Tel Fyr (take a boat from Vivec to Sadrith Mora, then find Tel Fyr southeast). Talk to Divayth Fyr about the corprus cure. He asks you to retrieve the Dwemer Boots of Flying from the Corprusarium below.
+33. Enter the Corprusarium beneath Tel Fyr. Navigate through the infected creatures. Find Yagrum Bagarn and get the Dwemer Boots of Flying. Return them to Divayth Fyr.
+34. Drink the potion Divayth Fyr gives you to cure corprus. Return to Caius Cosades in Balmora.
+
+# === MAIN QUEST: BECOMING HORTATOR AND NEREVARINE ===
+
+35. Talk to Caius Cosades. He gives you his final orders and leaves for Cyrodiil. You must now be named Hortator by all three Great Houses and Nerevarine by the four Ashlander tribes.
+36. Travel to Balmora and become Hortator of House Hlaalu. Talk to the Hlaalu councilors and convince them to name you Hortator. You may need to do favors or persuade them.
+37. Travel to Ald-ruhn and become Hortator of House Redoran. Talk to the Redoran councilors under Skar and convince them to name you Hortator.
+38. Travel to Sadrith Mora and become Hortator of House Telvanni. Talk to the Telvanni councilors in their towers and convince them to name you Hortator.
+39. Visit the Urshilaku Camp and be named Nerevarine by the Urshilaku tribe. Then visit the Ahemmusa, Zainab, and Erabenimsun Ashlander camps to be named Nerevarine by each tribe.
+
+# === MAIN QUEST: THE PATH OF THE INCARNATE ===
+
+40. Go to the Cavern of the Incarnate in the Azura's Coast region during dawn or dusk. Receive Azura's blessing and the Moon-and-Star ring. You are now the Nerevarine.
+41. Travel to Vivec and confront Vivec in his palace at the top of the Temple canton. Talk to Vivec about the plan to defeat Dagoth Ur. He gives you Wraithguard and the plan to use the Tools of Kagrenac.
+42. Obtain Sunder from Vemynal, a Dwemer ruin on Red Mountain. Fight through Dagoth Vemyn and his minions.
+43. Obtain Keening from Odrosal, another Dwemer ruin on Red Mountain. Fight through Dagoth Odros and his minions.
+
+# === FINAL QUEST: DEFEAT DAGOTH UR ===
+
+44. Prepare for the final battle. Make sure you have Wraithguard equipped, Sunder and Keening in your inventory, plenty of health potions, restore fatigue potions, and the best armor you can find. Save your game.
+45. Enter the Ghostfence at Ghostgate and travel across Red Mountain to the Citadel of Dagoth Ur. Enter the outer facility and fight through the Ash Vampires and Sixth House monsters.
+46. Find Dagoth Ur in the inner citadel. He will talk to you before the fight. After the dialogue, fight Dagoth Ur until he flees deeper into the facility.
+47. Follow Dagoth Ur down to the Heart Chamber at the heart of Red Mountain. Strike the Heart of Lorkhan with Sunder first, then strike it with Keening five times to destroy it. This destroys Dagoth Ur and the Blight. You have completed the main quest.

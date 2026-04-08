@@ -8,6 +8,7 @@ namespace MWLua
     struct Context;
 
     sol::table initBridgePackage(const Context& context);
+    bool isBridgeConnected();
 }
 
 #endif // MWLUA_BRIDGEBINDINGS_H

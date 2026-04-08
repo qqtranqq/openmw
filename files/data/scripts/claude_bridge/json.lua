@@ -27,7 +27,7 @@ end
 
 function json.encodeString(s)
     -- Escape special characters
-    local escaped = s:gsub('[\\"\x00-\x1f]', function(c)
+    local escaped = s:gsub('[\\"%c]', function(c)
         local replacements = {
             ['\\'] = '\\\\',
             ['"'] = '\\"',

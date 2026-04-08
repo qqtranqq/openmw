@@ -1,0 +1,204 @@
+{
+  "improvements": [
+    {
+      "id": 1,
+      "title": "Goal skipping — orchestrator ignores goal queue",
+      "impact": "CRITICAL",
+      "fix_type": "Prompt Change + Bug Fix",
+      "recommendation": "Added goal discipline section, [CURRENT GOAL] in every message, post-trim reminder",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 2,
+      "title": "NPC targeting — talk_to activates wrong NPC",
+      "impact": "CRITICAL",
+      "fix_type": "Bug Fix",
+      "recommendation": "Added NPC name verification after dialogue opens, auto-close if wrong NPC",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 3,
+      "title": "Level-up UI blocks agent",
+      "impact": "CRITICAL",
+      "fix_type": "New Tool",
+      "recommendation": "C++ autoLevelUp binding, Lua auto-detection in onFrame",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 4,
+      "title": "Combat scripts not loaded (data-mw)",
+      "impact": "CRITICAL",
+      "fix_type": "Bug Fix",
+      "recommendation": "Copied MW combat scripts to data/, added to builtin.omwscripts",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 5,
+      "title": "Player AI combat not attacking",
+      "impact": "CRITICAL",
+      "fix_type": "Bug Fix",
+      "recommendation": "C++ actors.cpp reads controls.mUse during AI combat, Lua manual swing timing",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 6,
+      "title": "Death screen blocks agent",
+      "impact": "HIGH",
+      "fix_type": "Bug Fix",
+      "recommendation": "Lua auto-reload on death with AI cleanup, Python death detection",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 7,
+      "title": "Spell casting not firing",
+      "impact": "HIGH",
+      "fix_type": "Bug Fix",
+      "recommendation": "overrideCombatControls(true) during cast action",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 8,
+      "title": "Stale AI packages block manual play",
+      "impact": "HIGH",
+      "fix_type": "Bug Fix",
+      "recommendation": "isBridgeConnected() guard in actors.cpp",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 9,
+      "title": "No rest system",
+      "impact": "HIGH",
+      "fix_type": "New Tool",
+      "recommendation": "C++ rest binding, Lua action, Python tool, orchestrator integration",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 10,
+      "title": "No persuasion tools",
+      "impact": "HIGH",
+      "fix_type": "New Tool",
+      "recommendation": "C++ persuade binding, Lua action, dialogue agent integration",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 11,
+      "title": "No armor/weapon stat awareness",
+      "impact": "MEDIUM",
+      "fix_type": "Prompt Change",
+      "recommendation": "Lua buildEquipment/buildInventory show AR and damage, game_state.py displays stats",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 12,
+      "title": "City navigation — can't find buildings",
+      "impact": "HIGH",
+      "fix_type": "New Tool",
+      "recommendation": "search_area tool, auto-save doors to knowledge base",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 13,
+      "title": "No looting from containers/corpses",
+      "impact": "HIGH",
+      "fix_type": "New Tool",
+      "recommendation": "get_contents, take_item, take_all Lua actions",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 14,
+      "title": "No encumbrance awareness",
+      "impact": "MEDIUM",
+      "fix_type": "New Tool",
+      "recommendation": "Added encumbrance to observations, drop_item tool",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 15,
+      "title": "No bounty awareness",
+      "impact": "MEDIUM",
+      "fix_type": "Prompt Change",
+      "recommendation": "Bounty guidance in all agent prompts, goal generator prioritizes clearing bounty",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 16,
+      "title": "Accidental dialogue blocks movement",
+      "impact": "HIGH",
+      "fix_type": "Bug Fix",
+      "recommendation": "Lua auto-close dialogue before movement actions, WARNING in observations",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 20:42"
+    },
+    {
+      "id": 17,
+      "title": "No alchemy system",
+      "impact": "HIGH",
+      "fix_type": "New Agent",
+      "recommendation": "Create alchemy sub-agent with ingredient effects and potion crafting",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 21:07"
+    },
+    {
+      "id": 18,
+      "title": "No training system",
+      "impact": "HIGH",
+      "fix_type": "New Tool",
+      "recommendation": "C++ training bindings, orchestrator tool for paying trainers",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 21:07"
+    },
+    {
+      "id": 19,
+      "title": "No lockpicking",
+      "impact": "MEDIUM",
+      "fix_type": "New Tool",
+      "recommendation": "Lua pick_lock action using Security skill",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 21:07"
+    },
+    {
+      "id": 20,
+      "title": "No stealth/thievery agent",
+      "impact": "LOW",
+      "fix_type": "New Agent",
+      "recommendation": "Pickpocket, steal awareness with crime risk assessment",
+      "status": "implemented",
+      "found_at": "2026-04-07 20:42",
+      "implemented_at": "2026-04-07 21:07"
+    }
+  ]
+}

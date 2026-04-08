@@ -247,8 +247,18 @@ namespace MWMechanics
     {
         if (actor == getPlayer())
         {
-            // Players don't use this.
-            return;
+            // Allow AI execution for player only when an AiCombat package is active (bridge combat)
+            bool hasCombatPackage = false;
+            for (const auto& pkg : mPackages)
+            {
+                if (pkg->getTypeId() == AiPackageTypeId::Combat)
+                {
+                    hasCombatPackage = true;
+                    break;
+                }
+            }
+            if (!hasCombatPackage)
+                return;
         }
 
         if (mResetFriendlyHits)
@@ -334,6 +344,13 @@ namespace MWMechanics
 
         try
         {
+            if (actor == getPlayer())
+            {
+                static int debugCount = 0;
+                if (++debugCount % 100 == 0)
+                    Log(Debug::Verbose) << "Bridge: Executing package typeId=" << static_cast<int>(packageTypeId)
+                        << " total packages=" << mPackages.size();
+            }
             if (package->execute(actor, characterController, mAiState, duration))
             {
                 // Put repeating non-combat AI packages on the end of the stack so they can be used again
@@ -374,8 +391,20 @@ namespace MWMechanics
 
     void AiSequence::stack(const AiPackage& package, const MWWorld::Ptr& actor, bool cancelOther)
     {
+        // Allow AiCombat (and its internal sub-packages) for player (used by bridge for AI-controlled combat)
         if (actor == getPlayer())
-            throw std::runtime_error("Can't add AI packages to player");
+        {
+            const auto typeId = package.getTypeId();
+            Log(Debug::Info) << "Bridge: Player AI package request, typeId=" << static_cast<int>(typeId)
+                             << " (Combat=" << static_cast<int>(AiPackageTypeId::Combat) << ")";
+            // AiCombat internally pushes InternalTravel, Face, and AvoidDoor sub-packages
+            if (typeId != AiPackageTypeId::Combat
+                && typeId != AiPackageTypeId::InternalTravel
+                && typeId != AiPackageTypeId::Face
+                && typeId != AiPackageTypeId::AvoidDoor
+                && typeId != AiPackageTypeId::Pursue)
+                throw std::runtime_error("Can't add AI packages to player");
+        }
 
         // Stop combat when a non-combat AI package is added
         if (isActualAiPackage(package.getTypeId()))

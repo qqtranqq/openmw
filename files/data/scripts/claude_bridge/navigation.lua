@@ -30,9 +30,10 @@ local LOCATIONS = {
 local navState = nil  -- nil when not navigating
 
 local WAYPOINT_REACH_DIST = 200   -- distance to consider a waypoint reached
+local GOAL_REACH_DIST = 500       -- distance to consider the final destination reached (covers doors/walls)
 local STUCK_TIME = 3.0            -- seconds without progress before stuck detection
 local STUCK_DIST = 50             -- minimum distance to move in STUCK_TIME
-local MAX_RETRIES = 3             -- max stuck retries before giving up
+local MAX_RETRIES = 5             -- max stuck retries before giving up
 local PROGRESS_INTERVAL = 2.0     -- seconds between progress reports
 
 -- Resolve a destination: can be {x,y,z} table or a location name string
@@ -85,7 +86,7 @@ function nav.startNavigation(dest)
     -- Find path
     local status, path = nearby.findPath(sourceVec, destVec, {
         agentBounds = agentBounds,
-        includeFlags = nearby.NAVIGATOR_FLAGS.Walk + nearby.NAVIGATOR_FLAGS.OpenDoor,
+        includeFlags = nearby.NAVIGATOR_FLAGS.Walk + nearby.NAVIGATOR_FLAGS.OpenDoor + nearby.NAVIGATOR_FLAGS.UsePathgrid,
     })
 
     if status ~= nearby.FIND_PATH_STATUS.Success and status ~= nearby.FIND_PATH_STATUS.PartialPath then
@@ -155,7 +156,7 @@ function nav.updateNavigation(dt)
 
     -- Check if we reached the final destination
     local distToGoal = (navState.targetPos - playerPos):length()
-    if distToGoal < WAYPOINT_REACH_DIST then
+    if distToGoal < GOAL_REACH_DIST then
         selfModule.controls.movement = 0
         selfModule.controls.yawChange = 0
         local result = {
@@ -171,13 +172,17 @@ function nav.updateNavigation(dt)
     -- Get current waypoint
     local wp = navState.waypoints[navState.currentWaypoint]
     if not wp then
+        -- Ran out of waypoints — if we're reasonably close, count as success
         selfModule.controls.movement = 0
         selfModule.controls.yawChange = 0
+        local closeEnough = distToGoal < 1000  -- ~8 meters
         local result = {
             type = 'action_complete',
             id = navState.id or '',
-            success = false,
-            message = 'No more waypoints',
+            success = closeEnough,
+            message = closeEnough
+                and ('Arrived near ' .. navState.targetName .. ' (' .. math.floor(distToGoal) .. ' units away). Look around for doors.')
+                or ('Could not reach ' .. navState.targetName .. ' (' .. math.floor(distToGoal) .. ' units away)'),
         }
         navState = nil
         return {result}
@@ -229,6 +234,7 @@ function nav.updateNavigation(dt)
             if navState.retries > MAX_RETRIES then
                 selfModule.controls.movement = 0
                 selfModule.controls.yawChange = 0
+                selfModule.controls.sideMovement = 0
                 local result = {
                     type = 'action_complete',
                     id = navState.id or '',
@@ -238,12 +244,50 @@ function nav.updateNavigation(dt)
                 navState = nil
                 return {result}
             end
-            -- Try to unstick: jump and sidestep
-            selfModule.controls.jump = true
-            selfModule.controls.sideMovement = (navState.retries % 2 == 0) and 1 or -1
+
+            if not navState.backingUp then
+                -- Back away from the obstacle with randomized duration and direction
+                navState.backingUp = true
+                navState.backupTimer = 0
+                navState.backupDuration = 1.0 + math.random() * 2.0  -- 1-3 seconds
+                navState.backupSide = (math.random() * 2.0) - 1.0    -- random side bias [-1, 1]
+            end
         end
         navState.stuckTimer = 0
         navState.lastProgressPosition = playerPos
+    end
+
+    -- Handle backing up phase
+    if navState.backingUp then
+        navState.backupTimer = (navState.backupTimer or 0) + dt
+        -- Walk backward and to a random side
+        selfModule.controls.movement = -1
+        selfModule.controls.run = true
+        selfModule.controls.sideMovement = navState.backupSide
+
+        if navState.backupTimer >= navState.backupDuration then
+            -- Done backing up — re-path from current position
+            navState.backingUp = false
+            selfModule.controls.movement = 0
+            selfModule.controls.sideMovement = 0
+
+            local agentBounds = Actor.getPathfindingAgentBounds(selfModule.object)
+            local status, newPath = nearby.findPath(playerPos, navState.targetPos, {
+                agentBounds = agentBounds,
+                includeFlags = nearby.NAVIGATOR_FLAGS.Walk + nearby.NAVIGATOR_FLAGS.OpenDoor + nearby.NAVIGATOR_FLAGS.UsePathgrid,
+            })
+            if (status == nearby.FIND_PATH_STATUS.Success or status == nearby.FIND_PATH_STATUS.PartialPath) and newPath and #newPath > 0 then
+                navState.waypoints = newPath
+                navState.currentWaypoint = 1
+                navState.stuckTimer = 0
+                navState.lastProgressPosition = playerPos
+            end
+            -- If re-path fails, continue with old waypoints and hope for the best
+        end
+        -- Skip normal movement while backing up
+        if navState and navState.backingUp then
+            return nil
+        end
     end
 
     -- Progress reports
@@ -262,6 +306,79 @@ function nav.updateNavigation(dt)
         return messages
     end
     return nil
+end
+
+-- Start navigating to a nearby NPC by name
+-- Searches nearby actors for a name match, then pathfinds to their position
+function nav.startNavigationToNPC(npcName)
+    if not npcName or npcName == '' then
+        return {success = false, message = 'No NPC name specified'}
+    end
+
+    local searchName = npcName:lower()
+    local bestMatch = nil
+    local bestDist = math.huge
+
+    for _, obj in ipairs(nearby.actors) do
+        if obj.id ~= selfModule.object.id and obj.position then
+            local name = ''
+            local ok, record = pcall(function() return obj.type.record(obj) end)
+            if ok and record and record.name then
+                name = record.name
+            end
+            if name:lower():find(searchName, 1, true) then
+                local dist = (obj.position - selfModule.object.position):length()
+                if dist < bestDist then
+                    bestDist = dist
+                    bestMatch = {name = name, position = obj.position}
+                end
+            end
+        end
+    end
+
+    if not bestMatch then
+        return {success = false, message = 'NPC "' .. npcName .. '" not found nearby. Try look_around to see who is around.'}
+    end
+
+    -- Pathfind to NPC position
+    local destVec = bestMatch.position
+    local sourceVec = selfModule.object.position
+    local agentBounds = Actor.getPathfindingAgentBounds(selfModule.object)
+
+    local status, path = nearby.findPath(sourceVec, destVec, {
+        agentBounds = agentBounds,
+        includeFlags = nearby.NAVIGATOR_FLAGS.Walk + nearby.NAVIGATOR_FLAGS.OpenDoor + nearby.NAVIGATOR_FLAGS.UsePathgrid,
+    })
+
+    if status ~= nearby.FIND_PATH_STATUS.Success and status ~= nearby.FIND_PATH_STATUS.PartialPath then
+        return {success = false, message = 'No path found to ' .. bestMatch.name .. ' (status: ' .. tostring(status) .. ')'}
+    end
+
+    if not path or #path == 0 then
+        return {success = false, message = 'Empty path to ' .. bestMatch.name}
+    end
+
+    navState = {
+        targetName = bestMatch.name,
+        targetPos = destVec,
+        waypoints = path,
+        currentWaypoint = 1,
+        stuckTimer = 0,
+        lastPosition = sourceVec,
+        lastProgressPosition = sourceVec,
+        retries = 0,
+        progressTimer = 0,
+        totalDistance = (destVec - sourceVec):length(),
+        partial = (status == nearby.FIND_PATH_STATUS.PartialPath),
+    }
+
+    local msg = 'Navigating to ' .. bestMatch.name .. ' (' .. #path .. ' waypoints, ' .. math.floor(bestDist) .. 'm away'
+    if navState.partial then
+        msg = msg .. ', partial path'
+    end
+    msg = msg .. ')'
+
+    return {success = true, message = msg}
 end
 
 -- Check if currently navigating

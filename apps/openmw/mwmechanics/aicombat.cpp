@@ -255,6 +255,16 @@ namespace MWMechanics
 
         storage.mReadyToAttack = (currentAction->isAttackingOrSpell() && distToTarget <= rangeAttack && storage.mLOS);
 
+        if (actor == MWMechanics::getPlayer())
+        {
+            static int dbg2 = 0;
+            if (++dbg2 % 60 == 0)
+                Log(Debug::Info) << "Bridge: readyToAttack=" << storage.mReadyToAttack
+                    << " isAttackingOrSpell=" << currentAction->isAttackingOrSpell()
+                    << " dist=" << distToTarget << " range=" << rangeAttack
+                    << " LOS=" << storage.mLOS;
+        }
+
         if (isRangedCombat)
         {
             // rotate actor taking into account target movement direction and projectile speed
@@ -645,6 +655,14 @@ namespace MWMechanics
     void AiCombatStorage::startAttackIfReady(const MWWorld::Ptr& actor, CharacterController& characterController,
         const ESM::Weapon* weapon, bool distantCombat, bool canShout)
     {
+        if (actor == MWMechanics::getPlayer())
+        {
+            static int dbg = 0;
+            if (++dbg % 100 == 0)
+                Log(Debug::Info) << "Bridge: startAttackIfReady: ready=" << mReadyToAttack
+                    << " ctrlReady=" << characterController.readyToStartAttack()
+                    << " cooldown=" << mAttackCooldown;
+        }
         if (mReadyToAttack && characterController.readyToStartAttack())
         {
             if (mAttackCooldown <= 0)
@@ -657,6 +675,9 @@ namespace MWMechanics
 
                 auto& prng = MWBase::Environment::get().getWorld()->getPrng();
                 mStrength = Misc::Rng::rollClosedProbability(prng);
+
+                if (actor == MWMechanics::getPlayer())
+                    Log(Debug::Info) << "Bridge: AI attack start, target mStrength=" << mStrength;
 
                 const MWWorld::ESMStore& store = *MWBase::Environment::get().getESMStore();
 
@@ -688,8 +709,13 @@ namespace MWMechanics
         if (mAttack)
         {
             float attackStrength = characterController.calculateWindUp();
+            bool wasAttacking = mAttack;
             mAttack
                 = !characterController.readyToPrepareAttack() && attackStrength < mStrength && attackStrength != -1.f;
+            if (wasAttacking && !mAttack && actor == MWMechanics::getPlayer())
+                Log(Debug::Info) << "Bridge: AI attack release, windUp=" << attackStrength
+                    << " mStrength=" << mStrength
+                    << " readyToPrepare=" << characterController.readyToPrepareAttack();
         }
         actor.getClass().getCreatureStats(actor).setAttackingOrSpell(mAttack);
     }

@@ -598,8 +598,20 @@ namespace MWClass
             weapskill = weapon.getClass().getEquipmentSkill(weapon);
 
         float hitchance = MWMechanics::getHitChance(ptr, victim, static_cast<int>(getSkill(ptr, weapskill)));
+        int roll = Misc::Rng::roll0to99(world->getPrng());
+        bool hit = roll < hitchance;
 
-        return Misc::Rng::roll0to99(world->getPrng()) < hitchance;
+        if (ptr == MWMechanics::getPlayer() || victim == MWMechanics::getPlayer())
+        {
+            Log(Debug::Info) << "Combat: " << ptr.getClass().getName(ptr)
+                << " -> " << victim.getClass().getName(victim)
+                << " skill=" << static_cast<int>(getSkill(ptr, weapskill))
+                << " hitchance=" << hitchance
+                << " roll=" << roll
+                << " " << (hit ? "HIT" : "MISS");
+        }
+
+        return hit;
     }
 
     void Npc::hit(const MWWorld::Ptr& ptr, float attackStrength, int type, const MWWorld::Ptr& victim,
@@ -614,20 +626,37 @@ namespace MWClass
         MWMechanics::applyFatigueLoss(ptr, weapon, attackStrength);
 
         if (victim.isEmpty()) // Didn't hit anything
+        {
+            if (ptr == MWMechanics::getPlayer() || (victim.isEmpty() && ptr == MWMechanics::getPlayer()))
+                Log(Debug::Info) << "Combat hit(): victim is empty, returning";
             return;
+        }
 
         const MWWorld::Class& othercls = victim.getClass();
         MWMechanics::CreatureStats& otherstats = othercls.getCreatureStats(victim);
         if (otherstats.isDead()) // Can't hit dead actors
+        {
+            if (ptr == MWMechanics::getPlayer() || victim == MWMechanics::getPlayer())
+                Log(Debug::Info) << "Combat hit(): victim already dead, returning";
             return;
+        }
 
         if (!MWMechanics::isInMeleeReach(ptr, victim, MWMechanics::getMeleeWeaponReach(ptr, weapon)))
+        {
+            if (ptr == MWMechanics::getPlayer() || victim == MWMechanics::getPlayer())
+                Log(Debug::Info) << "Combat hit(): NOT in melee reach, returning (reach="
+                    << MWMechanics::getMeleeWeaponReach(ptr, weapon) << ")";
             return;
+        }
 
         if (ptr == MWMechanics::getPlayer())
             MWBase::Environment::get().getWindowManager()->setEnemy(victim);
 
         float damage = 0.0f;
+        Log(Debug::Info) << "Combat hit(): " << ptr.getClass().getName(ptr)
+            << " -> " << victim.getClass().getName(victim)
+            << " success=" << success
+            << " attackStrength=" << attackStrength << " type=" << type;
         if (!success)
         {
             MWBase::Environment::get().getLuaManager()->onHit(ptr, victim, weapon, MWWorld::Ptr(), type, attackStrength,
@@ -699,10 +728,17 @@ namespace MWClass
         if (MWMechanics::blockMeleeAttack(ptr, victim, weapon, damage, attackStrength))
             damage = 0;
 
-        if (victim == MWMechanics::getPlayer() && MWBase::Environment::get().getWorld()->getGodModeState())
+        bool godMode = victim == MWMechanics::getPlayer() && MWBase::Environment::get().getWorld()->getGodModeState();
+        if (godMode)
             damage = 0;
 
         MWMechanics::diseaseContact(victim, ptr);
+
+        Log(Debug::Info) << "Combat DAMAGE: " << ptr.getClass().getName(ptr)
+            << " -> " << victim.getClass().getName(victim)
+            << " damage=" << damage << " healthdmg=" << healthdmg
+            << " blocked=" << (damage == 0 && !godMode ? "maybe" : "no")
+            << " godmode=" << godMode;
 
         MWBase::Environment::get().getLuaManager()->onHit(ptr, victim, weapon, MWWorld::Ptr(), type, attackStrength,
             damage, healthdmg, hitPosition, true, MWMechanics::DamageSourceType::Melee);

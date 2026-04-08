@@ -14,8 +14,13 @@ local MAX_HISTORY = 20
 
 -- Check if dialogue UI is currently open
 function dialogue.isDialogueOpen()
-    local ok, stack = pcall(ui._getUiModeStack)
-    if not ok or not stack then return false end
+    local ok, bridge = pcall(require, 'openmw.bridge')
+    if ok and bridge and bridge.isDialogueOpen then
+        return bridge.isDialogueOpen()
+    end
+    -- Fallback to UI mode stack check
+    local ok2, stack = pcall(ui._getUiModeStack)
+    if not ok2 or not stack then return false end
     for _, mode in ipairs(stack) do
         if mode == 'Dialogue' then
             return true

@@ -220,6 +220,10 @@ namespace MWGui
         std::unique_ptr<ResponseCallback> mCallback;
         std::unique_ptr<ResponseCallback> mGreetingCallback;
 
+    public:
+        ResponseCallback* getCallback() { return mCallback.get(); }
+    private:
+
         void setControllerFocus(size_t index, bool focused);
         size_t mControllerFocus = 0;
         int mControllerChoice = -1;

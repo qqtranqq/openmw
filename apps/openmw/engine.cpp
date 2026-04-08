@@ -447,6 +447,7 @@ void OMW::Engine::setDataDirs(const Files::PathContainer& dataDirs)
 {
     mDataDirs = dataDirs;
     mDataDirs.insert(mDataDirs.begin(), mResDir / "vfs");
+    mDataDirs.insert(mDataDirs.begin(), mResDir / "vfs-mw");
     mFileCollections = Files::Collections(mDataDirs);
 }
 

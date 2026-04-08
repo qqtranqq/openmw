@@ -37,3 +37,13 @@ CUSTOM: scripts/omw/console/local.lua
 
 # Music system
 NPC,CREATURE: scripts/omw/music/actor.lua
+
+# Morrowind combat, skills, and cell handling
+GLOBAL: scripts/omw/cellhandlers.lua
+GLOBAL: scripts/omw/combat/global.lua
+MENU: scripts/omw/combat/menu.lua
+NPC,CREATURE,PLAYER: scripts/omw/combat/local.lua
+PLAYER: scripts/omw/music/music.lua
+MENU: scripts/omw/music/settings.lua
+PLAYER: scripts/omw/playerskillhandlers.lua
+LOAD: scripts/omw/esmfallbacks.lua

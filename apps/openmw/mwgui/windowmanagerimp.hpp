@@ -447,6 +447,9 @@ namespace MWGui
         std::unique_ptr<MessageBoxManager> mMessageBoxManager;
         Console* mConsole;
         DialogueWindow* mDialogueWindow;
+    public:
+        DialogueWindow* getDialogueWindow() { return mDialogueWindow; }
+    private:
         std::unique_ptr<DragAndDrop> mDragAndDrop;
         std::unique_ptr<ItemTransfer> mItemTransfer;
         InventoryWindow* mInventoryWindow;

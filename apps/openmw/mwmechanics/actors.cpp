@@ -8,6 +8,8 @@
 
 #include <components/debug/debuglog.hpp>
 #include <components/misc/mathutil.hpp>
+
+#include "../mwlua/bridgebindings.hpp"
 #include <components/misc/resourcehelpers.hpp>
 #include <components/misc/rng.hpp>
 #include <components/sceneutil/positionattitudetransform.hpp>
@@ -370,7 +372,13 @@ namespace MWMechanics
             const bool runFlag = stats.getMovementFlag(MWMechanics::CreatureStats::Flag_Run);
             const bool sneakFlag = stats.getMovementFlag(MWMechanics::CreatureStats::Flag_Sneak);
             const bool attackingOrSpell = stats.getAttackingOrSpell();
-            if (controls.mChanged)
+            // Check if AI combat is active for the player — if so, let AI control everything.
+            // Only when the bridge is connected — stale packages from disconnected sessions must not block manual play.
+            bool playerAiCombatActive = isPlayer && MWLua::isBridgeConnected()
+                && !stats.getAiSequence().isEmpty()
+                && stats.getAiSequence().getActivePackage().getTypeId() == AiPackageTypeId::Combat;
+
+            if (controls.mChanged && !playerAiCombatActive)
             {
                 mov.mPosition[0] = controls.mSideMovement;
                 mov.mPosition[1] = controls.mMovement;
@@ -388,9 +396,22 @@ namespace MWMechanics
 
                 controls.mChanged = false;
             }
+            // During AI combat, still read Lua controls.use for attack (Lua handles swing timing)
+            if (playerAiCombatActive && controls.mChanged)
+            {
+                stats.setAttackingOrSpell(controls.mUse != AttackType::NoAttack);
+                stats.setAttackType(attackTypeName(controls.mUse));
+                // Also apply Lua movement controls (facing, approach)
+                mov.mPosition[0] = controls.mSideMovement;
+                mov.mPosition[1] = controls.mMovement;
+                mov.mRotation[0] = controls.mPitchChange;
+                mov.mRotation[2] = controls.mYawChange;
+                stats.setMovementFlag(MWMechanics::CreatureStats::Flag_Run, controls.mRun);
+                controls.mChanged = false;
+            }
             // For the player we don't need to copy these values to Lua because mwinput doesn't change them.
             // All handling of these player controls was moved from C++ to a built-in Lua script.
-            if (!isPlayer)
+            if (!isPlayer || playerAiCombatActive)
             {
                 controls.mSideMovement = movement.x();
                 controls.mMovement = movement.y();
@@ -401,6 +422,14 @@ namespace MWMechanics
                     controls.mUse = AttackType::NoAttack;
                 else if (controls.mUse == AttackType::NoAttack)
                     controls.mUse = AttackType::Any;
+                if (isPlayer && playerAiCombatActive)
+                {
+                    static int logCounter = 0;
+                    if (++logCounter % 100 == 0)
+                        Log(Debug::Verbose) << "Bridge: Player AI controls: attackingOrSpell=" << attackingOrSpell
+                            << " mUse=" << static_cast<int>(controls.mUse)
+                            << " mov=(" << movement.x() << "," << movement.y() << ")";
+                }
             }
             // For the player these controls are still handled by mwinput, so we need to update the values.
             controls.mPitchChange = rotationX;
@@ -1614,14 +1643,22 @@ namespace MWMechanics
                         if (actor.getPtr().getClass().isNpc() && !isPlayer)
                             updateCrimePursuit(actor.getPtr(), duration, cachedAllies);
 
-                        if (!isPlayer)
                         {
                             CreatureStats& stats = actor.getPtr().getClass().getCreatureStats(actor.getPtr());
-                            if (isConscious(actor.getPtr()) && !(luaControls && luaControls->mDisableAI))
+                            // Allow AI execution for player if they have an active AI combat package (bridge-controlled)
+                            bool playerHasAiCombat = isPlayer && !stats.getAiSequence().isEmpty()
+                                && stats.getAiSequence().getActivePackage().getTypeId() == AiPackageTypeId::Combat;
+                            if ((!isPlayer || playerHasAiCombat)
+                                && isConscious(actor.getPtr()) && !(luaControls && luaControls->mDisableAI))
                             {
+                                if (playerHasAiCombat)
+                                    Log(Debug::Verbose) << "Bridge: Executing AiCombat for player";
                                 stats.getAiSequence().execute(actor.getPtr(), ctrl, duration);
-                                updateGreetingState(actor.getPtr(), actor, mTimerUpdateHello > 0);
-                                playIdleDialogue(actor.getPtr());
+                                if (!isPlayer)
+                                {
+                                    updateGreetingState(actor.getPtr(), actor, mTimerUpdateHello > 0);
+                                    playIdleDialogue(actor.getPtr());
+                                }
                                 updateMovementSpeed(actor.getPtr());
                             }
                         }

@@ -3,7 +3,7 @@
   "Darvame Hleran": "{\"location\": \"Seyda Neen\", \"role\": \"Silt Strider caravaner\"}",
   "Elone": "{\"location\": \"Arrille's Tradehouse, Seyda Neen\", \"role\": \"Main quest NPC (Report to Caius Cosades)\"}",
   "Bacola Closcius": "{\"location\": \"South Wall Cornerclub, Balmora\", \"role\": \"Main quest NPC (Report to Caius Cosades)\"}",
-  "Caius Cosades": "{\"location\": \"Balmora\", \"role\": \"Grand Spymaster of the Blades, main quest giver\", \"essential\": true, \"essential_reason\": \"Main quest Blades spymaster; always essential until he leaves for Cyrodiil\"}",
+  "Caius Cosades": "{\"location\": \"Balmora, northeast section\", \"building\": \"Caius Cosades' House (look for door labeled Caius Cosades)\", \"role\": \"Grand Spymaster of the Blades, main quest giver\", \"essential\": true, \"essential_reason\": \"Main quest Blades spymaster; always essential until he leaves for Cyrodiil\", \"notes\": \"Shirtless man in a small house. Enter and deliver the Coded Package from Sellus Gravius.\"}",
   "Hasphat Antabolis": "{\"location\": \"Balmora Fighters Guild, training room\", \"role\": \"Main quest NPC (Antabolis Informant)\", \"essential\": true, \"essential_reason\": \"Required for Antabolis Informant quest\"}",
   "Boss Crito": "{\"location\": \"Arkngthand, Cells of Hollow Hand\", \"role\": \"Main quest NPC (Antabolis Informant)\"}",
   "Frink Ruuz": "{\"location\": \"Arkngthand\", \"role\": \"Main quest NPC (Antabolis Informant)\"}",
@@ -265,5 +265,6 @@
   "Endryn Llethan": "{\"location\": \"Vivec, High Fane\", \"role\": \"Required for Hortator and Nerevarine quest completion\", \"essential\": true}",
   "Goris the Maggot King": "{\"location\": \"Venim Ancestral Tomb\", \"role\": \"Incorrectly marked essential in vanilla game\", \"essential\": true}",
   "Mistress Brara Morvayn": "{\"location\": \"Ald'ruhn, Morvayn Quarters\", \"role\": \"Required for Redoran Hortator quest\", \"essential\": true}",
-  "Tholer Saryoni": "{\"location\": \"Vivec, High Fane\", \"role\": \"Required for Hortator and Nerevarine quest completion\", \"essential\": true}"
+  "Tholer Saryoni": "{\"location\": \"Vivec, High Fane\", \"role\": \"Required for Hortator and Nerevarine quest completion\", \"essential\": true}",
+  "fargoth_first_impression": "Fargoth of Seyda Neen: A Wood Elf of remarkably poor manners, even by provincial standards. When approached for basic introductions, he responded with \"Hurry this up, will you?\" — the sort of dismissive efficiency one might expect from an overworked mason, but hardly appropriate for greeting newcomers to his settlement. Clearly not management material. Note: Avoid future business dealings unless absolutely necessary."
 }

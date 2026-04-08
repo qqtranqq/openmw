@@ -122,6 +122,11 @@ class BridgeConnection:
                 msg = await self.recv(timeout=remaining)
                 if msg is None:
                     return None
+                # Propagate player_died immediately so callers can handle it
+                if msg.get("type") == "player_died":
+                    stashed.append(msg)
+                    return {"type": "action_result", "id": cmd_id, "success": False,
+                            "message": "PLAYER DIED"}
                 if msg.get("id") == cmd_id and msg.get("type") in msg_types:
                     return msg
                 stashed.append(msg)
@@ -193,3 +198,15 @@ class BridgeConnection:
         for m in drained:
             await self._message_queue.put(m)
         return latest
+
+    def flush_queue(self):
+        """Discard all queued messages. Call after a game load to clear stale data."""
+        count = 0
+        while not self._message_queue.empty():
+            try:
+                self._message_queue.get_nowait()
+                count += 1
+            except asyncio.QueueEmpty:
+                break
+        if count:
+            logger.info(f"Flushed {count} stale messages after game load")
